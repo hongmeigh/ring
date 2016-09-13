@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="raphael-min.js"></script>
+</head>
+<body style="position:relative">	
+	 <style>
+        #canvas
+        {
+        border-style:solid;
+        border-width:1px;
+        }
+		shape{
+			overflow:hidden;
+			}
+    </style>
+    <div style="position:absolute; width:400px; height:400px;" id="canvas"></div>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+	//实现多个弧形连动
+    $(function() {
+	var color=["red","yellow","green","blue","purple"]
+	function animate(canvas,arr){
+		var length=[];
+		var subpath=[];
+		for(var i=0; i<arr.length; i++){
+			length[i]=arr[i].getTotalLength();
+			}
+			console.log(length[1])
+			$("#canvas").animate({
+            	'to': 2.2
+			}, {
+				duration: 3000,
+				easing:"linear",
+				step: function(pos, fx) {
+					console.log(pos)
+					 if(0<pos<=1){
+						subpath[0]=arr[0].getSubpath(0, length[0]*pos)
+						}
+					 if(0.3<pos<=1.3){
+						subpath[1]=arr[1].getSubpath(0, length[1]*(pos-0.3))
+						}
+					 if(0.6<pos<=1.6){
+						subpath[2]=arr[2].getSubpath(0, length[2]*(pos-0.6))
+						}
+					 if(0.9<pos<=1.9){
+						subpath[3]=arr[3].getSubpath(0, length[3]*(pos-0.9))
+						}
+					 if(1.2<pos<=2.2){
+						subpath[4]=arr[4].getSubpath(0, length[4]*(pos-1.2))
+						}
+					canvas.clear();
+					for(var m=0; m<arr.length; m++){
+						canvas.path(subpath[m]).attr({
+							"stroke-width":20,
+							"stroke": color[m]
+						});	
+					}
+				},
+			});
+		}
+	var pathString=[];
+	pathString[0] = "m 350,200 a 150,150 0 1 1 -300,0 150,150 0 1 1 300,0 z";
+	pathString[1] = "m 330,200 a 130,130 0 1 1 -260,0 130,130 0 1 1 260,0 z"
+	pathString[2] = "m 310,200 a 110,110 0 1 1 -220,0 110,110 0 1 1 220,0 z"
+	pathString[3] = "m 290,200 a 90,90 0 1 1 -180,0 90,90 0 1 1 180,0 z"
+	pathString[4] = "m 270,200 a 70,70 0 1 1 -140,0 70,70 0 1 1 140,0 z"
+    var canvas = Raphael('canvas', 400, 400);
+	var arr=[];
+	for(var n=0; n<pathString.length; n++){
+		arr[n]=canvas.path(pathString[n]).attr({
+			"stroke-width":20,
+            "stroke": color[n],
+        });
+		}
+		//画圆可以采用两天弧形路径"M120,338 A160,160,0,1,1,280,338 A160,160,0,0,1,120,338";
+   animate(canvas,arr) 
+
+    //animateLine(canvas, "canvas", "#f12438", pathString);
+
+});
+    </script>
+</body>
+</html>
