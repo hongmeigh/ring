@@ -1,0 +1,239 @@
+1.禁止页面滚动：
+	移动端禁止页面随手滑而滚动
+	$('body').on("touchmove",function(e){
+        	e.preventDefault();
+    	});
+	$('body').off("touchmove")
+	pc端禁止页面滚动
+	$(window/body/html).on("wheel/mousewheel",function(e){
+		e.preventDefault();
+	})
+2.ie中显示绝对定位的空元素
+	加上属性
+	background:#000;
+	opacity:0;
+	filter:alpha(opacity==0);
+	 /* 加背景颜色 */
+    	background-color: #000;
+    	/* 或者加边框 */
+   	 border: 1px solid #fff;
+    	/* 或者加背景图片*/
+    	background-image:url(xxx.jpg)
+    	/* 或者加空白页的命令 */
+    	background-image:url(about:blank);
+3.让字沿着图片周围排列
+	例：p img
+	只需将img  float即可
+4.ps中选区反选Ctrl+shift+i
+5.判断是否是微信端登录
+	function isweixin(){ 
+		var ua = window.navigator.userAgent.toLowerCase(); 
+		if(ua.match(/MicroMessenger/i) == 'micromessenger'){ 
+			return true; 
+		}else{ 
+			return false; 
+		} 
+	}
+6.判断是pc端还是手机端
+	function IsPC()  
+	{  
+           var userAgentInfo = navigator.userAgent;  
+           var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
+           var flag = true;  
+           for (var v = 0; v < Agents.length; v++) {  
+               if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }  
+           }  
+           return flag;  
+	} 
+7.font字体制作（图标）：
+	（1）AI软件在网格下制作图标，背景要透明
+	（2）导出svg格式
+	（3）在http://icomoon.io/   注册账号         小人头地方是注册
+	（4）icoMoonApp>之后import Icons>之后generate Font>之后得到一个icomoon的文件夹
+		注意：里面有demo-files,fonts文件夹，demo.html和Read Me.txt和selection.json和style.css
+	(5)引用方法：建文件夹名为iconfonts文件夹放入css。文件夹里放入fonts和style.css 之后再html文档中引用即可
+	  <link rel="stylesheet" href="css/iconfonts/style.css">    注意导标图必须要引用。
+	（6）页面中应用：  <span class=""></span> 每个类名上可以多设置别的类名来调节颜色和字体大小、
+8.超出框是显示省略号
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+   强制文本在一行内显示  超出部分省略
+	overflow : hidden;
+	text-overflow: ellipsis;
+	white-space:nowrap;
+9.li元素前面出现圆点
+	li{
+		list-style-type: disc !important;
+		list-style-position: inside;
+	}
+10.$("body").on('click',".question-wrap-title",function(){})
+	当这种形式绑定click事件时在iPhone里面会出现不可点击的情况即点不中
+	这时只需要在body上面加上属性
+	cursor: pointer;
+11.元素中单属性的添加和删除例如：readonly disabled
+	用prop方法
+12.移动端在input值改变时触发的事件可以用html5中的input事件
+	还可以keydown keyup
+13.IE(包括IE10等)下绝对定位(position:absolute)a标签或者其它标签失效
+	a{
+    	/* 加背景颜色 */
+   	 background-color: #000;
+   	 /* 或者加边框 */
+   	 border: 1px solid #fff;
+   	 /* 或者加背景图片*/
+   	 background-image:url(xxx.jpg)
+   	 /* 或者加空白页的命令 */
+    	background-image:url(about:blank);
+	}
+14.手机横屏转竖屏  转屏判断
+    js:
+	function orientationChange(){   
+	switch(window.orientation) {   
+	case 0: // Portrait  竖屏 
+	case 180: // Upside-down Portrait   竖屏
+	// Javascript to setup Portrait view   
+	break;   
+	case -90: // Landscape: turned 90 degrees counter-clockwise   横屏
+	case 90: // Landscape: turned 90 degrees clockwise   横屏
+	// Javascript to steup Landscape view   
+	break;   
+	}   
+}   
+	window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", orientationChange, false); 
+   jquery:
+	function orient() {
+	alert('gete');
+	if (window.orientation == 0 || window.orientation == 180) {
+	$("body").attr("class", "portrait");
+	orientation = 'portrait';
+	return false;
+	}
+	else if (window.orientation == 90 || window.orientation == -90) {
+	$("body").attr("class", "landscape");
+	orientation = 'landscape';
+	return false;
+	}
+}
+	$(window).bind( 'orientationchange', function(e){
+	orient();
+	});
+15.让input date出现placeholder的内容
+	css:
+		input[type="date"]::before {
+		color: #999999;
+		content: attr(placeholder);
+		}
+		input[type="date"] {
+		color: #ffffff;
+		}
+		input[type="date"]:focus,input[type="date"]:valid {
+		color: #666666;
+		}
+		input[type="date"]:focus::before,input[type="date"]:valid::before {
+		content: "" !important;
+		}
+	html:
+		<input class="date" type="date" placeholder="请选择考试时间"  required>
+	或
+	css:
+		input[type="date"]:before {
+  		color: lightgrey;
+  		content: attr(placeholder) !important;
+ 		margin-right: 0.5em;
+		}
+		input[type="date"]:focus:before {
+  		content: '' !important;
+		}
+	html:
+		<input class="date" type="date" placeholder="请选择考试时间">
+    偏向于的一种方式
+16.移动端如果背景小了 想要背景覆盖全部 但又不能压缩或拉伸使背景变形可以用
+	background-size:cover
+17.在标签中换行 的换行符是&#13;&#10;  而不是 \n 或 \r 在js中的换行是\r\n；
+18.localhost和ip的区别
+	localhost：表示本机。
+	特点：
+	1、不联网。
+	2、不使用网卡，不受防火墙和网卡限制。
+	3、本机访问。
+	本机IP：制定ip地址。
+	特点：
+	1、联网。
+	2、网卡传输 ，受防火墙和网卡限制。
+	3、本机或外部访问。
+19.改变placeholder的样式
+	.inputclass::-webkit-input-placeholder {
+		text-align: center;
+		}
+	.inputclass:-moz-placeholder { /* Firefox 18- */
+		text-align: center;  
+		}
+	.inputclass::-moz-placeholder {  /* Firefox 19+ */
+		text-align: center;  
+		}
+	.inputclass:-ms-input-placeholder {  
+		text-align: center; 
+		}
+20.鼠标事件的event事件对象中clientX/Y  pageX/Y screenX/Y的区别
+	clientX/Y：
+		相对于视口的top left不包括滚动条 即相当于fixed时的top和left
+	offsetX/Y:
+		相对于事件对象的top和left 即相对于鼠标事件的事件对象
+	pageX/Y：
+		相对于html文档的top和left
+	screenX/Y：
+		相对于电脑屏幕 即到电脑屏幕上边缘和左边缘  而不仅仅是相对于文档的视口。
+	console.log("client："+event.clientX+" "+event.clientY)
+      	console.log("offset："+event.offsetX+" "+event.offsetY)
+      	console.log("screen："+event.screenX+" "+event.screenY)
+      	console.log("page："+event.pageX+" "+event.pageY)
+	可用来验证
+21.$.trim()函数会移除字符串开始和结尾处的所有换行符，空格(包括连续的空格)和制表符（tab）
+22.对于包裹着float:left的子元素的父元素，要使父元素的宽高等于里面float的子元素撑起的宽高 则只需在父元素上加上
+   overflow:hidden
+23.当用on绑定未来元素的mouseover和mouseout事件出现闪烁的解决办法
+	用mouseenter和mouseleave来代替
+24.用输入框里的搜索按钮绑定搜索
+	<!doctype html>
+	<html lang="en">
+ 		<head>
+     		<meta charset="UTF-8">
+     		<title>Document</title>
+     		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+     		<script src="jquery-1.11.2.min.js"></script>
+ 	</head>
+ 	<body>
+     		<form id="myform" action="" onsubmit="return false;">
+     			<input id="myinput" type="search">
+     		</form>
+		<script>
+ 			//这两种都能用, 一个是在form上加id 一个是在input元素加id
+ 			//对于苹果手机添加一个form元素是必要的,否则只能实现功能但是键盘的文字不能变成搜索字样
+ 			//  $('#myform').bind('search', function () {
+ 			//      //coding
+ 			//      alert(1);
+ 			//  });
+    		 	$('#myinput').on('search',function(){
+         			//coding
+         			alert(1);
+     			});
+ 		</script>
+		</body>
+	</html>
+25.去掉 a，input 在移动端浏览器中的默认样式(半透明灰色遮罩阴影)
+	a,button,input,optgroup,select,textarea {
+    		-webkit-tap-highlight-color:rgba(0,0,0,0); /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+	}
+26.禁止长按 a，img 标签长按出现菜单栏
+	a, img {
+    		-webkit-touch-callout: none; /*禁止长按链接与图片弹出菜单*/
+	}
+27.为什么有的数值加起来会出现那么多的小数位呢，有的加起来又没有呢？
+	var a=4.2;  
+        var b=9.2;   
+        alert(Number((a+b).toFixed(2)));
+	用这种方式避免
+28.父级元素如果有transform属性，会导致子元素的fixed失效。父元素去掉transform属性或者 父元素加display：inline;
