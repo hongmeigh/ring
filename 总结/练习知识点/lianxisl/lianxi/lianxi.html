@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+  <script src="jquery/jquery-1.11.2.min.js"></script>
+	<style>
+	 a{
+	 	text-decoration: none;
+	 	color: magenta;
+	 	font-size: 2em;
+	 }
+	 img{
+	 	width: 80%;
+	 	height: auto;
+	 	display: block;
+	 }
+	 .font{
+	 	color: yellow;
+	 }
+	 .ziti{
+	 	font-family: 微软雅黑;
+	 	font-size: 36px;
+	 }
+	 .font2{
+	 	color: forestgreen;
+	 }
+	 #eee:hover{
+	 	color: maroon;
+	 	cursor: pointer;
+	 }
+   #ccc .font1{
+    color: red;
+    font-size: 18px;
+   }
+    #ccc .font2{
+    color: green;
+    font-size: 21px;
+   }
+    #ccc .font3{
+    color: blue;
+    font-size: 23px;
+   }
+	</style>
+	<script>
+	  function dianji(){
+	  	var x=document.getElementById("eee");
+	  	x.classList.toggle("ziti");
+	  }
+	</script>
+</head>
+<body  style="width:1300px;">
+	<div id="ef">好好学习</div>
+  <div id="df">好好学习</div>
+  <div id="zf">好好学习</div>
+  <div id="xf">好好学习</div>
+  <div id="xz" style="font-size:36px; color:green; margin-top:20px; width:150px; height:42px; display:block">天天向上</div>
+	<a name="ff" href="javascript:new Date().toLocaleTimeString();">你好</a>
+	<a name="ff" id="ddd" href="javascript:alert(1);">你好</a>
+	<a id="ff" style="font-size:36px; font-weight:bold" href="javascript:function a(){var x='hello world'; return x;}; a();">你好</a>
+	<a href="javascript:function a(){var x='hello world'; return x;}; a(); void 0;">你好</a>
+	<div id="haox" contenteditable>好好学习</div>
+	<a href="" name="hao">天天向上</a>
+	<a href="" name="hao">天天</a>
+	<a href="" TARGET="_blank" name="hao">天天</a>
+  <div id="sudu" style="width:500px; height:30px; background-color:pink"></div>
+	<div><div>天天向上</div></div>
+	<img src="" width="100px" height="100px" alt="">
+	<div id="sx" data-width="100px">hello<span>你好</span></div>
+	<form action="" id="bbb">
+		<input  type="text" placeholder="水果">
+		<input type="checkbox" checked="">苹果
+		<select name="" multiple="" id="">
+			<option value="">苹果</option>
+			<option value="">葡萄</option>
+			<option value="">香蕉</option>
+			<option value="">橘子</option>
+		</select>
+    <div id="af">好好学习</div>
+    <div id="bf">好好学习</div>
+	</form>
+    <span style="position:relative;">
+        shadowed
+        <span style="position:absolute; top:4px; left:4px; z-index:-1; color:red;">shadowed</span>
+        <span style="position:absolute; top:8px; left:8px; z-index:-2; color:green;">shadowed</span>
+    </span>
+	<iframe src="" frameborder="0" id="ccc"></iframe>
+	<img src="images/EDM0316_02.jpg" alt="" id="img">
+	<div id="eee" class="font2 font0" onclick="dianji()">hello world</div>
+	<div id="qqq" contenteditable style="font-size:30px; overflow: scroll; width:600px; height:300px; color:indigo; font-family:'微软雅黑'; font-weight:bold; border:2px solid blue;"></div>
+	<button id="btn" style="width:100px; height:50px; text-align:center; line-height:50px; font-size:30px;">点击</button>
+	<a id="abc" target="_blank" href="https://www.baidu.com/">阻止默认行为</a>
+	<a id="bcd" target="_blank" href="https://www.baidu.com/">阻止事件</a>
+	<a id="cde" target="_blank" href="https://www.baidu.com/">阻止</a>
+	<div id="111" style="width:150px; height:150px; border:1px solid #000;">
+		<div id="222" style="width:100px; height:100px; border:1px solid #000;"></div>
+	</div>
+	<div id="123">大家好</div>
+	<div draggable="true" id="234" style="position:absolute; left:350px; top:1000px; color:orangered; font-weight:bold; font-size:36px;">拖动移动</div>
+  <input id="fff" style="width:300px; height:50px;" type="text">
+  <div id="yyy" style="position:relative; display:block; width:200px; height:200px; border:1px solid #000;">
+    <span>明月</span>
+    <span class="font0">几时</span>
+    <span>有</span>
+  </div>
+  <div id="gd" data-width="20px" data-height="30px" style="width:300px; height:200px; font-size:25px; padding:50px 50px 50px 50px; border:1px solid black; margin:10px; font-weight:bold;">获取元素高度</div>
+  <div style="width:100px; height:100px; border:1px solid black; overflow:scroll;">11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</div>
+  <input class="aaa" type="text" value="姓名">
+  <input class="aaa" type="text" value="年龄">
+  <input class="zzz" type="checkbox" value="aa">
+  <input class="zzz" type="checkbox" value="bb">
+  <input class="zzz" type="checkbox" name="cc">
+  <input class="xxx" type="radio" value="ee">
+  <div id="abd" style="position:relative; display:block; width:200px; height:200px; border:1px solid #000;">
+    <span>把酒</span>
+    <span class="font0">问</span>
+    <span>青天</span>
+  </div>
+  <div id="abe" style="position:relative; background-color:#000; display:block; width:200px; height:200px; border:1px solid #000;">
+  <img src="../images/22_08.png" alt="" />
+    <span>把酒</span>
+    <span class="font0">问</span>
+    <span>青天</span>
+  </div>
+  <div id="que" style="width:200px; height:200px; background-color:pink; display:none;">
+  	<img src="../images/22_08.png" alt="" />
+  </div>
+  <button id="bttn">点击</button>
+  <textarea name="" rows="" cols=""></textarea>
+  <input id="bbon" type="button" />
+  <audio src="aa.mp3" controls="true"></audio>
+  <video src="aa.mp3" controls="true"></video>
+  
+</body>
+   <script>
+       // setTimeout(function(){alert("加油")},50000);
+       var bton=document.getElementById("btn");
+       bton.onclick=function(){
+       	  alert("1");
+       }
+      bton.addEventListener("click",function(){alert("2")},true); 
+      bton.addEventListener("click",function(){alert("3")},false);  
+      //阻止默认行为 state 
+      var x=document.getElementById("abc");
+      x.onclick=function(event){
+      	if (event.preventDefault) {
+      		event.preventDefault();
+      		alert("阻止a的click默认行为");
+      	}
+      }
+      function a(e){
+      	if (e.preventDefault) {
+      		e.preventDefault();
+      	};
+      	alert("点击不跳转");
+      }
+      function b(){
+      	y.style.color="dodgerblue";
+      }
+      var y=document.getElementById("bcd");
+      y.addEventListener("click",b,false);
+      y.addEventListener("click",a,false);
+
+      var z=document.getElementById("cde");
+      z.onclick=function(){
+      	z.style.color="green";
+      	alert("组织默认事件");
+      	return false;
+      }
+      //end
+      var child=document.getElementById("222");
+      child.onclick=function(){
+      	child.style.backgroundColor="red";
+      }
+      var parent=document.getElementById("111");
+      parent.onclick=function(){
+      	parent.style.backgroundColor="green";
+      }
+      parent.onclick=function(e){
+      	e.stopPropagation();
+      }
+      var bdy=document.getElementsByTagName("body")[0];
+      bdy.onclick=function(e){
+
+      }
+      //事件对象里的属性
+      var xx=document.getElementById("123");
+      xx.onclick=function(e){
+      	var zz=e.clientY;
+      	var yy=e.altKey;
+      	alert(zz);
+      	alert(yy);
+      }
+      //return false;的用处
+      var aa=document.getElementById("234");
+      aa.onclick=function(){
+      	aa.style.color="red";
+      	return false;
+      	aa.style.fontSize="50px";
+      }
+      //阻止字母的输入
+      var gg=document.getElementById("qqq");//该节点也可以用此方法
+      var bb=document.getElementById("fff");
+      bb.onkeypress=function(e){
+        var code=e.keyCode;//code为数字
+        var text=String.fromCharCode(code);//转换为键盘上的字母
+        var reg=/[A-z]/;
+        if (reg.test(text)==true) {//此处也可以是大写字母，即输入为大写字母会阻止
+          alert("非法字符");
+          return false;
+        };
+      };
+      //传入函数
+      $("#ccc span").attr("class",function(a,b){
+        if (a==0) {return "font1"}
+        else if (a==1) {
+          console.log(b);
+          return "font2"}
+
+          else return "font3";
+          
+      })
+      //阻止冒泡
+      // $("#yyy").click(function(e){
+      //   $(this).children().css("font-size","30px");
+      //   console.log(e.target);
+      //   console.log(e.currentTarget);
+      //   console.log(this);
+      // });
+      // $("#yyy span").click(function(e){
+      //   $(this).css("color","red");
+      //   console.log(e.target);
+      //   console.log(e.currentTarget);
+      //   console.log(this);
+      //   console.log(e.timeStamp);
+      //   console.log(e.which);
+      //   console.log(e.handler);   
+      //   console.log(e.result);
+      //   return "hello";
+      // });
+      // $("#yyy span").click(function(e){       
+      //   console.log(e.result);
+      // });
+      //手动触发事件最简单的方式是不带参数调用事件注册的简单方法$("#yyy span").click();
+     setTimeout(function(){$("#yyy span").click();},3000) ;
+     //bind()绑定的事件不实时
+     $("#abd span").bind("click",function(){$(this).css("color","blue");});
+     $("<span></span>",{text:"你好",css:{color:"pink",fontSize:"22px"}}).appendTo("#abd");
+     //deledate()绑定的事件实时
+     $("#abe").delegate("span","click",function(){$(this).css("color","blue");});
+     $("<span></span>",{text:"你好",css:{color:"pink",fontSize:"22px"}}).appendTo("#abe");
+     $("<span></span>",{text:"你好",css:{color:"pink",fontSize:"22px"}}).insertAfter("#abe");
+     //动画
+     jQuery.fx.speeds["superslow"]=3000;//设置时间关键词
+     //jQuery.fx.off=true; //该设置会将每段动画的时长变为0ms
+    $(document).click(function(){
+      $("#ef").fadeTo("superslow",0.5,function(e){$(this).css("opacity","1")});
+      $("#df").hide("superslow");
+    })
+    $("#zf").hover(function(){$(this).toggle("superslow");})
+    $("#xf").hover(function(){
+    //$(this).slideUp("superslow"); $(this).slideDown("superslow");
+    $(this).slideToggle("superslow")
+  })
+    $("#xz").hover(function(){
+      
+      $(this).animate({width:"hide"},{queue:false,duration:3000});
+      $(this).animate({height:"hide"},3000);
+    })
+    //缓动函数
+    jQuery.easing["fendian"]=function(n){
+      if (n==0) return 0;
+      else if(n<0.25) return n*3;
+      else if(n>=0.25&&n<0.5) return 0.75+n/3;
+      else if(n>=0.5) return 0.75+0.5/3+(n-0.5)/6;
+    }
+    function ccc(a,b){if(b.prop=="width"){console.log(b.now);}}
+     $("#sudu").click(function(){
+      $(this).delay(3000).animate({width:0,height:0,opacity:0},{duration:5000,specialEasing:{height:"fendian",width:"linear"},step:ccc})
+     })
+     $(function(){
+     $("#que").delay(5000).show(5000).queue(function(next){$(this).text("hello world"); /*console.log(next);*/ next();}).animate({width:"300px"},3000);
+     //$("#que").delay(5000).show(5000).queue(function(){$(this).text("hello world");  $(this).dequeue();}).animate({width:"300px"},3000);
+     })
+     $("#af").load("toefl_jianjie.html #Article",function(a,b,c){console.log(a+"/"+b+"/"+c);})
+     //获得鼠标选中的文本及在textarea中如何获得选中的文本
+     $("textarea").select(function(e){
+     	var x=window.getSelection().toString();
+     	console.log(x);
+     })
+     $("#bbon").click(function(){
+     	var x=window.getSelection().toString();
+     	console.log(x);
+     })
+//   $(document).ready(function(){
+//   	var z=new Audio("aa.mp3");
+//   	z.play();
+//   })
+    </script>
+</html>

@@ -1,0 +1,9 @@
+$(document).ready(function(){
+	$("#dongh").click(function(){
+		$(this).addClass("add")
+	})
+	$("#ani").click(function(){
+		$(this).addClass("adddongh");
+		setTimeout(function(){$("#ani").removeClass("adddongh");},10000)
+	})
+})

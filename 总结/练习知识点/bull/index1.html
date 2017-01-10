@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<script src="jquery-1.11.2.min.js"></script>
+	<script src="app1.js"></script>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			border: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		#mycanvas{
+			/*width: 100%;
+			height: 100%;*/
+			display: block;
+		}
+		#score{
+			width: 620px;
+			font-size: 20px;
+			font-family: '微软雅黑';
+			font-weight: bold;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+		#time{
+			width: 116px;
+			font-size: 20px;
+			font-family: '微软雅黑';
+			font-weight: bold;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="mycanvas" width="" height=""></canvas>
+	<div id="score">分数：0</div>
+	<div id="time">倒计时：20s</div>
+</body>
+</html>

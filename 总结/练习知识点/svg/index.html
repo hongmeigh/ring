@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
+		<circle cx="100" cy="100" r="60" stroke="green" fill="red" stroke-width="5"></circle>
+		<g transform="translate(0,100)">
+			<rect x="200" y="200" width="50" height="60" stroke="green" fill="red" stroke-width="5"></rect>
+			<ellipse cx="100" cy="300" rx="60" ry="30" stroke="green" fill="red" stroke-width="5"></ellipse>
+		</g>
+		<line x1="0" y1="0" x2="0" y2="600" stroke-width="5" stroke="green"></line>
+		<polyline points="0 600 600 600 600 0 0 0" stroke-width="5" stroke="green" fill="none"></polyline>
+		<polygon points="350 100 300 300 500 400 350 100" stroke-width="5" stroke="green" fill="red"></polygon>
+	</svg>
+	<script>
+		var cir=document.getElementsByTagName("circle")[0];
+		console.log(cir.getAttribute("cx"))
+		var count=1;
+		function movex(){			
+			if(cir.getAttribute("cx")<100){
+				count=1;
+			}
+			if(cir.getAttribute("cx")>500){
+				count=-1;
+			}
+			cir.setAttribute("cx",parseInt(cir.getAttribute("cx"))+count)
+		}
+		var timer=setInterval(function(){
+			movex()
+		},10)
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		input{
+			width: 160px;
+			height: 30px;
+			padding-left: 10px;
+			border-radius: 5px;
+			border: 1px solid #333;
+			margin-top: 10px;
+			margin-right: 20px;
+		}
+		form{
+			margin-top: 50px;
+		}
+		span{
+			display: inline-block;
+			width: 60px;
+		}
+	</style>
+</head>
+<body style="width:900px; margin:0 auto;">
+	<form action="http://172.17.1.142:8888/inquire" method="get">
+		<span>工号：</span><input type="number" name="jobnumber"><input type="submit" value="查询">
+	</form>
+</body>
+</html>

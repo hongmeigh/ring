@@ -1,0 +1,59 @@
+<html class="wid">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="jquery/jquery-1.11.2.min.js"></script>		
+		<title></title>
+		<style>
+			*{border: 0; padding: 0; margin: 0;}
+			.wid{ width:100%; height: 100%;}
+			.pos{ position: relative; overflow: hidden;}
+			.pos img{ position: absolute;}
+		</style>
+	</head>
+	<body class="wid">
+		<div class="wid pos">
+			<img class="wid" src="images/tupian1.jpg">
+			<img class="wid" src="images/tupian2.jpg">
+			<img class="wid" src="images/tupian3.jpg">
+			<img class="wid" src="images/tupian4.jpg">
+			<img class="wid" src="images/tupian5.jpg">
+			<img class="wid" src="images/tupian6.jpg">
+			<img class="wid" src="images/tupian7.jpg">
+			<img class="wid" src="images/tupian8.jpg">
+			<img class="wid" src="images/tupian9.jpg">
+			<img class="wid" src="images/tupian10.jpg">
+			<img class="wid" src="images/tupian11.jpg">
+			<img class="wid" src="images/tupian12.jpg">
+			<img class="wid" src="images/tupian13.jpg">
+			<img class="wid" src="images/tupian14.jpg">
+			<img class="wid" src="images/tupian15.jpg">
+		</div>
+		<script>
+			var h=0;
+			var arr=$(".pos img");
+			var winh=$(".wid").height();
+			for(var i=0; i<arr.length; i++){
+				h=h+winh*i;
+				arr.eq(i).css("top",h);
+			}
+			var body=document.getElementsByTagName("body")[0];
+			var y1,y2;
+			body.ontouchstart=function(e){
+				y1=e.touches[0].clientY;
+				console.log(y1)
+			}
+			body.ontouchend=function(e){
+				y2=e.changedTouches[0].clientY;
+				if(y2-y1<-50){
+					$(".pos img").each(function(index,elm){
+						if(parseInt($(".pos img").eq(14).css("top"))>0){
+						$(this).animate({top:parseInt($(this).css("top"))-winh+"px"},500)
+						}
+					})
+				}
+			}
+			
+		</script>
+	</body>
+</html>

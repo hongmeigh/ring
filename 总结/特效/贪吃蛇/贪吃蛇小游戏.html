@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		table{
+			margin: 0 auto;
+		}
+		table,tr,td{
+			border: 1px solid #ccc;
+			border-collapse: collapse;
+		}
+		td{
+			width: 20px;
+			height: 20px;
+		}
+		.shetou{
+			background-color: red;
+		}
+		.sheshen{
+			background-color: blue;
+		}
+		.shiwu{
+			background-color: greenyellow;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		 
+	</table>
+	
+	<script type="text/javascript" src="js/underscore.js"></script>
+	<script type="text/javascript">
+		//创建表格
+		var table = document.getElementsByTagName("table")[0];
+
+		//********************************************************
+		//* 创建DOM并且组建数组
+		//* 给表格创建了20行20列，并且用一个tds二维数组存放他们
+		//********************************************************
+
+		//创建一个数组，存放所有td，注意这个数组是二维数组
+		var tds = [];
+		//20行20列
+		for(var row = 0 ; row < 20 ; row++){
+			//创建TR
+			var oTR = document.createElement("tr");
+			table.appendChild(oTR);
+			//这一行的临时小数组
+			var arr = [];
+			//然后在这个oTD内部，创建20个TD
+			for(var col = 0 ; col < 20 ; col++){
+				var oTD = document.createElement("td");
+				//让这一行的oTR追加它
+				oTR.appendChild(oTD);
+				//放入临时小数组
+				arr.push(oTD);
+			}
+			//再把这一行往正式数组里面放
+			tds.push(arr);
+		}
+
+		//折腾了半天，现在等于我们自己给我们自己开发了一个API
+		//tds[3][8].className = "blue";
+
+		//********************************************************
+		//* 蛇类
+		//********************************************************
+		function Snake(){
+			//身体属性
+			this.body = [
+				{x : 3 , y : 9},
+				{x : 3 , y : 8},
+				{x : 3 , y : 7}
+			];
+			//方向
+			this.direction = "RIGHT";
+		}
+		//渲染方法
+		Snake.prototype.render = function(){
+			_.each(this.body , function(item){
+				tds[item.x][item.y].className = "sheshen";
+			});
+		}
+		//移动
+		Snake.prototype.update = function(){
+			// 根据自己的方向，来选择追加的蛇头是什么
+			// 捎带脚的判断死亡
+			switch(this.direction){
+				case "RIGHT" :
+					if(this.body[0].y + 1 > 19){
+						this.die();
+						return;
+					}
+					var tou = {x : this.body[0].x, y : this.body[0].y + 1};
+					break;
+				case "LEFT" :
+					if(this.body[0].y - 1 < 0){
+						this.die();
+						return;
+					}
+					var tou = {x : this.body[0].x, y : this.body[0].y - 1};
+					break;
+				case "UP" :
+					if(this.body[0].x - 1 < 0){
+						this.die();
+						return;
+					}
+					var tou = {x : this.body[0].x - 1, y : this.body[0].y};
+					break;
+				case "DOWN" :
+					if(this.body[0].x + 1 > 19){
+						this.die();
+						return;
+					}
+					var tou = {x : this.body[0].x + 1, y : this.body[0].y};
+					break;
+			}
+			// 检测tou（新头）这个格格是sheshen的，如果是sheshen，就表示撞到自己了 
+			if(tds[tou.x][tou.y].className == "sheshen"){
+				this.die();
+				return;
+			}
+
+			// 检测tou（新头）这个格格是shiwu的，就表示吃到食物了
+			if(tds[tou.x][tou.y].className == "shiwu"){
+				//吃到食物了，就不用删除尾巴的项目了！
+				//创建新的事务
+				food.createFood();
+			}else{
+				// 这一帧如果没有吃到食物，那么删除尾巴的项
+				var last = this.body.pop();
+				// 让尾巴那个格格去掉类名
+				tds[last.x][last.y].className = "";
+			}
+			
+			// 头部追加一项
+			this.body.unshift(tou);
+		}
+		//死亡
+		Snake.prototype.die = function(){
+			clearInterval(timer);
+			alert("GAME OVER！！分数" + this.body.length);
+		}
+
+		//********************************************************
+		//* 食物类
+		//********************************************************
+		function Food(){
+			this.createFood();
+		}
+		//创建食物
+		Food.prototype.createFood = function(){
+			//属性
+			//不断试探直到这个td没有类名，这个算法思路叫做无穷无尽的试，直到某一个符合。
+			do{
+				var x = _.random(0,19);
+				var y = _.random(0,19);
+			}while(tds[x][y].className != "");  //当这个x、y格格有类名的时候，甭废话再取一次x、y
+
+			this.position = {x: x, y : y};
+			
+			//让食物这个格格为绿色
+			tds[this.position.x][this.position.y].className = "shiwu";
+		}
+		
+
+		//********************************************************
+		//* 其他事情
+		//********************************************************
+		
+		//创建一个蛇精
+		var shejing = new Snake();
+		//渲染蛇精
+		shejing.render();
+		//创建一个食物，页面上永远只有1个食物，这个食物不会再被new
+		//如果要创建新的食物，实际上调用的是food.createFood()这个方法。
+		var food = new Food();
+
+		//添加监听,监听键盘是否被按下
+		document.onkeydown = function(event){
+			console.log(event.keyCode)
+			//event.keyCode值就是键码，键盘上的任何键都有键码。
+			switch(event.keyCode){
+				case 37 :
+					//用户按下了左箭头
+					if(shejing.direction == "RIGHT"){
+						return;
+					}
+					shejing.direction = "LEFT";
+					break;
+				case 38 :
+					//用户按下了上箭头
+					if(shejing.direction == "DOWN"){
+						return;
+					}
+					shejing.direction = "UP";
+					break;
+				case 39 :
+					//用户按下了右箭头
+					if(shejing.direction == "LEFT"){
+						return;
+					}
+					shejing.direction = "RIGHT";
+					break;
+				case 40 :
+					//用户按下了下箭头
+					if(shejing.direction == "UP"){
+						return;
+					}
+					shejing.direction = "DOWN";
+					break;
+			}
+		}
+
+		//定时器
+		var timer = setInterval(function(){
+			//让蛇改变、渲染
+			shejing.update();
+			shejing.render();
+		},300);
+	</script>
+</body>
+</html>

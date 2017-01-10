@@ -1,0 +1,76 @@
+$mycolor:red;
+$px:5px 10px 20px 30px;
+$bgcolor:red yellow green blue;
+$hei:45px 40px 35px 30px;
+$wid:200px 170px 140px 110px; 
+$mycolor:red;
+$button:(l 200px 46px red 25px),(m 170px 40px orange 20px),(s 140px 36px green 16px),(xs 110px 30px blue 14px);
+$headers:(h1:25px,h2:21px,h3:17px,h4:13px);
+@mixin tongyong($var){
+	padding:0;
+	border:0;
+	text-align:center;
+	font-size:nth($var,5);
+	color:#fff;
+	line-height:nth($var,3);
+	font-weight:bold;
+}
+body{
+	font-family:"Microsoft YaHei";
+}
+p{
+	color:darken($mycolor,10%);
+	font-size:nth($px,3);
+}
+div{
+	color:darken($mycolor,20%);
+	font-size:length($px)+16+px;
+}
+span{
+    font-size:20px;
+	color:darken($mycolor,30%);
+}
+@for $i from 1 through 4{
+	.divbg-#{$i}{
+		padding:0;
+		border:0;
+		border-radius:3px;
+		width:nth($wid,$i);
+		height:nth($hei,$i);
+		background-color:nth($bgcolor,$i);
+	}
+}
+@each $var in $button{
+	.button-square-#{nth($var,1)}{
+		width:nth($var,2);
+		height:nth($var,3);
+		background-color:nth($var,4);
+		@include tongyong($var);
+		border-radius:3px;
+		&:hover{background-color:darken(nth($var,4),10%)};
+	}
+	.button-round-#{nth($var,1)}{
+		width:nth($var,2);
+		height:nth($var,3);
+		background-color:nth($var,4);
+		@include tongyong($var);
+		border-radius:nth($var,3) / 2;
+		&:hover{background-color:darken(nth($var,4),10%)};
+	}
+	.button-empty-#{nth($var,1)}{
+		width:nth($var,2);
+		height:nth($var,3);
+		background-color:#fff;
+		border-radius:nth($var,3) / 2;
+		@include tongyong($var);
+		border:1px solid nth($var,4);
+		color:#333;
+		transition:all 1s;
+		&:hover{background-color:nth($var,4); color:#fff;};
+	}
+} 
+@each $header,$size in $headers{
+	#{$header}{
+	font-size:$size;
+	}
+}

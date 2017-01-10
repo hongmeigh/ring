@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-1.12.3.min.js"></script>
+</head>
+<body>
+  <div class="search">
+    <span>输入关键字</span>
+    <input id="enter" type="text">
+    <div class="list">
+      <ul>
+      </ul>
+    </div>
+  </div>
+  <script>
+    var oldtext=$("#enter").val();
+    window.requestend=true;
+    var num=1;
+    document.getElementById("enter").onkeyup=function(){
+       var newtext=$("#enter").val();
+       if(oldtext!=newtext){         
+          oldtext=newtext;
+          var url='data/data'+num+'.json';
+          num++;
+          if(num>10){
+            num=1;
+          }
+          if(window.requestend){
+              getdata(oldtext,url);
+          }
+       }
+    }
+    function getdata(keyword,url){
+      console.log("yyy")
+      window.requestend=false;
+      $.ajax({
+       url:url,
+       type:"GET",
+       data:{keyword:keyword},
+       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+       dataType: 'json',
+       success:function(data){
+           $(".list ul").empty();
+           for(var i=0; i<data.data.length; i++){
+              $(".list ul").append('<li>'+data.data[i]+'</li>')
+           }
+           $(".list").slideDown(300);
+           window.requestend=true;
+         },
+       error:function(){
+            alert("服务器请求失败，请稍后再试");
+            window.requestend=true;
+         }
+       })
+    }
+
+    $(".list").on("click","li",function(){
+        $("#enter").val($(this).text())
+        $(".list").hide();
+    })
+    $(document).click(function(){
+        $(".list").hide();
+    })
+
+
+  </script>
+</body>
+</html>

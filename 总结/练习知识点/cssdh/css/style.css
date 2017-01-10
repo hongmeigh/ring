@@ -1,0 +1,103 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+#dongh{
+	width: 100px;
+	height: 100px;
+	margin: 100px 0 0 100px;
+	background-color: red;
+	transition:width 2s 1s,height 2s 1s,transform 2s 1s;
+	-webkit-transition:width 2s 1s,height 2s 1s,background-color 2s 1s,-webkit-transform 2s 1s;
+}
+.add{
+	width: 200px !important;
+	height: 200px !important;
+	background-color: green !important;
+	transform:rotate(360deg);
+	-webkit-transform:rotate(360deg);
+	transform:translate(300px,100px);
+	-webkit-transform:translate(300px,100px);
+}
+div:before{
+	content:'动画';
+	font-size:22px;
+	color:#333;
+	font-weight:bold;
+	}
+@keyframes donghua{
+	0%{
+		width: 100px;
+		height: 100px;
+		background-color: #1ef219;
+		margin: 100px 0 0 100px;
+		transform:rotate(0deg);
+		-webkit-transform:rotate(0deg);
+	}
+	50%{
+		width: 150px;
+		height: 150px;
+		background-color: #19f2e5;
+		margin: 50px 0 0 500px;
+		transform:rotate(0deg);
+		-webkit-transform:rotate(0deg);
+	}
+	100%{
+		width: 100px;
+		height: 100px;
+		background-color: #1ef219;
+		margin: 100px 0 0 100px;
+		transform:rotate(-360deg);
+		-webkit-transform:rotate(-360deg);
+	}
+}
+@-webkit-keyframes donghua{
+	0%{
+		width: 100px;
+		height: 100px;
+		background-color: #1ef219;
+		margin: 100px 0 0 100px;
+		transform:rotate(0deg);
+		-webkit-transform:rotate(0deg);
+	}
+	50%{
+		width: 150px;
+		height: 150px;
+		background-color: #19f2e5;
+		margin: 50px 0 0 500px;
+		transform:rotate(0deg);
+		-webkit-transform:rotate(0deg);
+	}
+	100%{
+		width: 100px;
+		height: 100px;
+		background-color: #1ef219;
+		margin: 100px 0 0 100px;
+		transform:rotate(-360deg);
+		-webkit-transform:rotate(-360deg);
+	}
+}
+#ani{
+	width: 100px;
+	height: 100px;
+	background-color: #1ef219;
+	border-radius: 10px;
+	margin: 100px 0 0 100px;
+	
+}
+#ani1{
+	width: 100px;
+	height: 100px;
+	background-color: #1ef219;
+	border-radius: 10px;
+	margin: 100px 0 0 100px;
+	animation:donghua 5s infinite;
+	-webkit-animation:donghua 5s infinite;}
+.adddongh{
+	animation:donghua 5s 2;
+	-webkit-animation:donghua 5s 2;
+	}
+.jianqie1{
+	-webkit-clip-path:polygon(0px 0px,300px 0px,300px 187px,0px 187px,0px 0px) polygon(300px 0px,600px 0px,600px 187px,300px 187px,300px 0px)
+	}

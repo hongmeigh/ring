@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="demo.css">
+<script src="jquery-1.11.2.min.js"></script>
+</head>
+
+<body>
+	<p>这是P的一段展示文字</p>
+    <div>这是div的一段展示文字</div>
+    <p>这是一系列按钮</p>
+    <button class="divbg-1"></button>
+    <button class="divbg-2"></button>
+    <button class="divbg-3"></button>
+    <button class="divbg-4"></button>
+    <p>这是一系列按钮</p>
+    <button class="button-square-l">按钮类型</button>
+    <button class="button-square-m">按钮类型</button>
+    <button class="button-square-s">按钮类型</button>
+    <button class="button-square-xs">按钮类型</button>
+    <p>这是一系列按钮</p>
+    <button class="button-round-l">按钮类型</button>
+    <button class="button-round-m">按钮类型</button>
+    <button class="button-round-s">按钮类型</button>
+    <button class="button-round-xs">按钮类型</button>
+    <p>这是一系列按钮</p>
+    <button class="button-empty-l">按钮类型</button>
+    <button class="button-empty-m">按钮类型</button>
+    <button class="button-empty-s">按钮类型</button>
+    <button class="button-empty-xs">按钮类型</button>
+    <h1>这是一段h1的展示文字</h1>
+    <h2>这是一段h2的展示文字</h2>
+    <h3>这是一段h3的展示文字</h3>
+    <h4>这是一段h4的展示文字</h5>
+    <a class="yyy" href="indexfb.html" onClick="tiaozhuan()">点击跳转</a>
+    <script>
+		function tiaozhuan(){
+			console.log(event);
+			var pand=confirm("确定跳转？");
+			if(!pand){
+				alert("zuzhi")
+				event.preventDefault();
+				}
+			}
+		//$(".yyy").click(tiaozhuan)
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <!--<script src="../build/react-0.14.0.js"></script>-->
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <script src="../build/jquery.min.js"></script>
+    <script src="../build/react-dom-server.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <div id="example1"></div>
+    <script type="text/babel">
+        var HelloWorld = React.createClass({
+        handleprop:function(){
+          //这两个方法在0.14版本之后都已经废弃
+          this.setProps({"name":"hongmei"});
+          console.log(this.getDOMNode())
+          //用这个方法代替
+          console.log(ReactDOM.findDOMNode(this))
+        },
+        statics:{
+          init:function(){
+            alert("组件开始之前")
+          }
+        },
+        getInitialState:function(){
+          return {text:"hello"}
+        },
+        getDefaultProps:function(){
+          return {age:26}
+        },
+        componentWillMount:function(){
+          alert("组件挂载之前")
+        },
+        //当组件已经挂载到了dom上时执行
+        componentDidMount:function(){
+          alert("组件挂载之后")
+          console.log(ReactDOM.findDOMNode(this));
+          console.log(this.isMounted())
+        },
+        //该方法需得用0.14之前版本，因为之后版本prop为不可变的
+        componentWillReceiveProps:function(){
+          alert("更新prop之后")
+        },
+        shouldComponentUpdate:function(newprop,newstate){
+          console.log(newprop)
+          console.log(newstate)
+          return true;
+        },
+        componentWillUpdate:function(){
+          alert("组件更新之前")
+        },
+        componentDidUpdate:function(){
+          alert("组件更新之后")
+        },
+        componentWillUnmount:function(){
+          alert("移除挂载组件之前")
+        },
+        render: function() {
+          //这样写是错误的，因为settimeout里面的函数中的this并不是指组件实例而是应该定义一个处理函数
+          //setTimeout(function(){this.setProps({"name":"hongmei"})},2000)
+          //浏览器出现每隔1s调用一次的情况，是因为{new Date()}改变了props所以导致重新渲染
+          //setTimeout(this.handleprop,2000)
+          return (
+            <p>
+              Hello, <input type="text" placeholder={this.props.name} />!
+              It is {this.props.date.toTimeString()}
+              <span>年龄：{this.props.age}</span><br/>
+              <span>{this.state.text}</span>
+              {React.Children.map(this.props.children,function(child){
+                return child
+              })}
+              {React.Children.only(this.props.children)}
+            </p>
+          );
+        }
+      });
+      //HelloWorld.init();
+      var com1=ReactDOM.render(
+          <HelloWorld date={new Date()} name="gao">
+            <span>好好学习</span>
+          </HelloWorld>,
+          document.getElementById('example')
+        );
+      var com2=ReactDOM.render(
+          <HelloWorld date={new Date()} name="gao">
+            <span>好好学习</span>
+          </HelloWorld>,
+          document.getElementById('example1')
+        );
+      console.log(com1)
+      setTimeout(function(){
+        com1.setState({text:"World"})
+      },2000)
+      setTimeout(function(){
+        ReactDOM.unmountComponentAtNode(document.getElementById('example'))
+      },5000)
+      //组件类中的this即指组件实例com1
+      // console.log(com1);
+      // setTimeout(function(){
+      //   com1.setProps({"age":20})
+      // },2000)
+      
+      // setInterval(function() {
+      //   ReactDOM.render(
+      //     <HelloWorld date={new Date()} />,
+      //     document.getElementById('example')
+      //   );
+      // }, 500);
+
+      var child = React.createElement('li', null, 'Text Content');
+      var factory=React.createFactory("li");
+      var li1=factory({className:"lione"},'这是第一个li')
+      var li2=factory({className:"litwo"},'这是第二个li')
+      var root = React.createElement('ul', { className: 'my-list' }, li1,li2);
+      // ReactDOM.render(root, document.getElementById('example'));
+
+      // setTimeout(function(){
+      //   var boo=React.unmountComponentAtNode(document.getElementById('example'));
+      //   console.log(boo);
+      // },2000)
+
+      //var str=ReactDOMServer.renderToString(root);
+      //该方法需要加载0.14以上版本react.js;
+      //console.log(ReactDOMServer.renderToString(root));
+      //console.log(ReactDOMServer.renderToStaticMarkup(root));
+      //该方法在高低版本都可以
+      console.log(React.isValidElement(document.getElementById('example')));
+      console.log(React.isValidElement(root));
+      console.log(React.DOM.div(null, 'Hello World!'));
+      console.log(React.PropTypes)
+      var arr=[1,2,3,4,5];
+      var obj=React.Children.map(arr,function(child){
+        return child+1;
+
+      })
+      console.log(obj);
+      console.log(React.Children.count(arr))
+    </script>
+  </body>
+</html>

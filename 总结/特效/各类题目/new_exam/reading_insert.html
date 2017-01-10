@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>小站教育</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta name="renderer" content="webkit">
+  <link rel="stylesheet" href="css/style.min.css" />
+  <script src="scripts/lib.min.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/dragFill.js"></script>
+  <script src="scripts/analytical_srollbar.min.js"></script>
+  <script src="scripts/test.js"></script>
+  <script src="scripts/swfobject.js"></script>
+  <script>
+    var ifClick = false;
+    $(function() {
+      var initAnswer = 'a';
+      initQues1(initAnswer);
+    })
+  </script>
+</head>
+<body class="grey-bg-color">
+  <div id="topbg">
+    <div class="posi">
+      <a class="logo" href="#"></a>
+      <div class="title">Part3: TPO34 - Reading</div>
+      <div class="save">退出</div>
+    </div>
+  </div>
+
+  <div class="common-style-cont speaking-love">
+    <!--left_div-->
+    <div class="common-style-left reading_insert_left">
+      <div class="title-content">
+        <div class="title">Quertion 5 of 14</div>
+      </div>
+      <p class="question-requirement">
+        Look at the four squares [ <span class="insert-area"></span> ] that indicate where the following sentence could be added to the passage. where would the sentence best fit ? Click on a square to add the sentence to the passage.
+      </p>
+      <span class="inserted-sentence">
+                	To enhance their listener's enjoyment,storytellers continually make their stories more engaging and memorable.
+                </span>
+      <div class="answer">
+        <div class="choose">
+          <div class="choose_d"><span class="tit">你的回答:</span><span class="choice yes">A</span><img src="images/right-icon.png" /></div>
+          <div class="choose_d"><span class="tit">正确回答:</span><span class="choice">A</span></div>
+        </div>
+        <div class="explain">
+          <div>小站名师讲解：</div>
+          <div class="exp_p">Talk about a book you have read that was important to you for some reason. Explain why the book was important to you. Give specific details and examples to explain your answer</div>
+        </div>
+      </div>
+    </div>
+    <!--/left_div-->
+    <!--right_div-->
+    <div class="common-style-right reading-love-right">
+      <div class="reading_scroll_one nano customize-style-scroll">
+        <div class="nano-content">
+          <div class="nano-content_in wrap-insert">
+            <p id="question-third">原文：</p>
+            <p><img src="images/writing-dsj.png">This test measures your ability <span class="high-light-word">to understand conversations and lectures in Eng</span>to understand conversations and lectures in English.</p>
+            <p>唉呀妈呀The Listening <span class="insert-are" data-answer="a"></span> section is divided into 2 separately timed parts. In each part you will listen to 1 conversation and 2 lectures. <span class="insert-area" data-answer="b"></span> You will
+              hear each conversation or lecture only one time. After each conversation or lecture, you will answer some questions about it. <span class="insert-area" data-answer="c"></span> The questions typically as about the main idea and supporting
+              details. Some questions ask about a speaker's <span class="insert-area" data-answer="d"></span> purpose or attitude. Answer the questions based on what is stated or implied by the speakers.</p>
+            <p>You may take<span class="insert-area" data-answer="e"></span> notes while you listen. You may use your notes to help you answer the questions. Your notes will not be scored. If you need to change the volume while you listen, click on the Volume
+              icon at the top of the screen.</p>
+            <p>Most questions are worth 1 point. If a question is worth more than 1 point, it will have special directions that indicate how many points you can receive.</p>
+            <p>You must answer <span class="insert-area" data-answer="f"></span>each question. After you answer, click on Next. Then click on OK to confirm your answer and go on to the next question. After you click on OK. you cannot return to previous questions.</p>
+            <p>If you are using the Untimed Mode, you may return to previous questions and you may listen to each conversation and lecture again. Remember that prior exposure to the conversations, lectures, and questions could lead to an increase in your
+              section scores and may not reflect a score you would get when seeing them for the first time.</p>
+            <p>During this practice test, you may click the Pause icon at any time. This will stop the test until you decide to continue. You may continue the test in a few minutes or at any time during the period that your test is activated.</p>
+            <p>In an actual test, and if you are using Timed Mode, a clock at the top of the screen will show you how much time is remaining. The clock will not count down </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--right_div-->
+  </div>
+  <div id="footer">
+    <div class="posi">
+      <div class="keynote unselectable"><span class="icon"><input type="checkbox" value="0" id="choice_keynote" autocomplete="off" /></span><label for="choice_keynote">请老师讲解重点</label></div>
+      <div class="pages">
+        <button class="pre unselectable"><img src="images/pre.png"/></button>
+        <span class="nums unselectable">1/26</span>
+        <button class="next unselectable"><img src="images/next.png"/></button>
+      </div>
+      <div class="confirm"><button>完  成</button></div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var nonaBar = $(".reading_scroll_one").nanoScroller({
+      alwaysVisible: true,
+      scrollTo: $('#question-third')
+    });
+    $(".popup_scroll").nanoScroller({
+      alwaysVisible: true
+    });
+    $(".popup_scroll_in").nanoScroller({
+      alwaysVisible: true
+    });
+  </script>
+</body>
+</html>

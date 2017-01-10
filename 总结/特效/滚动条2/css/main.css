@@ -1,0 +1,230 @@
+@font-face {
+    font-family: 'AvantGardeBkBTBook';
+    src: url('../fonts/avant_garde_book_bt-webfont.eot');
+    src: url('../fonts/avant_garde_book_bt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/avant_garde_book_bt-webfont.woff') format('woff'),
+         url('../fonts/avant_garde_book_bt-webfont.ttf') format('truetype'),
+         url('../fonts/avant_garde_book_bt-webfont.svg#AvantGardeBkBTBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'BentonSansExtraCompRegular';
+    src: url('../fonts/bentonsansextracomp-regular-webfont.eot');
+    src: url('../fonts/bentonsansextracomp-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/bentonsansextracomp-regular-webfont.woff') format('woff'),
+         url('../fonts/bentonsansextracomp-regular-webfont.ttf') format('truetype'),
+         url('../fonts/bentonsansextracomp-regular-webfont.svg#BentonSansExtraCompRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+* {
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	border:none;
+}
+
+body {
+     background-color: #0e0e0e;
+	background-image:url(../images/preview/grid13.png);
+	background-repeat:repeat;
+}
+
+#main {
+	padding-top:20px;
+
+     background-color: #ffffff;
+	width: 900px;
+	margin: 30px auto ;
+	
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 3px;
+	
+	border:solid;
+	border-color:#e9e9e9;
+	border-width:3px;
+}
+
+#center {
+	width: 802px;
+	margin: 0px auto ;
+}
+
+#header {
+	width: 802px;
+	margin: 0px auto ;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+#footer {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#333333;
+	width: 802px;
+	margin: 0px auto ;
+	margin-bottom:20px;
+}
+
+#social_links {
+	right:0px;
+	margin-top:-10px;
+	height: 30px;
+	float:right;
+}
+
+#social_links .social_button{
+	height:30px;
+	width:30px;
+	
+	position: relative;
+	margin:0 3px;
+	float:left;
+}
+
+#social_links .social_button span.hover{
+	height:30px;
+	width:30px;
+	position: absolute;
+}
+
+
+div.example{
+	padding-bottom:30px;
+	padding-top:30px;
+	
+	border-bottom:solid;
+	border-bottom-color:#CCCCCC;
+	border-bottom-width:1px;
+}
+
+div.example .imageEx{
+	margin-bottom:5px;
+	
+	border:solid;
+	border-color:#cccccc;
+	border-width:1px;
+}
+
+div.active{
+	opacity:0.5;
+	
+}
+
+div.notActive{
+	-webkit-transition: opacity 0.3s ease-out;
+	-moz-transition: opacity 0.3s ease-out;
+	transition: opacity 0.3s ease-out;
+	opacity:1;
+	
+}
+
+div.notActive:hover{
+	opacity:0.9;
+}
+
+h1{
+text-align:right;
+
+	padding-top:20px;
+	padding-bottom:20px;
+	font-family: "BentonSansCompRegular";
+	font-size:29px;
+	color:#080808;
+	
+	border-bottom:solid;
+	border-bottom-color:#CCCCCC;
+	border-bottom-width:1px;
+	
+	border-top:solid;
+	border-top-color:#CCCCCC;
+	border-top-width:1px;
+}
+
+h1 span{
+	font-size:18px;
+	color:#a1dc13;
+}
+
+h1 img{
+	float:left;
+	position:relative;
+	top:-12px;
+}
+
+p{
+	color:#333333;
+	
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:15px;
+	
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:10px;
+	padding-right:10px;
+	
+	margin-bottom:20px;
+	margin-top:10px;
+}
+
+p.box{
+	
+	border-bottom:dotted;
+	border-bottom-color:#CCCCCC;
+	border-bottom-width:1px;
+	
+	border-top:dotted;
+	border-top-color:#CCCCCC;
+	border-top-width:1px;
+}
+
+h2{
+	font-family: 'BentonSansExtraCompRegular';
+	font-size:35px;
+	color:#080808;
+	
+	border-bottom:solid;
+	border-bottom-color:#CCCCCC;
+	border-bottom-width:1px;
+	
+	margin-top:50px;
+	margin-bottom:15px;
+	
+	padding-left:10px;
+	padding-right:10px;
+}
+h2 span{
+	color:#a1dc13;
+}
+
+h3{
+	font-family: 'BentonSansExtraCompRegular';
+	font-size:30px;
+	color:#080808;
+	
+	
+	margin-top:10px;
+	
+	padding-left:10px;
+	padding-right:10px;
+}
+
+h4{
+	font-family: 'BentonSansCompRegular';
+	font-size:23px;
+	color:#080808;
+	
+	
+	margin-top:10px;
+	
+	padding-left:10px;
+	padding-right:10px;
+}

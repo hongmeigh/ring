@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>小站教育</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta name="renderer" content="webkit">
+  <link rel="stylesheet" href="css/style.min.css" />
+  <script src="scripts/lib.min.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/dragFill.js"></script>
+  <script src="scripts/analytical_srollbar.min.js"></script>
+  <script src="scripts/test.js"></script>
+  <script SRC="scripts/swfobject.js"></script>
+  <script src="scripts/dragFill.js"></script>
+  <script type="text/javascript">
+    var isEditAble = false;
+    $(document).ready(function() {
+
+      var TestConst = TestConst || {};
+      TestConst.volume = 0.5;
+
+      function thisMovie(movieName) {
+        return swfobject.getObjectById(movieName);
+      }
+      var flvars1 = {
+        "soundId": "speaking1",
+        "soundUrl": "video/yichengwangshi.mp3",
+        'volume': TestConst.volume
+      };
+      swfobject.embedSWF("video/MediaPlayer.swf", "play1_swf", "480px", "40px", "15.0.0", "", flvars1, {
+        quality: "high",
+        allowScriptAccess: "always",
+        menu: "false",
+        wmode: "Transparent"
+      });
+
+      var flvars2 = {
+        "soundId": "speaking2",
+        "soundUrl": "video/yichengwangshi.mp3",
+        'volume': TestConst.volume
+      };
+      swfobject.embedSWF("video/MediaPlayer.swf", "play2_swf", "480px", "40px", "15.0.0", "", flvars2, {
+        quality: "high",
+        allowScriptAccess: "always",
+        menu: "false",
+        wmode: "Transparent"
+      });
+
+      function stopOthers(param) {
+        if (thisMovie("play1_swf")) {
+          thisMovie("play1_swf").stopByOther(param);
+        };
+        if (thisMovie("play2_swf")) {
+          thisMovie("play2_swf").stopByOther(param);
+        }
+      }
+    });
+  </script>
+
+</head>
+<body class="grey-bg-color">
+  <div id="topbg">
+    <div class="posi">
+      <a class="logo" href="#"></a>
+      <div class="title">Part1: TPO34 - Listening 1</div>
+      <div class="save">退出</div>
+    </div>
+  </div>
+
+  <!--equipment-contain-->
+  <!--/reading_header-->
+  <div class="resultset-container listen-rank-content listening_excel">
+    <div class="resultset-content">
+      <div class="title-content">
+        <div class="title">Quertion 5 of 14</div>
+        <div class="text">Talk about a book you have read that was important to you for some reason. Explain why the book was important to you. Give specific details and examples to explain your answer</div>
+      </div>
+      <div class="writing-wrap-content">
+        <div class="drag-in-area">
+          <p class="clearfix">
+            <span class="number pull-left">1</span>
+            <input class="answer1" type="hidden" name="drag_content[]" value="">
+            <textarea name="dragTxt[]" id="ta_bg" readonly class="sort-target pull-left answer1"></textarea>
+          </p>
+          <p class="clearfix">
+            <span class="number pull-left">2</span>
+            <input class="answer2" type="hidden" name="drag_content[]" value="">
+            <textarea name="dragTxt[]" id="ta_bg" readonly class="sort-target pull-left answer2"></textarea>
+          </p>
+          <p class="clearfix">
+            <span class="number pull-left">3</span>
+            <input class="answer3" type="hidden" name="drag_content[]" value="">
+            <textarea name="dragTxt[]" id="ta_bg" readonly class="sort-target pull-left answer3"></textarea>
+          </p>
+          <p class="clearfix">
+            <span class="number pull-left">4</span>
+            <input class="answer4" type="hidden" name="drag_content[]" value="">
+            <textarea name="dragTxt[]" id="ta_bg" readonly class="sort-target pull-left answer4"></textarea>
+          </p>
+        </div>
+        <div class="draged-object">
+          <p class="hg-drag">
+            <i>A.</i>Arts councils were established in all 50 states of the country.Arts councils were established in all 50 states of
+          </p>
+          <p class="hg-drag">
+            <i>B.</i>The federal budgest supporting the arts was reduced by half.
+          </p>
+          <p class="hg-drag">
+            <i>C.</i>The Federal Art Project helped reduce unemployment.
+          </p>
+          <p class="hg-drag">
+            <i>D.</i>The National Endoement for the Arts was established.
+          </p>
+        </div>
+        <div class="answer">
+          <div class="choose">
+            <div class="choose_d"><span class="tit">你的回答:</span><span class="choice no">A</span><span class="choice no">B</span><img src="images/icon_no.png" /></div>
+            <div class="choose_d"><span class="tit">正确回答:</span><span class="choice">C</span><span class="choice">D</span></div>
+          </div>
+          <div class="explain">
+            <div>老师批改：</div>
+            <div class="exp_p">有语法错误，在第X行第X句，应该注意元音发音和连读。有语法错误，在第X行第X句，应该注意元音发音和连读。有语法错误，在第X行第X句，应该注意元音发音和连读。应该注意元音发音和连读。有语法错误，在第X行第X句，应该注意元音发音和连读。</div>
+          </div>
+        </div>
+        <div class="article">
+          <div class="article_title">音频材料：</div>
+          <div class="speaking_play speaking_play_yinping">
+            <div id="play1_swf">
+            </div>
+          </div>
+          <div class="article_title">音频原文：</div>
+          <p>Talk about a book you have read that was important to you for some reason. Explain why the book was important to you. Give specific details and examples to explain your answer<br>Recently, I read a book named Keep the aspidistra flying written
+            by George Orwell. The book influences me a lot because the story has something that touches my heart. The story talks about a man who wants to be a poet and who abandons many well-paying jobs to pursue his dream of being a poet. I have a similar
+            experience of quitting a very good job in order to be a writer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="posi">
+      <div class="keynote unselectable"><span class="icon"><input type="checkbox" value="0" id="choice_keynote" autocomplete="off" /></span><label for="choice_keynote">请老师讲解重点</label></div>
+      <div class="pages">
+        <button class="pre unselectable"><img src="images/pre.png"/></button>
+        <span class="nums unselectable">1/26</span>
+        <button class="next unselectable"><img src="images/next.png"/></button>
+      </div>
+      <div class="confirm"><button>完  成</button></div>
+    </div>
+  </div>
+
+</body>
+</html>

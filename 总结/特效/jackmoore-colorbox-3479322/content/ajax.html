@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/colorbox.css">
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/jquery.colorbox.js"></script>
+</head>
+<body>
+	<a  class="small" href="images/daisy.jpg"><img width="150" src="images/daisy.jpg"></a>
+	<a  class="small" href="images/homer.jpg"><img width="150" src="images/homer.jpg">
+	<a  class="small" href="images/ohoopee2.jpg"><img width="150" src="images/ohoopee2.jpg">
+	<a  class="small" href="images/ohoopee1.jpg"><img width="150" src="images/ohoopee1.jpg">
+	<a  class="small" href="images/marylou.jpg"><img width="150" src="images/marylou.jpg">
+	<a  class="small" href="images/ohoopee3.jpg"><img width="150" src="images/ohoopee3.jpg">
+
+	<script>
+	function goColorBox() {
+		 $(".small").colorbox({scalePhotos:true,rel:'small'});
+		}
+	$(".small").click(function(){
+		goColorBox()
+	})
+	</script>
+</body>
+</html>

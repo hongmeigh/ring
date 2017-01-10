@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		img{
+			border: none;
+		}
+		.carousel{
+			width: 1200px;
+			height: 400px;
+			border: 1px solid #ccc;
+			margin: 0 auto;
+			position: relative;
+			overflow: hidden;
+		}
+		.carousel ul{
+			list-style: none;
+		}
+		.carousel ul li{
+			position: absolute;
+		}
+		.carousel ul li img{
+			width: 100%;
+			height: 100%;
+		}
+		.carousel ul li.s0{
+			width: 200px;
+			height: 100px;
+			top: 150px;
+			left: -100px;
+			z-index: 4;
+			opacity: 0;
+		}
+		.carousel ul li.s1{
+		    width: 470px;
+		    height: 240px;
+		    top: 66px;
+		    left: 0px;
+		    z-index: 5;
+		    opacity: 1;
+		}
+		.carousel ul li.s2{
+		    width: 610px;
+		    height: 280px;
+		    top: 45px;
+		    left: 305px;
+		    z-index: 6;
+		    opacity: 1;
+		}
+		.carousel ul li.s3{
+		    width: 470px;
+		    height: 240px;
+		    top: 66px;
+		    left: 730px;
+			z-index: 5;
+			opacity: 1;
+		}
+		.carousel ul li.s4{
+			width: 200px;
+			height: 100px;
+			top: 150px;
+		    left: 1100px;
+			z-index: 4;
+			opacity: 0;
+		}
+		.carousel ul li.wait{
+			display: none;
+		}
+		.carousel ul li .mask{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: black;
+			opacity: 0.8;
+			filter:alpha(opacity = 80);
+		}
+		.carousel ul li.s2 .mask{
+			display: none;
+		}
+		.carousel .btns a{
+			position: absolute;
+			width: 40px;
+			height: 40px;
+			top: 50%;
+			margin-top: -20px;
+			background-color: orange;
+			z-index: 999;
+		}
+		.carousel .btns a.leftBtn{
+			left: 20px;
+		}
+		.carousel .btns a.rightBtn{
+			right: 20px;
+		}
+		.carousel .circles{
+			position: absolute;
+			left: 50%;
+			width: 270px;
+			height: 20px;
+			bottom: 10px;
+			margin-left: -135px;
+			list-style: none;
+		}
+		.carousel .circles li{
+			float: left;
+			width: 20px;
+			height: 20px;
+			margin-right: 10px;
+			background-color: orange;
+		}
+		.carousel .circles li.cur{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="carousel" id="carousel">
+		<ul>
+			<li class="s2">
+				<div class="mask"></div>
+				<a href="#">
+					<img src="images/youku/121.jpg" alt="" />			
+				</a>
+			</li>
+			<li class="s3">
+				<div class="mask"></div>
+				<a href="#">
+					<img src="images/youku/122.jpg" alt="" />			
+				</a>
+			</li>
+			<li class="s4">
+				<div class="mask"></div>
+				<a href="#">
+					<img src="images/youku/123.jpg" alt="" />			
+				</a>
+			</li>
+			<li class="wait">
+				<div class="mask"></div>
+				<a href="#">
+					<img src="images/youku/124.jpg" alt="" />			
+				</a>
+			</li>
+			<li class="wait">
+				<div class="mask"></div>
+				<a href="#">
+					<img src="images/youku/125.jpg" alt="" />			
+				</a>
+			</li>
+			<li class="wait">
+				<div class="mask"></div>
+				<a href="#">
+					<img src="images/youku/126.jpg" alt="" />			
+				</a>
+			</li>
+			<li class="s0">
+				<div class="mask"></div>
+				<a href="#">
+					<img src="images/youku/127.jpg" alt="" />			
+				</a>
+			</li>
+			<li class="s1">
+				<div class="mask"></div>
+				<a href="#">
+					<img src="images/youku/138.jpg" alt="" />			
+				</a>
+			</li>
+		</ul>
+		<div class="btns">
+			<a href="javascript:void(0);" class="leftBtn"  id="leftBtn"></a>
+			<a href="javascript:void(0);" class="rightBtn" id="rightBtn"></a>
+		</div>
+		<ol class="circles">
+			<li class="cur"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript">
+		//我们现在发现，每一个s的状态，就是下一个s的animate的终点。我们必须要把他们读取出来。放入数组。
+		//得到所有的li
+		var $lis = $("#carousel ul li");
+		//得到小圆点
+		var $cirecleslis = $("#carousel ol li");
+
+		//准备一个数组，收纳所有的JSON。这个数组一旦生成，永不改变
+		var STATEARR = [];
+
+		//遍历li，把每个li的css数组放入STATEARR数组。s0的放入到了第0项，s1的就是第1项……
+		for(var i = 0 ; i <= 4 ; i++){
+			STATEARR.push({
+				"width" 	: 	$(".s" + i).css("width"),
+				"height" 	: 	$(".s" + i).css("height"),
+				"top" 		: 	$(".s" + i).css("top"),
+				"left" 		: 	$(".s" + i).css("left"),
+				"opacity"	: 	$(".s" + i).css("opacity")
+			});
+		} 
+	
+		//console.log(STATEARR);
+
+		//类名数组，注意，这个数组每次点击按钮的时候，会发生轮替
+		var classArr = ["s2","s3","s4","wait","wait","wait","s0","s1"];
+		//console.log(classArr);
+		
+		//信号量
+		var idx = 0;
+
+		 
+		var timer = setInterval(rightBtnHandler,800);
+
+		$("#carousel").mouseenter(function(){
+			clearInterval(timer);
+		});
+
+		$("#carousel").mouseleave(function(){
+			timer = setInterval(rightBtnHandler,800);
+		});
+
+		//右边按钮监听
+		$("#rightBtn").click(rightBtnHandler);
+		function rightBtnHandler(){
+			//防流氓
+			if($lis.is(":animated")){
+				return;
+			}
+			//命令的是名字，命令的每次执行的元素，实际上变化了，轮替了：
+			$(".s1").animate(STATEARR[0],600);
+			$(".s2").animate(STATEARR[1],600);
+			$(".s3").animate(STATEARR[2],600);
+			$(".s4").animate(STATEARR[3],600);
+ 			
+ 			//数组的最后一项删除，并且插入到数组前面
+ 			classArr.unshift(classArr.pop());
+
+ 			//设置类名
+ 			$lis.each(function(i){
+ 				$(this).attr("class",classArr[i]);
+ 			});
+ 			//防止bug，此时s4是刚刚由aimate变来的，身上可能有某个行内样式（因为刚发生动画，比如点击小圆点了），此时就会造成s4不在s4的位置上（干不过行内样式）
+ 			$(".s4").css(STATEARR[4]);
+
+ 			//console.log(classArr);
+
+ 			//信号量改变，信号量和图片的切换没有关系。图片的切换是彼此交换json和类名，不涉及信号量。信号量之和小圆点有关系。
+ 			idx++;
+ 			if(idx > $lis.length - 1){
+ 				idx = 0;
+ 			}
+ 			//设置小圆点
+ 			$cirecleslis.eq(idx).addClass("cur").siblings().removeClass("cur");
+		}
+
+		//左边按钮监听
+		$("#leftBtn").click(function(){
+			//防流氓
+			if($lis.is(":animated")){
+				return;
+			}
+			//命令的是名字，命令的每次执行的元素，实际上变化了，轮替了：
+			$(".s0").animate(STATEARR[1],600);
+			$(".s1").animate(STATEARR[2],600);
+			$(".s2").animate(STATEARR[3],600);
+			$(".s3").animate(STATEARR[4],600);
+ 
+ 			
+ 			//数组的第0项删除，并且插入到数组后面
+ 			classArr.push(classArr.shift());
+
+ 			//设置类名
+ 			$lis.each(function(i){
+ 				$(this).attr("class",classArr[i]);
+ 			});
+ 			//防止bug，此时s4是刚刚由aimate变来的，身上可能有某个行内样式（因为刚发生动画，比如点击小圆点了），此时就会造成s4不在s4的位置上（干不过行内样式）
+ 			$(".s0").css(STATEARR[0]);
+ 			
+
+ 			//信号量改变，信号量和图片的切换没有关系。图片的切换是彼此交换json和类名，不涉及信号量。信号量之和小圆点有关系。
+ 			idx--;
+ 			if(idx < 0){
+ 				idx = $lis.length - 1;
+ 			}
+ 			//设置小圆点
+ 			$cirecleslis.eq(idx).addClass("cur").siblings().removeClass("cur");
+		});
+
+
+		//小圆点的点击业务
+		$cirecleslis.click(function(){
+			//集体退后！！
+			$lis.animate({"width":100,"height":100,"left":600,"top":180,"opacity":0.4},100);
+			//换classArr这个数组
+			//变量a就是用户点击的这个小圆点和当前信号量的差值
+			var a = $(this).index() - idx;
+			//用户点击的这个小圆点，和当前信号量要比较一个大小。如果用户点击的数字大，那么此时就应该数组按照rightBtn的模型进行轮替；反之，用户点击的数字小，那么就应该按照leftBtn的模型进行轮替。
+			if(a > 0){
+				//如果用户点击的是，比当前信号量大
+				for(var i = 0 ; i < a ; i ++){
+					classArr.unshift(classArr.pop());
+				}
+			}else if(a < 0){
+				//如果用户点击的是，比当前信号量大。
+				//此时a的值是负数，所以用a的绝对值。Math.abs()就是绝对值。
+				for(var i = 0 ; i < Math.abs(a) ; i++){
+					classArr.push(classArr.shift());
+				}
+			}
+
+			// console.log("主人你好，你点击这个小圆点之后，classArr将变为：");
+			// console.log(classArr);
+
+			//设置类名
+ 			$lis.each(function(i){
+ 				$(this).attr("class",classArr[i]);
+ 			});
+
+ 			//然后运动
+ 			$(".s0").animate(STATEARR[0],300);
+ 			$(".s1").animate(STATEARR[1],300);
+ 			$(".s2").animate(STATEARR[2],300);
+ 			$(".s3").animate(STATEARR[3],300);
+ 			$(".s4").animate(STATEARR[4],300);
+			 
+
+			//改变信号量
+			idx = $(this).index();
+
+			//设置小圆点
+			$(this).addClass('cur').siblings().removeClass('cur');
+
+
+		});
+	</script>
+</body>
+</html>

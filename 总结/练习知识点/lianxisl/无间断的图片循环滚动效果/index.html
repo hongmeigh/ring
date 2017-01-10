@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script  src="js/jquery-1.11.2.min.js"></script>
+  <style>
+      #mov1 div{float: left;}
+      #mov2 div{float: left;}
+      @keyframes gundong
+      {
+        from {left: 0px;}
+        to {left: -110px;}
+      }
+  </style>
+</head>
+<body>
+    <div style="position:relative; width:600px; height:89px; margin:0 auto; overflow:hidden;">
+      <div id="mov1" style="position:absolute; top:0px; left:0px; width:880px; height:89px;">
+        <div><img src="images/1.jpg"></div>
+        <div><img src="images/2.jpg"></div>
+        <div><img src="images/3.jpg"></div>
+        <div><img src="images/4.jpg"></div>
+        <div><img src="images/5.jpg"></div>
+        <div><img src="images/6.jpg"></div>
+        <div><img src="images/7.jpg"></div>
+        <div><img src="images/8.jpg"></div>
+      </div>
+      <div id="mov2" style="position:absolute; top:0px; left:880px; width:880px; height:89px;">
+        <div><img src="images/1.jpg"></div>
+        <div><img src="images/2.jpg"></div>
+        <div><img src="images/3.jpg"></div>
+        <div><img src="images/4.jpg"></div>
+        <div><img src="images/5.jpg"></div>
+        <div><img src="images/6.jpg"></div>
+        <div><img src="images/7.jpg"></div>
+        <div><img src="images/8.jpg"></div>
+      </div>
+    </div>
+   <script>
+    $(document).ready(function(){
+      var w=true;
+      var x=$("#mov1");
+      var y=$("#mov2");
+      function move(){
+        x.stop().animate({left:"-880px"},{duration:6000,easing:"linear",complete:function(){x[0].style.left="880px";}});
+        y.stop().animate({left:"0px"},{duration:6000,easing:"linear",complete:function(){var z=x; x=y; y=z;}});
+		$("#mov1,#mov2").mouseover(function(){
+			$("#mov1,#mov2").stop();			
+			})
+
+  };
+      setInterval(move,6015);
+      
+    })
+      
+    
+   </script>
+</body>
+</html>

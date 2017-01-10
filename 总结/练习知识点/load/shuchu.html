@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jquery/jquery-1.11.2.min.js"></script>
+		<script src="jquery/shuchu.js"></script>
+	</head>
+	<body>
+		<textarea cols="30" rows="15" class="shuru"></textarea>
+		<button>点击</button>
+		<div class="shuchu"></div>
+		<script>
+			function heavyCompute(n) {
+    var count = 0,
+        i, j;
+
+    for (i = n; i > 0; --i) {
+        for (j = n; j > 0; --j) {
+            count += 1;
+        }
+    }
+}
+
+var t = new Date();
+
+setTimeout(function () {
+    console.log(new Date() - t);
+}, 1000);
+
+heavyCompute(50000);
+		</script>
+	</body>
+</html>

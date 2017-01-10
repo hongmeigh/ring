@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+*                       { margin:0; padding:0; }
+
+body                    { background:#fff; color:#555; font:12px/1.5em '微软雅黑';overflow-x:hidden;}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, blockquote, textarea, p, th, td ,table {margin:0;padding:0;}
+
+a:link,a:visited        { color:#555; text-decoration:none; }
+a:hover,a:active        { color:#D73554; text-decoration:none; }
+a img,img                   { border:0; }
+:focus                  { outline:0; }
+
+/* Heading */
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal} 
+
+/* Table */
+table                 { border-collapse:collapse;}
+th                      { padding:0; text-align:left; vertical-align:top; }
+td                     { padding:0; vertical-align:top; }
+u   			{text-decoration:none;color:#999;}
+em 			{font-style:normal;}
+/* font color*/
+.f12                    {font-size:12px}
+.f13                    {font-size:13px}
+.f14                    {font-size:14px}
+.f16                    {font-size:16px}
+.f20                    {font-size:20px}
+.fb                     {font-weight:bold}
+.fn                     {font-weight:normal}
+.hotcolor,a.hotcolor {color:#D73554}
+.bluecolor,a.bluecolor {color:#5093EB}
+a.hotcolor:hover,a.bluecolor:hover {text-decoration:underline;}
+.lh260 {line-height:26px;}
+
+/* position */
+.tl                     {text-align:left}
+.tc                     {text-align:center}
+.tr                     {text-align:right}
+.fl                     {float:left;display:inline}
+.fr                     {float:right;display:inline}
+.cb                     {clear:both}
+.cl                     {clear:left}
+.cr                     {clear:right}
+.vm                     {vertical-align:middle} 
+.pr                     {position:relative} 
+.pa                     {position:absolute}
+.abs-right              {position:absolute;right:0}
+.zoom                   {zoom:1} 
+.hidden                 {visibility:hidden} 
+.none                   {display:none}
+.mt5		{margin-top:5px;}
+.mt10		{margin-top:10px;}
+.mt15		{margin-top:15px;}
+.ml65		{margin-left:65px;}
+.ml5 		{margin-left:5px;}
+.ml10 		{margin-left:10px;}
+.ml20 		{margin-left:20px;}
+.mr10 		{margin-right:10px;}
+.mr20 		{margin-right:20px;}
+.oh {overflow:hidden;}
+
+/* Paragraph */
+address                 { font-style:normal; }
+cite                    { font-style:normal; font-size:10px; }
+q:before, 
+q:after                 { content:'';}
+
+/* Form */
+form                    { display:inline; }
+fieldset                { border:0; }
+legend                  { display:none; display:block !important; height:0; line-height:0; margin:0; overflow:hidden; padding:0; width:0; visibility:hidden; }
+label                   { color:#333; }
+input, select           { vertical-align:middle; }
+textarea                { overflow:auto; }
+
+/* Lists */
+ul,ol                   { list-style:none; }
+dt                      { display:block; }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5练习</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.7.2.min.js"></script>
+	
+</head>
+<body>
+	<!--<canvas style="width:200px; height:200px; background-color:green">不支持</canvas>-->
+	<header></header>
+	<nav></nav>
+	<article>
+		<dl>
+			<dt>番茄</dt>
+			<dd>蔬菜111111222222</dd>
+			<dt>苹果</dt>
+			<dd>水果111111222222</dd>
+		</dl>
+		<img src="images/1.jpg" alt="不见了" width="300" title="提示信息">
+        <form>
+        	<input type="text" pattern="[a-f]+" title="请输入大于1位的字母" style="width:150px; height:30px;">
+        	<input type="email" style="width:150px; height:30px;">
+        	<input type="url" style="width:150px; height:30px;">
+            <input type="number" min="1" max="10" step="4" style="width:150px; height:30px;">
+            <input type="range" min="1" max="10" step="1" style="width:150px; height:30px;">
+            <input type="date" style="width:150px; height:30px;">
+            <input type="month"  style="width:150px; height:30px;">
+            <input type="week"  style="width:150px; height:30px;">
+            <input type="datetime"  style="width:150px; height:30px;">
+            <input type="datetime-local"  style="width:150px; height:30px;">
+            <input type="search"  style="width:150px; height:30px;">
+            <input type="tel" autofocus  style="width:150px; height:30px;">
+            <input type="color"  style="width:150px; height:30px;">
+            <input id="shuru" style="width:150px; height:30px;">
+        	<input id="tijiao" type="button">
+        </form>
+	</article>
+	<!--<section></section>
+	<footer></footer>-->
+    <canvas width="430" height="300" style="border:1px solid #F09" id="mycanvas"></canvas>
+    <canvas width="430" height="300" style="border:1px solid #F09" id="mycanvas1"></canvas>
+    <audio src="audio/aa.mp3" controls autoplay="true" loop>
+    	该浏览器不支持audio元素
+    </audio>
+    <script src="js/app.js"></script>
+    <script>
+		$("#tijiao").click(function(){
+			var value=$("#shuru").val();
+			window.localStorage.hello=value;
+			window.sessionStorage.hello=value;
+			})
+    </script>
+</body>
+</html>

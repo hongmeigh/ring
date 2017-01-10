@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!--[if IE 8]><style>.ie8 .alert-circle,.ie8 .alert-footer{display:none}.ie8 .alert-box{padding-top:75px}.ie8 .alert-sec-text{top:45px}</style><![endif]-->
+<title>html5+css3进度条倒计时动画特效</title>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	background: #E6EAEB;
+	font-family: Arial, '微软雅黑', '宋体', sans-serif
+}
+
+.alert-box p {
+	margin: 0
+}
+.alert-circle {
+	position: absolute;
+	top: 150px;
+	left: 111px
+}
+.alert-sec-circle {
+	stroke-dashoffset: 0;
+	stroke-dasharray: 735;
+	transition: stroke-dashoffset 1s linear
+}
+
+
+</style>
+</head>
+<body class="ie8">
+
+	<svg class="alert-circle" width="50" height="50">
+  		<circle cx="25" cy="25" r="20" fill="#FFF" stroke="#43AEFA" stroke-width="5"></circle>
+  		<circle id="js-sec-circle" class="alert-sec-circle" cx="25" cy="25" r="20" fill="transparent" stroke="#F4F1F1" stroke-width="5" transform="rotate(-90 25 25)"></circle>
+ 	</svg> 	
+
+<script>
+function alertSet() {   
+    n = document.getElementById("js-sec-circle");
+    var t=10;
+    setInterval(function() {
+        if (0 == t){
+			location.href="#";//#时间到后跳转地址
+		}else {
+            t -= 1;
+            var e = Math.round(t / 10 * 735);
+            n.style.strokeDashoffset = e - 735
+        }
+    },
+    970);
+}
+</script>
+</body>
+</html>
+<script>alertSet('前往会员注册');</script>

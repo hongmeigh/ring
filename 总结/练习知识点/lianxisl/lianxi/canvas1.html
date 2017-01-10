@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+	<script src="jquery/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+	<canvas id="ccc" style="background-color:#3FF;" width="1000" height="1000" id="demo"></canvas>
+	<script>
+		var canvas=$("#ccc")[0];
+		var c=canvas.getContext("2d");
+		c.shadowColor="rgba(224,204,33,.5)";
+		c.shadowOffsetX=c.shadowOffsetY=3;
+		c.shadowBlur=5;
+		var bg=c.createLinearGradient(300,300,700,400);
+			bg.addColorStop(0.0,"green");
+			bg.addColorStop(1.0,"yellow");
+		c.fillStyle=bg;
+		
+		c.strokeStyle="yellow";
+		c.font="italic 900 45px '微软雅黑'";
+		c.fillText("好好学习 天天向上",300,300);
+
+
+
+	</script>
+	
+</body>
+</html>

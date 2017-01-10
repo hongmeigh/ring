@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<style type="text/css">
+		#main-slider-space {
+			overflow:hidden;
+			height:300px;
+		}
+
+		.slider-wrapper {
+			position:relative;
+			left:0;
+			height:100%;
+		}
+
+		.main-slide {
+			font-size: 36px;
+			height:100%;
+			float:left;
+		}
+
+		.slider-buttons {
+		    position:absolute;
+		    width:30px;
+		    height:30px;
+		}
+
+		#main-slider-next {
+		    background-color:#99CC66;
+		}
+		.container{
+			margin: 10px auto;
+			width:100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	<div id="main-slider-space">
+	    <div class="slider-wrapper">
+	        <div class="main-slide">
+	        	<div class="contain" style="border:1px solid #ccc; height:90%; ">0</div>
+	        </div>
+	    </div>
+	</div>
+	</div>
+
+	<div id="main-slider-next" class="slider-buttons"></div>
+
+	
+	<script type="text/javascript">
+	    $(document).ready(function(){
+	      	var width = $(".container").width();
+	     	$('#main-slider-space').css({
+	      		width:width
+	      	});
+			$('.main-slide').css({
+				width:width
+			});
+			$(".slider-wrapper").css({
+				width:width*2
+			});
+		  	var i = 0;
+		  	$('#main-slider-next').click(function(){
+			  	$(".slider-wrapper").append('<div class="main-slide"></div>');
+			  	//ajax 请求数据
+			  	i++;
+			  	$(".main-slide:last-child").html('<div style="border:1px solid #ccc; height:90%; ">'+i+'</div>');
+			  	//ajax 请求数据
+				var slides = $('.main-slide');
+				$('.main-slide').css({
+					width:width
+				});
+			    $('.slider-wrapper').animate(
+			      {'left' : -($(".main-slide:last-child").position().left)},
+			      1000,
+			      function(){
+			      	$(".main-slide:first-child").remove();
+			      	$('.slider-wrapper').css({
+			      		left:0		      		
+			      	})
+			      }
+			    );
+		  	});
+	    });
+  	</script>
+</body>
+</html>

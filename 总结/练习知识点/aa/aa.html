@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<style>
+		.wrap{
+			width: 600px;
+			height: 600px;
+			border: 1px solid #666;
+			margin: 0 auto;
+			padding-top: 150px;
+		}
+		.dh{
+			width: 1px;
+			height: 16px;
+			background-color: green;
+			border-radius: 10px;
+			position: relative;
+			margin-top: 100px;
+		}
+		.dh .cir{
+			width: 12px;
+			height: 12px;			
+			position: absolute;
+			border-radius:16px; 
+			border: 10px solid green;
+			top: -8px;
+			right: -22px;
+		}
+		.dh img{
+			position: absolute;
+			top: -60px;
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+
+			<div class="dh ani0">
+				<div class="cir"></div>
+				<img src="images/car.png">
+			</div>
+
+			<div class="dh ani1">
+				<div class="cir"></div>
+				<img src="images/car.png">
+			</div>
+
+	</div>
+
+	<script>
+		var width=0,maxwidth=300;
+		function move(){
+			width=width+1;
+			$(".ani0").css("width",width);
+			if(width<=maxwidth){
+				setTimeout(move,10)
+			}
+		}
+		// var timer=setInterval(function(){
+		// 	move();
+		// 	if(width>=maxwidth){
+		// 		clearInterval(timer);
+		// 	}
+		// },10)
+
+		var width1=0,maxwidth1=600;
+		function move1(){
+			width1=width1+2;
+			$(".ani1").css("width",width1);
+			if(width1<=maxwidth1){
+				setTimeout(move1,10)
+			}
+		}
+		move1();move();
+		// var timer1=setInterval(function(){
+		// 	move1();
+		// 	if(width1>=maxwidth1){
+		// 		clearInterval(timer1);
+		// 	}
+		// },20)
+	</script>
+</body>
+</html>

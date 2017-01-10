@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5练习</title>
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<style>
+		html,body,div{ width:100%; height:100%}
+		*{ border:0; margin:0; padding:0;}
+    </style>
+</head>
+<body>
+	<!--<canvas style="width:200px; height:200px; background-color:green">不支持</canvas>-->
+	<div id="colordiv" style="width:100%; height:100%;">
+    	<button onClick="pink()" style="width:100px; height:30px;">红色</button>
+    	<button onClick="yellow()" style="width:100px; height:30px;">黄色</button>
+    	<button onClick="green()" style="width:100px; height:30px;">绿色</button>
+    	<button onClick="blue()" style="width:100px; height:30px;">蓝色</button>
+    </div>
+    
+    <script>
+		var value;
+		function pink(){
+			value="#F99";
+			$("#colordiv").css("backgroundColor",value);
+			window.localStorage.color=value;
+			}
+		function yellow(){
+			value="yellow";
+			$("#colordiv").css("backgroundColor",value);
+			window.localStorage.color=value;
+			}
+		function green(){
+			value="green";
+			$("#colordiv").css("backgroundColor",value);
+			window.localStorage.color=value;
+			}
+		function blue(){
+			value="blue";
+			$("#colordiv").css("backgroundColor",value);
+			window.localStorage.color=value;
+			}
+		function norm(){
+			$("#colordiv").css("backgroundColor",window.localStorage.color);
+			}
+		norm();
+    </script>
+</body>
+</html>

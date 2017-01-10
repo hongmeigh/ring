@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		canvas{
+			border: 1px solid #333;
+			margin-left: 20px;
+			width: 50px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="100" height="100" value="0"></canvas>
+	<canvas width="100" height="100" value="0.1"></canvas>
+	<canvas width="100" height="100" value="0.2"></canvas>
+	<canvas width="100" height="100" value="0.3"></canvas>
+	<canvas width="100" height="100" value="0.4"></canvas>
+	<canvas width="100" height="100" value="0.5"></canvas>
+	<canvas width="100" height="100" value="0.6"></canvas>
+	<canvas width="100" height="100" value="0.7"></canvas>
+	<canvas width="100" height="100" value="0.8"></canvas>
+	<canvas width="100" height="100" value="0.9"></canvas>
+	<canvas width="100" height="100" value="1.0"></canvas>
+	
+</body>
+<script>
+	var cas=document.getElementsByTagName("canvas");
+	function draw(){
+		for(var i=0; i<cas.length; i++){
+			var count=0,num=0;
+			cir(cas[i],count,num)		
+		}
+	}
+	function cir(cas,count,num){
+		count=count+2;
+		var ctx=cas.getContext("2d");
+		ctx.beginPath();
+		ctx.lineWidth=8;
+		ctx.strokeStyle="#4bd5a2";
+		ctx.arc(50,50,42,-0.5*Math.PI,-0.5*Math.PI+2*Math.PI/100*count);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.lineWidth=10;			
+		ctx.strokeStyle="#fd4543";
+		if(count>=130){
+			num++;
+		}
+		var deg=-0.5*Math.PI+2*Math.PI/100*num;
+		if(deg>-0.5*Math.PI+cas.getAttribute("value")*2*Math.PI){
+			deg=-0.5*Math.PI+cas.getAttribute("value")*2*Math.PI;
+			ctx.arc(50,50,42,-0.5*Math.PI,deg);
+			ctx.stroke();
+		}else{
+			ctx.arc(50,50,42,-0.5*Math.PI,deg);
+			ctx.stroke();
+			console.log("yes")
+			setTimeout(function(){
+				ctx.clearRect(0,0,100,100)
+				cir(cas,count,num)
+			},20)
+			
+			//requestAnimationFrame(function(){cir(cas,count,num)})
+		}	
+	}
+	draw()
+</script>
+</html>

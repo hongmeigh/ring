@@ -1,0 +1,71 @@
+img{
+	display: block;
+}
+.contain{
+	width: 1200px;
+	height: 350px;
+	position: relative;
+	margin: 100px auto 0;
+	overflow: hidden;
+}
+.contain .tupian{
+	position: absolute;
+	display: block;
+}
+.contain .tupian img{
+	width: 100%;
+}
+.index{
+	width: 600px;
+	height: 300px;
+	top: 0;
+	left: 300px;
+	z-index: 111;
+}
+.index_left{
+	width: 400px;
+	height: 200px;
+	top: 50px;
+	left: 0;
+	z-index: 11;
+}
+.index_right{
+	width: 400px;
+	height: 200px;
+	top: 50px;
+	left:800px;
+	z-index: 11;
+}
+.bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #000;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+}
+.opa{
+	top: 150px;
+	height: 0px;
+	opacity: 0;
+	left: 1300px;
+}
+.btn{
+	width: 200px;
+	position: absolute;
+	bottom: 0;
+	left: 500px;
+}
+.btn span{
+	width: 10px;
+	height: 10px;
+	background-color: #ccc;
+	border-radius: 5px;
+	display: inline-block;
+	margin: 0 5px;
+}
+.btn .index-btn{
+	background-color: #0b4fea;
+}

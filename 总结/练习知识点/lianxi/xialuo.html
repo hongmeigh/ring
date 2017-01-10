@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jquery/jquery-1.11.2.min.js"></script>
+		<style type="text/css">
+			.squ{width: 70px;height: 70px; background-color: red; position: absolute; top: 30px;}
+			.left1{left: 30px;}
+			.left2{left: 130px;}
+			.left3{left: 230px;}
+			.left4{left: 330px;}
+			.left5{left: 430px;}
+			.left6{left: 530px;}
+			.left7{left: 630px;}
+			.left8{left: 730px;}
+			.left9{left: 830px;}
+			.left10{left: 930px;}
+			button{width: 100px; height: 50px; position: absolute; top: 40px; right: 100px;}
+		</style>
+	</head>
+	<body>
+		<div class="squ left1"></div>
+		<div class="squ left2"></div>
+		<div class="squ left3"></div>
+		<div class="squ left4"></div>
+		<div class="squ left5"></div>
+		<div class="squ left6"></div>
+		<div class="squ left7"></div>
+		<div class="squ left8"></div>
+		<div class="squ left9"></div>
+		<div class="squ left10"></div>
+		<button>点击</button>
+		<script type="text/javascript">
+			var i=0;
+			var j;
+			var arr=$(".squ");
+			var p;
+			function move(){
+				if(i%20==0&&i<181){
+					j=i/20;
+				}
+				i++;
+				for(var n=0; n<j+1; n++){
+					var t=parseInt(arr.eq(n).css("top"));
+					if(t<730){
+					arr.eq(n).css("top",t+4+"px");
+					p==false;
+					}
+					else{p==true;}
+				}
+			}
+			$("button").click(function(){
+				if(p){clearInterval(time)};
+				var time=setInterval(move,1);
+			})
+			
+		</script>
+	</body>
+</html>

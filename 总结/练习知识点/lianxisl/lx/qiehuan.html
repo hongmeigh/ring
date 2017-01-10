@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			border: 0;
+			padding: 0;
+			margin: 0;
+		}
+		.bg{
+			background-color: #fff !important;
+		}
+	</style>
+	<script src="jquery/jquery-1.11.2.min.js"></script>
+</head>
+<body style="height:100%; width:100%;">
+<div style="height:100%; width:100%; position:relative; overflow:hidden;">
+ <div id="eee" style="height:400%; width:100%; position:absolute; top:0; left:0;">
+	<div id="aaa" style="height:25%; width:100%; background-color:red; position:relative;"></div>
+	<div id="bbb" style="height:25%; width:100%; background-color:yellow; display:block;"></div>
+	<div id="ccc" style="height:25%; width:100%; background-color:green; display:block;"></div>
+	<div id="ddd" style="height:25%; width:100%; background-color:blue; display:block;"></div>
+ </div>
+</div>
+	<div class="sss bg" style="width:20px; height:20px; background-color:#666; position:fixed; background-clip:content-box; top:30%; right:5%;"></div>
+	<div class="sss" style="width:20px; height:20px; background-color:#666; position:fixed; margin:50px 0 0 88%; top:32%; right:5%;"></div>
+	<div class="sss" style="width:20px; height:20px; background-color:#666; position:fixed; margin:50px 0 0 88%; top:38%; right:5%;"></div>
+	<div class="sss" style="width:20px; height:20px; background-color:#666; position:fixed; margin:50px 0 0 88%; top:44%; right:5%;"></div>
+  
+
+	<script>
+	var w=true;
+		document.onmousewheel=function(e){
+			if (w) {				
+			var x=parseInt($("#eee")[0].style.top);
+			if (e.wheelDelta<0&&x%100==0) {
+				var y=x-100;
+				if (y>-400) {
+					w=false;
+					var z=$("div[class*=bg]");
+				    z.toggleClass("bg"); 
+				    z.next().toggleClass("bg");
+					$("#eee").animate({top:y+"%"},500,function(){w=true;});
+
+				}
+			
+			}
+			else if (e.wheelDelta>0&&x%100==0) {  
+				var y=x+100;
+				if (y<100) {
+					w=false;
+					var z=$("div[class*=bg]"); 
+					z.toggleClass("bg"); 
+					z.prev().toggleClass("bg");
+					$("#eee").animate({top:y+"%"},500,function(){w=true;});
+					
+				}
+			  }
+			 }
+		   }
+
+			 $("div[class*=sss]").click(function(){
+			 	for (var j = 0; j < $("div[class*=sss]").length; j++) {
+			 		if ($("div[class*=sss]")[j]==$("div[class*=bg]")[0]) {
+			 			break;
+			 		};
+			 	};
+
+			 	for (var i = 0; i <$("div[class*=sss]").length; i++) {
+			 		if ($("div[class*=sss]")[i]==$(this)[0]) {
+			 			break;
+			 		};
+			 	};
+			 	
+			 	var x=parseInt($("#eee")[0].style.top);
+			 	var y=x+(j-i)*100;
+			 	if (y%100==0) {
+			 		$("#eee").animate({top:y+"%"},500);
+			 		var z=$("div[class*=bg]");
+					z.toggleClass("bg"); 
+					$(this).toggleClass("bg");
+				};
+			 })	
+		
+
+// 	var isPlaying = false;
+// 		document.onmousewheel=function(e){
+// 			if(isPlaying){ 
+// 				return;
+// 			}
+// 			var x=parseInt($("#eee")[0].style.top);
+// 			if (e.wheelDelta<0&&x%100==0) {
+// 				var y=x-100;
+// 				if (y>-400) {
+// 					isPlaying = true;
+// 					var z=$("div[class*=bg]");
+// 					z.toggleClass("bg");
+					
+// 					$("#eee").animate({top:y+"%"},500,function(){isPlaying = false;});
+// 					z.next().toggleClass("bg");
+// 				};
+			
+// 			}
+// 			else if (e.wheelDelta>0&&x%100==0) {  
+// 				var y=x+100;
+// 				if (y<100) {
+// 					isPlaying = true;
+// 					var z=$("div[class*=bg]");
+// 					z.toggleClass("bg");
+					
+// 					$("#eee").animate({top:y+"%"},500,function(){isPlaying = false;});
+// 					z.prev().toggleClass("bg");
+					
+// 				};
+// 			}
+// }
+	</script>
+	
+</body>
+</html>

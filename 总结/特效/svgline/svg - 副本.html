@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="raphael.js"></script>
+</head>
+<body style="position:relative">	
+	 <style>
+        #canvas
+        {
+        border-style:solid;
+        border-width:1px;
+        }
+    </style>
+    <div style="position:absolute; width:400px; height:400px; z-index:1111;" id="canvas"></div>
+    <div style="width:400px; height:400px; position:relative;" id="canvas1">
+    	<div id="percent" style=" position:absolute; top:190px; left:199px;">0%</div>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+    	$(function() {
+
+     animateLine = function(canvas, hoverDivName, colorNumber, pathString) {
+        // $('#' + hoverDivName).hover(
+
+	       //  function() {
+	       //      var line = canvas.path(pathString).attr({
+	       //          stroke: colorNumber
+	       //      });
+	       //      var length = line.getTotalLength();
+
+	       //      $('path[fill*="none"]').animate({
+	       //          'to': 1
+	       //      }, {
+	       //          duration: 5000,
+	       //          step: function(pos, fx) {
+	       //              var offset = length * fx.pos;
+	       //              var subpath = line.getSubpath(0, offset);
+	       //              canvas.clear();
+	       //              canvas.path(subpath).attr({
+	       //                  stroke: colorNumber
+	       //              });
+
+	       //          },
+	       //      });
+	       //  }, function() {
+	       //      $('path[fill*="none"]').stop(true, false).fadeOut();
+        // });
+        //
+        var line = canvas.path(pathString).attr({
+			"stroke-width":10,
+            stroke: colorNumber
+        });
+        var length = line.getTotalLength();
+        $("#canvas1").animate({
+            'to': 1
+        }, {
+            duration: 5000,
+            easing:"linear",
+            step: function(pos, fx) {
+                var offset = length * fx.now;
+                var subpath = line.getSubpath(0, offset);
+				var cir=line.getPointAtLength(offset);
+                canvas.clear();
+				canvas.circle(cir.x,cir.y,10).attr({
+					"fill":"#f12438",
+					"stroke": "#f12438"
+                });
+                canvas.path(subpath).attr({
+					"stroke-width":10,
+                    stroke: colorNumber
+                });
+				var per=parseInt((offset/(320*(Math.PI)))*100)+"%";
+				$("#percent").html(per);
+
+            },
+        });
+	};
+
+    var canvas = Raphael('canvas', 400, 400);
+	var canvas1 = Raphael('canvas1', 400, 400);
+	canvas1.path("M120,327 A150,150,0,1,1,280,327").attr({
+			"stroke-width":3,
+            "stroke": "#666"
+        });
+		//画圆可以采用两条弧形路径"M120,338 A160,160,0,1,1,280,338 A160,160,0,0,1,120,338";
+    var pathString = "M120,338 A160,160,0,1,1,280,338";
+
+    animateLine(canvas, "canvas", "#f12438", pathString);
+
+});
+    </script>
+</body>
+</html>

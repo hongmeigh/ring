@@ -1,0 +1,28 @@
+{
+
+  "weekDate": [[2016, 5, 17], [2016, 5, 18], [2016, 5, 19], [2016, 5, 20], [2016, 5, 21], [2016, 5, 22], [2016, 5, 23] ], 
+
+  "course":[
+    { 
+      "stuName": "乐乐乐", "date": "5-17", "weekday": "1", "startTime": "9", "duration": 45, "courseType": "雅思", "subject": "听力", "bgClass":"cb-gkk", "isFirst": true      
+    },
+    {
+      "stuName": "乐乐乐", "date": "5-18", "weekday": "2", "startTime": "10", "duration": 90, "courseType": "雅思", "subject": "听力", "bgClass":"cb-gkk",  "isRepeat": true      
+    },
+    {
+      "stuName": "乐乐乐", "date": "5-19", "weekday": "3", "startTime": "10.5", "duration": 45, "courseType": "托福", "subject": "听力", "bgClass":"cb-sk"      
+    }
+  ],
+
+  "rest":[
+    {"restId": "1", "date": "5-17", "weekday": "1", "startTime": "13", "duration": 120, "restText": "休息"},
+    {"restId": "2", "date": "5-20", "weekday": "4", "startTime": "8", "duration": 120, "restText": "休息时间"},
+    {"restId": "3", "date": "5-21", "weekday": "6", "startTime": "10", "duration": 120, "restText": "会议休息", "noCancel": true}
+  ],
+
+  "holiday": [
+    {"date": "5-20", "weekday": "4", "holidayName": "端午节"},
+    {"date": "5-21", "weekday": "5", "holidayName": ""},
+    {"date": "5-22", "weekday": "6", "holidayName": ""}
+  ]
+}

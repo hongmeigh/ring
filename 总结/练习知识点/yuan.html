@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas width="500" height="500" id="mycas"></canvas>
+	<script>
+		var canvas=document.getElementById("mycas");
+		var ctx=canvas.getContext("2d");
+		var count=0;
+		function draw(){
+			ctx.clearRect(0,0,500,500)
+			count++;
+			ctx.beginPath();
+			ctx.strokeStyle="#000";
+			ctx.lineWidth=12;
+			ctx.arc(250,250,200,0,2*Math.PI/100*count);
+			ctx.stroke();
+			if(count<100){
+				setTimeout(function(){
+					draw()
+				},20)
+			}
+		}
+		draw()
+	</script>
+</body>
+</html>

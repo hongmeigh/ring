@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>小站教育</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta name="renderer" content="webkit">
+  <link rel="stylesheet" href="css/style.min.css" />
+  <script src="scripts/lib.min.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/dragFill.js"></script>
+  <script src="scripts/analytical_srollbar.min.js"></script>
+  <script src="scripts/test.js"></script>
+  <script SRC="scripts/swfobject.js"></script>
+  <script type="text/javascript">
+    var TestConst = TestConst || {};
+    TestConst.volume = 0.5;
+    var flashvars = {
+      'soundUrl': "",
+      'volume': TestConst.volume
+    }
+    swfobject.embedSWF("video/ExamMediaPlayer.swf", "listener_swf", "100", "25", "15.0.0", "", flashvars, {
+      quality: "high",
+      allowScriptAccess: "always",
+      menu: "false",
+      wmode: "Transparent"
+    });
+
+    var flvars = {
+      "soundUrl": "video/yichengwangshi.mp3",
+      'volume': TestConst.volume
+    };
+    swfobject.embedSWF("video/GreenMediaPlayer.swf", "listenerContent_swf", "475px", "100px", "15.0.0", "", flvars, {
+      quality: "high",
+      allowScriptAccess: "always",
+      menu: "false",
+      wmode: "Transparent"
+    });
+
+    function onReplay() {
+      if (thisMovie("listenerContent_swf")) {
+        thisMovie("listenerContent_swf").replay();
+      }
+    }
+  </script>
+
+</head>
+<body class="grey-bg-color">
+  <div id="topbg">
+    <div class="posi">
+      <a class="logo" href="#"></a>
+      <div class="title">Part1: TPO34 - Listening 1</div>
+      <div class="save">退出</div>
+    </div>
+  </div>
+
+  <!--equipment-contain-->
+  <div class="common-style-cont listening_equipment_ajust play_audio">
+    <img src="images/earphone.jpg" class="img" />
+    <h4>Now put on your headset</h4>
+    <p>您可以直接调节电脑音量</p>
+    <div id="listenerContent_swf"></div>
+  </div>
+  <!--equipment-contain-->
+
+
+  <div id="footer">
+    <div class="posi">
+      <div class="keynote unselectable"><span class="icon"><input type="checkbox" value="0" id="choice_keynote" autocomplete="off" /></span><label for="choice_keynote">请老师讲解重点</label></div>
+      <div class="pages">
+        <button class="pre unselectable"><img src="images/pre.png"/></button>
+        <span class="nums unselectable">1/26</span>
+        <button class="next unselectable"><img src="images/next.png"/></button>
+      </div>
+      <div class="confirm"><button>完  成</button></div>
+    </div>
+  </div>
+
+</body>
+</html>

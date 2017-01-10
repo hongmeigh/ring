@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+	<button style="width:100px; height: 50px;" type="button" id="send" value="Ajax">点击</button>
+	<button style="width:100px; height: 50px;" type="button" id="send1" value="Ajax">点击</button>
+	<div>已有评论</div>
+	<div id="get"></div>
+	<script>
+		$("#send").click(function(){
+			$.getJSON('new.json',function(data){
+				var html="";
+				$.each(data,function(index,comment){
+					var x=document.createElement("div");					
+					x.id=comment.id;
+					x.innerHTML=comment.text;
+					$("#get").append($(x));
+				})
+				
+			})
+		})
+//		$("#send1").click(function(){
+//			$.ajax({
+//				type:"get",
+//				url:"toefl_jianjie.html",
+//				dataType:"html",
+//				success:function(data,textstatus){
+//					$("#get").append($(data));
+//					
+//				}
+//				
+//			});
+//		})
+		$("#send1").click(function(){
+			$.ajax({
+				type:"post",
+				url:"localhost:8888/load/load.html",
+				data:"好好学习",
+				dataType:"html",
+				success:function(data,textstatus){
+					var dd=document.createElement("div");
+					dd.innerHTML=data;
+					$("#get").append(dd);
+					
+				}
+				
+			});
+		})
+	</script>
+</body>
+</html>

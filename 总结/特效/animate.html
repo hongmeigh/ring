@@ -1,0 +1,50 @@
+<html>
+<style>
+	.curve{
+		z-index:99999999999999999;
+		background:red;
+		position:fixed;
+		top:600px;
+		text-align:center;
+		font-size: 30px;
+		left:0px;
+		width:300px;
+		height:300px;
+		color:#fff;
+		line-height: 300px
+	}
+	
+</style>
+<body>
+<div class="curve" id="curve">click</div>
+<script>
+document.getElementById("curve").addEventListener("click",function(){
+	var el=document.getElementById("curve");
+		var sx=0,sy=0,scaleS=1;
+		
+		var ex=800;//终点位置的x坐标
+
+
+
+		var sin=function(){
+			sx+=20;
+			if(sx>=ex/2){
+				sx+=1;
+			}
+			sy=-(Math.sin(sx*Math.PI/800)*300+300);
+
+			scaleS=1-sx/800;
+			
+			el.style["webkitTransform"]='translate(' + sx + 'px,' + sy + 'px)'+' scale(' + scaleS + ',' + scaleS + ')';
+
+			if(sx<=ex){
+				requestAnimationFrame(sin);
+			}
+		}
+		
+		sin();
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+<!-- .mov1{font-family:'微软雅黑'; font-size:36px; color:#60F; font-weight:bold; position:relative; top:0px; left:0px; cursor:pointer;}
+--></style>
+</head>
+<body>
+<!-- <embed src="http://player.youku.com/player.php/sid/XOTM3NzE0MzQ4/v.swf" type="application/x-shockwave-flash" width="480" height="400">
+ </embed>
+ 
+<embed src="http://player.youku.com/player.php/sid/XMzI2NTc4NTMy/v.swf" 
+width="480" height="400" 
+type="application/x-shockwave-flash">
+</embed><br>
+<canvas id="mycanvas" height="500" width="500" style="border:1px solid;">
+</canvas>-->
+<img id="img" src="images/EDM0428_02.jpg" style="display:block; height:auto;">
+<button id="image">点击一下</button>
+<a href="javascript:test();">点击</a>
+
+<script type="text/javascript">
+var txt="hello world";
+document.write(txt.charAt(1)+"<br>");
+document.write(txt.charCodeAt(1)+"<br>");
+document.write(String.fromCharCode(0x65,69,76,76,79)+"<br>");
+var birthday = new Date(2015,3,26);
+document.write(birthday+"<br>");
+document.write(birthday.getDate()+"<br>");
+document.write(birthday.getDay()+"<br>");
+document.write(birthday.getMonth()+"<br>");
+document.write(birthday.getFullYear()+"<br>");
+var time=new Date();
+document.write(time.getHours()+"<br>");
+document.write(time.getMinutes()+"<br>");
+document.write(time.getSeconds()+"<br>");
+document.write(time.getMilliseconds()+"<br>");
+document.write(time.getTime()+"<br>")
+document.write(time.getTimezoneOffset()+"<br>")
+document.write(time.getUTCHours()+"<br>");
+document.write(Date.parse("2015/4/27")+"<br>");
+
+time.setDate(26);
+document.write(time+"<br>");
+
+var tim=time.setDate(26);
+document.write(tim+"<br>");
+
+time.setFullYear(2014);
+document.write(time+"<br>");
+var tim1=time.setFullYear(2014);
+document.write(tim1+"<br>");
+var Month=30;
+
+if (Month < 1 || Month > 12)
+{
+Month = Number.NaN;
+}
+
+document.write(Month);
+
+</script>
+<p>&#101,&nbsp;,&#101,&#x65,&#34,&#x6211,&#161,&#913 </p>
+<button id="htmlOnClick" onclick="clickHandler()">htmlOnClick</button>
+<button id="jsOnClick">jsOnClick</button>
+<button id="addEventListener">addEventListener</button><br>
+<p class="mov1" id="mov" style="font-family:'微软雅黑'; font-size:36px; color:#60F; font-weight:bold; position:relative; top:0px; left:0px; cursor:pointer;">好好学习 天天向上</p>
+<span id="sc"></span>
+<span id="sd"></span>
+<span id="se"></span>
+<span id="sf"></span>
+<span id="sg"></span>
+<span id="sh"></span>
+<span id="si"></span>
+<span id="sj"></span>
+<script>
+function clickHandler() {
+alert("onclick attribute in html");
+}
+function clickHandler2(e) {
+alert(e.target.innerHTML);
+}
+document.getElementById("jsOnClick").onclick = clickHandler2;
+document.getElementById("addEventListener").addEventListener("click",
+clickHandler2);
+ function dianji(){
+	 if(event.button==1){
+		alert("欢迎");
+		 }
+	 }
+ document.getElementById("img").onmousedown=dianji;
+ /*function down1(){
+     var x,y;
+	 x=event.clientX;
+	 y=event.clientY;
+     document.getElementById("sc").innerHTML=x;
+	 document.getElementById("sd").innerHTML=y;
+}
+document.onmousemove=down1;*/
+ function down(){
+	 
+	 if(event.srcElement.className=="mov1"){
+		var z=true;
+		var x=event.clientX;
+		var y=event.clientY;
+		}
+
+  function move(){
+	     var X=event.clientX;
+		 var Y=event.clientY;
+		  event.srcElement.style.left=X-x+"px";
+		  event.srcElement.style.top=Y-y+"px";
+		}
+
+	document.onmousemove=move;
+	
+ }
+    document.onmousedown=down;
+
+ 
+
+</script>
+
+<!--<script src="lianxi.js"></script>-->
+
+
+<!--<script> 
+ var mov1=false;
+ var z,x,y;
+ function move(){
+	 if(event.button==mov1){
+		 z.style.left="(event.clientX-x)px";
+		 z.style.top="(event.clientY-y)px";
+		 return false;
+		 }
+	 
+	 }
+ function down(){
+	 if(event.srcElement.className=="mov1"){
+		 mov1=true;
+		 z=event.srcElement;
+		 x=event.clientX;
+		 y=event.clientY;
+		 document.onmousemove=move;
+		}else{
+			mov1=false;
+			}
+ }
+ document.onmousedown=down;
+
+ 
+</script>-->
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <style>
+      .green{
+        color: green;
+        font-weight: bold;
+        font-family: '微软雅黑';
+      }
+    </style>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+
+      var data = 123;
+
+      var MyTitle = React.createClass({
+        propTypes: {
+          title: React.PropTypes.string.isRequired,
+        },
+
+        render: function() {
+          return <h1> {this.props.title} </h1>;
+        }
+      });
+
+      ReactDOM.render(
+        <MyTitle title={data} />,
+        document.getElementById('example')
+      );
+    </script>
+    <h1 class="green">hello world</h1>
+    <h2 class="green">hello world</h2>
+    <h3 class="green">hello world</h3>
+    <h4 class="green">hello world</h4>
+    <h5 class="green">hello world</h5>
+    <h6 class="green">hello world</h6>
+  </body>
+</html>
+

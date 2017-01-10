@@ -1,0 +1,32 @@
+body{
+	width: 910px;
+	margin: 0 auto;
+}
+header,nav,footer,article,section{
+	border: 1px solid green;
+	margin-bottom: 30px;
+}
+header{
+	width: 900px;
+	height: 100px;
+}
+nav{
+	width: 200px;
+	height: 500px;
+	float: left;
+}
+article{
+	width: 670px;
+	height: 500px;
+	float: left;
+	margin-left: 30px;
+}
+section{
+	width: 900px;
+	height: 300px;
+	clear: both;
+}
+footer{
+	width: 900px;
+	height: 100px;
+}

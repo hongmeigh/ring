@@ -1,0 +1,217 @@
+*{
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+html{
+	font-size: 62.5%;
+}
+body{
+	background-color: #eeeeee;
+	width: 100%;
+	font-family: '微软雅黑';
+}
+.denglu .img{
+	width: 29%;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+.denglu .img img{
+	width: 100%;
+	height: auto;
+}
+.denglu form input[type=text],.denglu form input[type=password]{
+	display: block;
+	width: 91%;
+	height: 45px;
+	margin: 0 auto;
+	margin-top: 20px;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	padding-left: 5px;
+	font-size: 1.5rem;
+	color: #ccc;
+}
+.denglu form  .margtop{
+	margin-top: 40px !important;
+}
+.denglu form .btn{
+	display: block;
+	width: 92%;
+	height: 45px;
+	background-color: #20a6fb;
+	margin: 0 auto;
+	margin-top: 45px;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 1.7rem;
+	font-weight: bold;
+}
+.denglu .fixed{
+	position: fixed;
+	width: 40%;
+	height: 50px;
+	background-color: #474747;
+	top: 40%;
+	left: 30%;
+	border-radius: 8px;
+	color: #fff;
+	line-height: 50px;
+	text-align: center;
+	font-size: 1.5rem;
+}
+.disnone{display: none;}
+.wid-hei{width: 100%; height: 100%;}
+.course .calendar{
+	width: 100%;
+	height: 50%;
+}
+.course .calendar select{
+	height:8%;
+	margin-top: 4%;
+	border: 1px solid #bebebe;
+}
+.course .calendar .month{
+	width: 25%;
+	margin-left: 3%;
+}
+.course .calendar .timezone{
+	width: 60%;
+	margin-left: 6%;
+}
+.course .calendar .time{
+	width: 100%;
+	height: 84%;
+	margin-top: 3%;
+	overflow: hidden;
+	position: relative;
+
+}
+.course .calendar .time .contain{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+}
+.course .calendar .time .include{width: 105%; height: 100%; overflow: auto;}
+.course .calendar .time table{
+	width: 95.2%;
+	background-color: #fff;
+	table-layout: fixed;
+}
+.course .calendar .time .week div{
+	height: 30px;
+}
+.course .calendar .time .week td{border-top: none;}
+.course .calendar .time tr{
+	overflow: hidden;
+}
+.course .calendar .time td{
+	width: 14.2%;
+	border-top: 1px solid #ccc;
+	border-left: 1px dashed #ccc; 
+	vertical-align: top;
+	padding: 0;
+}
+.course .calendar .time td div{width: 100%; height: 51px; overflow: hidden; text-indent: 5px;}
+.course .calendar .time td div span{color: #20a6fb; padding-left: 5px;}
+.course .calendar .time .fontcolor{color: #aaaaaa;}
+.course .calendar .time .anglebg{
+	background: url(../images/angle.png) bottom right no-repeat;
+	background-size: 30% 30%;
+}
+.course .calendar .time .now{
+	background-color: #ffffcd;
+}
+.course .calendar .time .youxian{
+	color: #ffc61a;
+}
+.course .kecheng{
+	width: 100%;
+	height: 38%;
+	margin-top: 5%;
+	overflow: hidden;
+}
+.course .kecheng .baohan{
+	width: 105%;
+	height: 100%;
+	overflow: auto;
+}
+.course .kecheng .baohan>div{
+	width: 95.2%;
+	height: 81px;
+	background-color: #fff;
+	margin-bottom: 3%;
+}
+.course .kecheng .baohan .title{
+	width: 25%;
+	height: 100%;
+	background-color: #4db8fc;
+	text-align: center;
+	color: #fff;
+	font-size: 1.4rem;
+	float: left;
+}
+.course .kecheng .baohan .title img{width: 35%; margin-top: 20%;}
+.course .kecheng .baohan .content{
+	float: left;
+	width: 75%;
+	height: 100%;
+}
+.course .kecheng .baohan .content div{float: left;}
+.course .kecheng .baohan .content .xinxi{
+	width: 50%;
+	height: 100%;
+}
+.course .kecheng .baohan .content .xinxi p{
+	margin-left: 10%;
+	color: #494949;
+	line-height: 1.6;
+}
+.course .kecheng .baohan .content .xinxi .font1{	
+	margin-top: 10%;
+	font-size: 1.5rem;
+}
+.course .kecheng .baohan .content .xinxi .font2{
+	font-size: 1.3rem;
+}
+.course .kecheng .baohan .content .xinxi .font3{
+	font-size: 1.3rem;
+	color: #20a6fb;
+}
+.course .kecheng .baohan .content .xinxi p span{
+	color: #808080;
+	font-size: 1.3rem;
+}
+.course .kecheng .baohan .content .tiaoke{
+	width: 27%;
+	height: 30%;
+	border:1px solid #4db8fc;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 2;
+	font-size: 1.4rem;
+	color: #4db8fc;
+	margin: 5% 0 0 17%;
+}
+.course .fixbottom{
+	width: 100%;
+	height: 10%;
+	position: fixed;
+	background-color: #fff;
+	bottom: 0;
+	left: 0;
+	border-top: 1px solid #dadada;
+}
+.course .fixbottom div{
+	width: 20%;
+	height: 100%;
+	float: left;
+	text-align: center;
+}
+.course .fixbottom div img{
+	width: 55%;
+	margin-top: 6%;
+}

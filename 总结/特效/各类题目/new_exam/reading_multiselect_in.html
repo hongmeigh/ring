@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>小站教育</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta name="renderer" content="webkit">
+  <link rel="stylesheet" href="css/style.min.css" />
+  <script src="scripts/lib.min.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/dragFill.js"></script>
+  <script src="scripts/analytical_srollbar.min.js"></script>
+  <script src="scripts/test.js"></script>
+  <script src="scripts/swfobject.js"></script>
+  <script type="text/javascript">
+    var TestConst = TestConst || {};
+    TestConst.volume = 0.5;
+    //控制音量
+    var flashvars = {
+      'soundUrl': "",
+      'volume': TestConst.volume
+    }
+    swfobject.embedSWF("video/ExamMediaPlayer.swf", "listener_swf", "100", "25", "15.0.0", "", flashvars, {
+      quality: "high",
+      allowScriptAccess: "always",
+      menu: "false",
+      wmode: "Transparent"
+    });
+    //重播音频
+    var flvars = {
+      "soundUrl": "video/yichengwangshi.mp3",
+      'volume': TestConst.volume
+    };
+    swfobject.embedSWF("video/MediaPlayer.swf", "listenerContent_swf", "320px", "24px", "15.0.0", "", flvars, {
+      quality: "high",
+      allowScriptAccess: "always",
+      menu: "false",
+      wmode: "Transparent"
+    });
+  </script>
+  <script>
+    var isEditAble = false;
+    $(function() {
+      var answerArr = ['B', 'A', 'C'];
+      initQues63(answerArr);
+    })
+  </script>
+</head>
+<body class="grey-bg-color multiselect">
+  <div id="topbg">
+    <div class="posi">
+      <a class="logo" href="#"></a>
+      <div class="title">Part3: TPO34 - Reading</div>
+      <div class="save">退出</div>
+    </div>
+  </div>
+
+  <div class="common-style-cont listen-rank-content resultset-container-ownlin">
+    <div class="resultset-content">
+      <div class="title-content">
+        <div class="title">Quertion 5 of 14</div>
+      </div>
+      <div class="writing-wrap-content">
+        <p class="reading-p">It is universally acknowledged that the more time people spend on study, the more they can obtain from the study, because they firmly believe that long time enable people to acquire more information. However, I am convinced that in order to guarantee
+          the effectiveness of education, taking courses as long as 11 months is not an ideal choice and my reasons can be articulated as following.</p>
+        <div class="drag-in-area">
+          <p class="clearfix">
+            <span class="number pull-left">1</span>
+            <input class="answer1" type="hidden" name="drag_content[]" value="">
+            <textarea name="dragTxt[]" id="ta_bg" rows="1" readonly class="sort-target pull-left answer1"></textarea>
+          </p>
+          <p class="clearfix">
+            <span class="number pull-left">2</span>
+            <input class="answer2" type="hidden" name="drag_content[]" value="">
+            <textarea name="dragTxt[]" id="ta_bg" rows="1" readonly class="sort-target pull-left answer2"></textarea>
+          </p>
+          <p class="clearfix">
+            <span class="number pull-left">3</span>
+            <input class="answer3" type="hidden" name="drag_content[]" value="">
+            <textarea name="dragTxt[]" id="ta_bg" rows="1" readonly class="sort-target pull-left answer3"></textarea>
+          </p>
+        </div>
+        <div class="content-select clearfix">
+          <div class="pull-left">
+            <p class="hg-drag">
+              <i>A.</i>Arts councils were established in all 50 states of the country.
+            </p>
+            <p class="hg-drag">
+              <i>B.</i>The federal budgest supporting the arts was reduced by half.
+            </p>
+            <p class="hg-drag">
+              <i>C.</i>The Federal Art Project helped reduce unemployment.
+            </p>
+
+          </div>
+          <div class="pull-left">
+            <p class="hg-drag">
+              <i>D.</i>The National Endoement for the Arts was established.
+            </p>
+            <p class="hg-drag">
+              <i>E.</i>The federal budgest supporting the arts was reduced by half.
+            </p>
+            <p class="hg-drag">
+              <i>F.</i>The Federal Art Project helped reduce unemployment.
+            </p>
+          </div>
+        </div>
+        <div class="answer">
+          <div class="choose">
+            <div class="choose_d"><span class="tit">你的回答:</span><span class="choice yes">ABC</span><span class="choice yes">DF</span><img src="images/right-icon.png" /></div>
+            <div class="choose_d"><span class="tit">正确回答:</span><span class="choice">ABC</span><span class="choice">DF</span></div>
+          </div>
+          <div class="explain">
+            <p>老师批改：</p>
+            <p class="exp_p">有语法错误，在第X行第X句，应该注意元音发音和连读。有语法错误，在第X行第X句，应该注意元音发音和连读。有语法错误，在第X行第X句，应该注意元音发音和连读。</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--replay-->
+  <div class="replay-show">
+    <div class="listening_play">
+      <div id="listenerContent_swf"></div>
+    </div>
+  </div>
+  <!--/replay-->
+  <div id="footer">
+    <div class="posi">
+      <div class="keynote unselectable"><span class="icon"><input type="checkbox" value="0" id="choice_keynote" autocomplete="off" /></span><label for="choice_keynote">请老师讲解重点</label></div>
+      <div class="pages">
+        <button class="pre unselectable"><img src="images/pre.png"/></button>
+        <span class="nums unselectable">1/26</span>
+        <button class="next unselectable"><img src="images/next.png"/></button>
+      </div>
+      <div class="confirm"><button>完  成</button></div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $(".popup_scroll").nanoScroller({
+      alwaysVisible: true
+    });
+  </script>
+  <script type="text/javascript">
+    $(function() {
+      setInterval(function() {
+        $(".resultset-container-ownlin .writing-wrap-content .content-select .pull-left:eq(0) p").each(function() {
+          if ($(this).is(":hidden")) {
+            $(".multiselect .writing-wrap-content .content-select .pull-left:eq(1)").removeClass("padding_left_28");
+          }
+
+        });
+        $(".resultset-container-ownlin .writing-wrap-content .content-select .pull-left:eq(0) p").each(function() {
+          if ($(this).is(":visible")) {
+            $(".multiselect .writing-wrap-content .content-select .pull-left:eq(1)").addClass("padding_left_28");
+          }
+
+        });
+      }, 14)
+      $(".resultset-container-ownlin .writing-wrap-content .content-select .pull-left:eq(0) p").each(function() {
+        if ($(this).is(":visible")) {
+          $(".multiselect .writing-wrap-content .content-select .pull-left:eq(1)").addClass("padding_left_28");
+        }
+
+      });
+
+      $(".resultset-container-ownlin .writing-wrap-content .drag-mouse-down").on("click", function() {
+        $(".multiselect .writing-wrap-content .content-select .pull-left:eq(1)").addClass("padding_left_28");
+      })
+    })
+  </script>
+</body>
+</html>

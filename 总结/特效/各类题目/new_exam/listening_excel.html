@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>小站教育</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta name="renderer" content="webkit">
+  <link rel="stylesheet" href="css/style.min.css" />
+  <script src="scripts/lib.min.js"></script>
+  <script src="scripts/common.js"></script>
+  <script src="scripts/dragFill.js"></script>
+  <script src="scripts/analytical_srollbar.min.js"></script>
+  <script src="scripts/test.js"></script>
+  <script SRC="scripts/swfobject.js"></script>
+  <script type="text/javascript">
+    // 获取答案
+    function getAnswer() {
+      var answers = [];
+      $('.listen-table-wrap>table>tbody>tr.listen-question-tr').each(function(idx, elm) {
+        var answer = '-'
+        var $checkedInput = $(elm).find('input:checked')
+        if ($checkedInput.length) {
+          var pos = $checkedInput.parents('td').index()
+          answer = ['A', 'B', 'C', 'D', 'E', 'F', 'G'][pos - 1]
+        }
+        answers.push(answer)
+      })
+      return answers
+    }
+
+    $(document).ready(function() {
+      //页面初始化
+      var data = ['-', 'A', 'B', 'A']; // '-' 表示没有选择
+      function initListeningExcel(data, editable) {
+        if (!editable) {
+          $("input[type=radio]").hide();
+        } else {
+          $(".listening_excel .tables table tr td span.cbox input").on("click", function() {
+            if ($(this).is(":checked")) {
+              $(this).parents("tr").find("span.cbox").removeClass("active");
+              $(this).parents("span.cbox").addClass("active");
+            }
+          })
+
+        }
+        if (data.length > 0) {
+          for (var i = 0; i < data.length; i++) {
+            if (data[i] != '-') {
+              var spanIndex = $.inArray(data[i], ['A', 'B', 'C', 'D', 'E', 'F', 'G'])
+              $(".tables tr[class!='line1']").eq(i).find("span.cbox").eq(spanIndex).addClass("active").find('input').prop('checked', true);
+            }
+          }
+        }
+      }
+      var TestConst = TestConst || {};
+      TestConst.volume = 0.5;
+
+      function thisMovie(movieName) {
+        return swfobject.getObjectById(movieName);
+      }
+      var flvars1 = {
+        "soundId": "speaking1",
+        "soundUrl": "video/yichengwangshi.mp3",
+        'volume': TestConst.volume
+      };
+      swfobject.embedSWF("video/MediaPlayer.swf", "play1_swf", "480px", "40px", "15.0.0", "", flvars1, {
+        quality: "high",
+        allowScriptAccess: "always",
+        menu: "false",
+        wmode: "Transparent"
+      });
+
+      var flvars2 = {
+        "soundId": "speaking2",
+        "soundUrl": "video/yichengwangshi.mp3",
+        'volume': TestConst.volume
+      };
+      swfobject.embedSWF("video/MediaPlayer.swf", "play2_swf", "480px", "40px", "15.0.0", "", flvars2, {
+        quality: "high",
+        allowScriptAccess: "always",
+        menu: "false",
+        wmode: "Transparent"
+      });
+
+      function stopOthers(param) {
+        if (thisMovie("play1_swf")) {
+          thisMovie("play1_swf").stopByOther(param);
+        };
+        if (thisMovie("play2_swf")) {
+          thisMovie("play2_swf").stopByOther(param);
+        }
+      }
+      //页面初始化
+      initListeningExcel(data, true);
+    });
+  </script>
+
+</head>
+<body class="grey-bg-color listen-excel">
+  <div id="topbg">
+    <div class="posi">
+      <a class="logo" href="#"></a>
+      <div class="title">Part1: TPO34 - Listening 1</div>
+      <div class="save">退出</div>
+    </div>
+  </div>
+
+  <div class="common-style-cont listening_excel">
+    <div class="title-content">
+      <div class="title">Quertion 5 of 14</div>
+      <div class="text">Talk about a book you have read that was important to you for some reason. Explain why the book was important to you. Give specific details and examples to explain your answer</div>
+    </div>
+    <div class="tables listen-table-wrap">
+      <table cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr class="line1">
+            <td width="45%" height="105" class="br2">&nbsp;</td>
+            <td width="19%">
+              <div class="name">1An animal attacks the ground instead of its enemy</div>
+            </td>
+            <td width="19%">
+              <div class="name">2An animal attacks the ground instead of its enemy</div>
+            </td>
+            <td>
+              <div class="name">3An animal attacks the ground instead of its enemy</div>
+            </td>
+          </tr>
+          <tr class="listen-question-tr">
+            <td height="92" class="br2">
+              <div class="ops"> 1 To find out his grade on the midterm exam.</div>
+            </td>
+            <td align="center"><span class="cbox"><input type="radio" name="option1" autocomplete="off"/></span></td>
+            <td align="center"><span class="cbox"><input type="radio" name="option1" autocomplete="off"/></span></td>
+            <td align="center"><span class="cbox"><input type="radio" name="option1" autocomplete="off"/></span></td>
+          </tr>
+          <tr class="listen-question-tr">
+            <td height="92" class="br2">
+              <div class="ops"> 2 To find out his grade on the midterm exam midterm exam out his grade.</div>
+            </td>
+            <td align="center"><span class="cbox"><input type="radio" name="option2" autocomplete="off"/></span></td>
+            <td align="center"><span class="cbox"><input type="radio" name="option2" autocomplete="off"/></span></td>
+            <td align="center"><span class="cbox"><input type="radio" name="option2" autocomplete="off"/></span></td>
+          </tr>
+          <tr class="listen-question-tr">
+            <td height="92" class="br2">
+              <div class="ops"> 1 To find out his grade on the midterm exam.</div>
+            </td>
+            <td align="center"><span class="cbox"><input type="radio" name="option3" autocomplete="off"/></span></td>
+            <td align="center"><span class="cbox"><input type="radio" name="option3" autocomplete="off"/></span></td>
+            <td align="center"><span class="cbox"><input type="radio" name="option3" autocomplete="off"/></span></td>
+          </tr>
+          <tr class="listen-question-tr">
+            <td height="92" class="br2">
+              <div class="ops"> 1 To find out his grade on the midterm exam.</div>
+            </td>
+            <td align="center"><span class="cbox"><input type="radio" name="option4" autocomplete="off"/></span></td>
+            <td align="center"><span class="cbox"><input type="radio" name="option4" autocomplete="off"/></span></td>
+            <td align="center"><span class="cbox"><input type="radio" name="option4" autocomplete="off"/></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="answer">
+      <div class="choose">
+        <div class="choose_d"><span class="tit">你的回答:</span><span class="choice yes">A</span><span class="choice yes">C</span><span class="choice no">D</span><img src="images/icon_yesno.png" /></div>
+        <div class="choose_d"><span class="tit">正确回答:</span><span class="choice">A</span><span class="choice">B</span><span class="choice">C</span></div>
+      </div>
+      <div class="explain">
+        <div>小站名师讲解：</div>
+        <div class="exp_p">Talk about a book you have read that was important to you for some reason. Explain why the book was important to you. Give specific details and examples to explain your answer</div>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article_title">音频材料：</div>
+      <div class="speaking_play speaking_play_yinping">
+        <div id="play1_swf">
+        </div>
+      </div>
+      <div class="article_title">音频原文：</div>
+      <p>Talk about a book you have read that was important to you for some reason. Explain why the book was important to you. Give specific details and examples to explain your answer<br>Recently, I read a book named Keep the aspidistra flying written by
+        George Orwell. The book influences me a lot because the story has something that touches my heart. The story talks about a man who wants to be a poet and who abandons many well-paying jobs to pursue his dream of being a poet. I have a similar
+        experience of quitting a very good job in order to be a writer.</p>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="posi">
+      <div class="keynote unselectable"><span class="icon"><input type="checkbox" value="0" id="choice_keynote" autocomplete="off" /></span><label for="choice_keynote">请老师讲解重点</label></div>
+      <div class="pages">
+        <button class="pre unselectable"><img src="images/pre.png"/></button>
+        <span class="nums unselectable">1/26</span>
+        <button class="next unselectable"><img src="images/next.png"/></button>
+      </div>
+      <div class="confirm"><button>完  成</button></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $(function() {
+      $(".listening_excel .tables table tr td span.cbox input").on("click", function() {
+        if ($(this).is(":checked")) {
+          $(this).parents("tr").find("span.cbox").removeClass("active");
+          $(this).parents("span.cbox").addClass("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

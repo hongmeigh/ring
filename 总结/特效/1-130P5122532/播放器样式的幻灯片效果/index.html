@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>播放器样式的幻灯片效果</title>
+<link href="css/lanrenzhijia.css" type="text/css" rel="stylesheet" />
+<script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="js/lanrenzhijia.js" type="text/javascript"></script>
+<script type="text/javascript">
+			$(function() {
+				$('#carousel').carouFredSel({
+					prev: '#prev',
+					next: '#next',
+					auto: {
+						button: '#play',
+						progress: '#timer',
+						pauseOnEvent: 'resume'
+					},
+					scroll: {
+						fx: 'fade'
+					}
+				});
+				$('#wrapper').hover(function() {
+					$('#navi').stop().animate({
+						bottom: 0
+					});
+				}, function() {
+					$('#navi').stop().animate({
+						bottom: -60
+					});
+				});
+				
+				
+			});
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+			<div id="inner">
+				<div id="carousel">
+					<img src="images/lanrenzhijia1.jpg" alt="rally1" width="600" height="400" border="0" />
+					<img src="images/lanrenzhijia2.jpg" alt="rally2" width="600" height="400" border="0" />
+					<img src="images/lanrenzhijia3.jpg" alt="rally3" width="600" height="400" border="0" />
+					<img src="images/lanrenzhijia4.jpg" alt="rally4" width="600" height="400" border="0" />
+				</div>
+				<div id="navi">
+					<div id="timer"></div>
+					<a id="prev" href="#"></a>
+					<a id="play" href="#"></a>
+					<a id="next" href="#"></a>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

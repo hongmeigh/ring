@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN"> 
+<head>
+<meta charset="UTF-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<!--title中的图片-->	
+<!--<link rel="icon" href="图片位置" type="image/x-icon"/>-->
+<script type="text/javascript" src="jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="public.js"></script>
+</head>
+
+<body>
+ <script>
+  $(document).ready(function(){
+	  alert("hello world");
+	  }
+  );
+  $(function(){
+	  alert("你好");
+	  }
+  );
+ </script>
+ <div style="display:none;">这是隐藏的部分</div>
+ <p id="b">好好学习 天天向上</p>
+ <p id="b1">好好学习 天天向上</p>
+ <p>好好学习 天天向上</p>
+ <p>好好学习 天天向上</p>
+ <p>好好学习 天天向上</p>
+ <p>好好学习 天天向上</p>
+ <p>好好学习 天天向上</p>
+ <button id="but">点击</button><br>
+<div> <span>好好学习 天天向上</span>
+ <span>好好学习 天天向上</span>
+ <span>好好学习 天天向上</span>
+ <span>好好学习 天天向上</span>
+ <span>好好学习 天天向上</span></div><br>
+ <div id="none">
+ <b>好好学习 天天向上</b>
+ <b>好好学习 天天向上</b>
+ <b>好好学习 天天向上</b>
+ <b id="c">明<span>月</span></b>
+ <b>好好学习 天天向上</b>
+ <b>好好学习 天天向上</b>
+ </div>
+ <ul>
+   <p>好好学习</p>
+   <li><span>好好</span><span>学习</span></li>
+   <li> 
+     <ul>
+      <p>好好学习</p>
+      <li id="tex">你好:<span>好好</span><span>学习</span></li>
+      <li>好好学习</li>
+      <li>好好学习</li>
+     </ul>
+    </li>
+   <li>好好学习</li>
+ </ul>
+ <input id="pingguo" type="checkbox" value="苹果" name="苹果" checked><label for="pingguo">苹果</label>
+ <input id="putao" type="checkbox" value="葡萄" name="葡萄" checked><label for="putao">葡萄</label>
+ <input id="xiangjiao" type="checkbox" value="香蕉" name="香蕉"><label for="xiangjiao">香蕉</label>
+ <input id="juzi" type="checkbox" value="橘子" name="橘子"><label for="juzi">橘子<label><br>
+ <p id="box">有2个被选中</p>
+ <select multiple>
+   <option>北京</option>
+   <option>上海</option>
+   <option>广州</option>
+   <option>深圳</option>
+ </select><br>
+ <p id="sec">你选中的内容是：</p>
+ 姓名：<input id="txt1" type="text" value="请输入你的姓名"><br>
+ 电话：<input id="txt2" type="text" value="请输入你的电话"><br>
+ <p class="mov1" id="mov" style="font-family:'微软雅黑'; font-size:36px; color:#60F; font-weight:bold; position:relative; top:0px; left:0px; cursor:pointer; width:300px;">好好学习 天天向上</p>
+  <script>
+  $("span").parent().css("background","white");
+  $("#none").hide(8000);
+ <!--获得焦点与失去焦点的转换strat-->
+ $("input[type='text']").focus(function(){
+	 var x=$(this).val();
+	 if(x=="请输入你的姓名"){
+		 $(this).val("");
+		 }
+	 else if(x=="请输入你的电话"){
+		 $(this).val("");
+		 }
+	 })
+  $("#txt1").blur(function(){
+	 var x=$("#txt1").val();
+	 if(x==""){
+		 $("#txt1").val("请输入你的姓名");
+		 }
+	 })
+    $("#txt2").blur(function(){
+	 var x=$("#txt2").val();
+	 if(x==""){
+		 $("#txt2").val("请输入你的电话");
+		 }
+	 })
+  <!--end-->
+ var x=$("#tex").text();
+  document.write(x);
+  $("p").wrap("<div style='background-color:#fff'></div>")
+  <!--输出多选框选中的个数strat-->
+  $("input").click(function(){
+	 var x=$("input:checked").length;
+	 document.getElementById("box").innerHTML="有"+x+"个被选中";
+	  })
+  <!--end-->
+  <!--输出下拉列表中选中的选项strat-->
+    $("option").click(function(){
+	 var x=new Array();
+	 var x=$("select :checked").text();
+	 var i=x.length;
+	 for(;i<8;i++){
+		 x=x+" ";
+		 }
+	 document.getElementById("sec").innerHTML="你选中的内容是："+x[0]+x[1]+" "+x[2]+x[3]+" "+x[4]+x[5]+" "+x[6]+x[7];
+	  })
+   <!--end-->
+  $("ul :only-child").css("font-weight","bold")
+                     .css("font-family","微软雅黑")
+					 .css("color","pink");
+  $("div:hidden").show(10000);
+  $(":focus").css("background","red")
+  $("#but").click(function(){
+	  $("p:even").css("color","blue")
+	        .css("font-size","36px")
+	  $("p:odd").css("color","yellow")
+	        .css("font-size","36px")
+	  $("span").siblings("span").css("font-family","微软雅黑")
+	                        .css("color","green")
+		                    .css("font-size","36px");
+		 
+	  })
+/*  document.getElementsByTagName("p")[3].innerHTML="明月几时有 把酒问青天";
+  function a(){
+  var x=document.getElementsByTagName("p")[6];
+  x.innerHTML="明月几时有 把酒问青天";
+  var y=document.getElementById("b");
+  y.innerHTML="明月几时有 把酒问青天";
+  }
+*/ </script>
+ <script>
+<!--移动鼠标让字随鼠标一起移动start-->  
+  $("#mov").mousedown(down=function(){ 
+	  var x=event.pageX;
+	  var y=event.pageY;
+	  var z=event.which;
+	  var T=parseInt($("#mov").css("top"));<!--将得到的字符串转化为数字-->
+	  var L=parseInt($("#mov").css("left"));
+	  var w=true;
+	 $("#mov").mousemove(move=function(){
+		  if(z==1&&w==true){
+			  var X=event.pageX;
+			  var Y=event.pageY;
+			  $("#mov").css("left",X-x+L);<!--此处可以加px也可不加，css会自动将数值转化-->
+			  $("#mov").css("top",Y-y+T);
+		  }
+	 })
+		
+	 $("#mov").mouseup(function(){
+	  w=false;
+	  return w;
+	  })
+  })
+  <!--end-->
+  $("#b").click(function(){
+	  alert(event.pageX+" "+event.pageY)
+	  });
+  $("#b1").mousedown(function(){
+	  alert("加油")
+	  });
+  $("#b1").trigger("mousedown")
+  var b=[2,1];
+  var a=new Array(b);
+  document.write(parseInt(" a3a")+"<br>");
+  document.write(+"3t"+"<br>");
+  var c=1;
+  document.write(c++); 
+ </script>
+</body>
+</html>

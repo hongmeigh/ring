@@ -1,0 +1,38 @@
+body,html{
+	border:0;
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	}
+.swiper-container{
+	width: 100%;
+	height: 100%;
+}
+.font1{background-color: red;}
+.font2{background-color: green;}
+.font3{background-color: yellow;}
+.font4{background-color: blue;}
+.font5{background-color: pink;}
+.font6{background-color: orange;}
+.font7{background-color: Lime;}
+.font{ font-size:30px; font-weight:bold; position:absolute;}
+.swiper-pagination{
+	width:200px;
+	height:200px;
+	position:fixed;
+	top:20px;
+	left:20px;
+	}
+.swiper-pagination span{
+	display:block;
+	width:20px;
+	height:20px;
+	background-color:#fff;
+	margin-top:20px;
+	}
+.swiper-pagination-bullet-active{
+	background-color:blue !important;
+	
+	}
+.swiper-slide { position:relative}

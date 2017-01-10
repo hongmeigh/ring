@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>FirstRaphael</title>
+    <script src="JS/raphael-min.js"></script>
+    <!--<script src="JS/our_script.js"></script>-->
+    <!--<script src="JS/demoMap_script.js"></script>-->
+    <script src="JS/Raphael_PaintMap.js"></script>
+    <style type="text/css">
+        #Raphael_container {
+            width: 1000px;
+            height: 1000px;
+            border: 1px solid #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div id="Raphael_container" style="display:block">
+        <!--<input type="text" value="from" id="lineFrom" />
+        <input type="text" value="End" id="lineEnd" />-->
+    </div>
+    <script type="text/javascript">
+        var strJson = "[{name:'乔布斯',grade:'0',children:[{name:'奥巴马',grade:'1',children:[{name:'米歇尔',grade:'2',children:[{name:'玛丽亚',grade:'3',children:[{name:'沙皮狗',grade:'4'}]}]},{name:'普京',grade:'2',children:[{name:'玛丽亚',grade:'3'},{name:'娜塔莎',grade:'3'}]}]},{name:'比尔盖茨',grade:'1'}]}]";
+        Raphael_PaintMap("Raphael_container", strJson);
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+	<script src="jquery/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+	<canvas id="ccc" style="background-color:#3FF;" width="1000" height="1000" id="demo"></canvas>
+	<script>
+		var canvas=$("#ccc")[0];
+		var c=canvas.getContext("2d");
+		c.beginPath();
+		c.moveTo(100,100);
+		c.lineTo(200,200);
+		c.lineTo(200,100);
+		c.fillStyle="green";
+		c.strokeStyle="red";
+		c.lineWidth=6;
+		c.lineJoin="bevel";
+		c.fill();
+		c.stroke();		
+		c.beginPath();
+		c.moveTo(200,100);
+		c.lineTo(100,100);
+		c.strokeStyle="pink";
+		c.lineWidth=10;
+		c.stroke();	
+		c.translate(300,300);
+		c.save();//保存状态		
+		c.beginPath();
+		c.moveTo(100,100);
+		c.arc(100,100,50,0,3.14,false);
+		c.fillStyle="green";
+		c.strokeStyle="red";
+		c.lineWidth=3;
+		c.fill();
+		c.stroke();
+		c.beginPath();
+		c.moveTo(100,100);
+		c.arc(100,100,50,3.14,5,false);
+		c.fillStyle="orange";
+		c.strokeStyle="red";
+		c.lineWidth=3;
+		c.fill();
+		c.stroke();
+		c.beginPath();
+		c.moveTo(100,100);
+		c.arc(100,100,50,5,6.283,false);
+		c.lineTo(100,100);
+		c.fillStyle="pink";
+		c.strokeStyle="red";
+
+		c.lineWidth=3;
+		c.fill();
+		c.stroke();
+		c.setTransform(1,0,0,1,0,0);
+		c.beginPath();
+		c.moveTo(500,100);
+		c.arcTo(600,100,600,200,50);
+		c.arcTo(600,300,500,300,50);
+		c.arcTo(400,300,400,200,50);
+		c.arcTo(400,100,500,100,50);
+		c.lineTo(500,100);
+
+		var bg=c.createLinearGradient(500,100,600,300);
+			bg.addColorStop(0.0,"green");
+			bg.addColorStop(1.0,"yellow");
+		
+		c.restore();//释放了保存的状态
+
+		var bgc=c.createRadialGradient(200,400,10,200,400,150);
+			bgc.addColorStop(0.0,"#C09");
+			bgc.addColorStop(0.5,"yellow");
+			bgc.addColorStop(1.0,"#0F3");
+
+		c.moveTo(200,300);
+		c.bezierCurveTo(300,100,500,500,600,300);
+		c.moveTo(0,400);
+		c.quadraticCurveTo(200,600,400,400);
+		c.rect(500,400,100,100);
+		c.setTransform(1,0,0,1,0,0);
+		c.fillStyle=bg;
+		c.strokeStyle="red";
+		c.fill();
+		c.lineWidth=3;
+		c.stroke();
+		c.fillStyle=bgc;
+		c.strokeStyle="blue";
+		c.fillRect(100,300,200,200);
+		c.strokeRect(100,500,100,100);
+
+		c.lineWidth=10;
+		c.strokeStyle="pink";
+		c.lineCap="round";
+		c.beginPath();
+		c.moveTo(0,10);
+		c.lineTo(200,10);
+		c.stroke();
+
+
+
+	</script>
+	
+</body>
+</html>

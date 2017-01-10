@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jquery/jquery-1.11.2.min.js"></script>
+	</head>
+	<body>
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1000" height="1000">
+			<defs>
+   				 <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+     			 <stop offset="0%" style="stop-color:#fff;stop-opacity:1" />
+	 			 <stop offset="50%" style="stop-color:pink ;stop-opacity:1" />	
+     			 <stop offset="100%" style="stop-color:#fff;stop-opacity:1" />
+   			 	 </linearGradient>
+  			</defs>
+  			<defs>
+   				 <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+     			 <stop offset="0%" style="stop-color:#fff; stop-opacity:1" />
+     			 <stop offset="100%" style="stop-color:pink; stop-opacity:1" />
+   			 	 </linearGradient>
+  			</defs>
+  			<path d="M500 500 C600 700 400 700 500 500"  stroke="none" fill="url(#grad2)">
+  				<animateTransform attributeType="xml" repeatCount="indefinite" attributeName="transform" type="rotate"  from="0 500 500" to="360 500 500"
+	    begin="0" dur="5s"/>
+  			</path>
+  			<path d="M500 500 C600 300 400 300 500 500"  stroke="none" fill="url(#grad2)">
+			    <animateTransform attributeType="xml" repeatCount="indefinite" attributeName="transform" type="rotate"  from="0 500 500" to="360 500 500"
+	    begin="0" dur="5s"/>
+  			</path>
+  			<path d="M500 500 C300 600 300 400 500 500"  stroke="none" fill="url(#grad2)">
+			    <animateTransform attributeType="xml" repeatCount="indefinite" attributeName="transform" type="rotate"  from="0 500 500" to="360 500 500"
+	    begin="0" dur="5s"/>
+  			</path>
+  			<path d="M500 500 C700 600 700 400 500 500"  stroke="none" fill="url(#grad2)">
+			    <animateTransform attributeType="xml" repeatCount="indefinite" attributeName="transform" type="rotate"  from="0 500 500" to="360 500 500"
+	    begin="0" dur="5s"/>
+  			</path>
+		</svg>
+		<script type="text/javascript">
+			
+		</script>
+	</body>
+</html>

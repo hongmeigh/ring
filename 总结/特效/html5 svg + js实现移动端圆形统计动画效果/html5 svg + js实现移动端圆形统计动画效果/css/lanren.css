@@ -1,0 +1,6 @@
+*{margin:0}
+.wrap{width:100%;max-width:720px;margin:0 auto}
+.wrap .col4{width:33%;float:left;box-sizing:border-box}
+.wrap svg{width:33%;float:left}
+.clearfix:after{content:"";clear:both;display:block;overflow:none;height:0}
+.clearfix{zoom:1}

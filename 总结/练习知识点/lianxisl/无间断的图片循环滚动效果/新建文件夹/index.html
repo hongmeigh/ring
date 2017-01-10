@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+*{ padding:0; margin:0; list-style:none; border:0;}
+body{ background:#000;}
+.all{ width:220px; height:89px; margin:100px auto; overflow:hidden; position:relative; border:1px solid red;}
+.all ul{ width:10000px; position:absolute;}
+.all ul li{ float:left; cursor:pointer;}
+</style>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+$(function(){	
+	var num=0;
+	var timer=null;
+	
+	timer=setInterval(fn,30)
+	
+	function fn(){	
+		num-=1
+		if(num<-440){num=0}
+		$('.all ul').css('left',num)
+	}
+
+	
+	$('.all ul li').mouseover(function(e) {
+        $(this).siblings().fadeTo(500,0.3);
+		clearInterval(timer)
+    }).mouseout(function(e) {
+        $('.all ul li').fadeTo(500,1);
+		clearInterval(timer)
+		timer=setInterval(fn,30)
+    });
+	
+})
+</script>
+</head>
+
+<body>
+<div class="all">
+	<ul>
+		<li><img src="images/img02/1.jpg" width="110" height="89" /></li>
+		<li><img src="images/img02/2.jpg" width="110" height="89" /></li>
+		<li><img src="images/img02/3.jpg" width="110" height="89" /></li>
+		<li><img src="images/img02/4.jpg" width="110" height="89" /></li>
+		<li><img src="images/img02/1.jpg" width="110" height="89" /></li>
+		<li><img src="images/img02/2.jpg" width="110" height="89" /></li>
+	</ul>
+</div>
+</body>
+</html>

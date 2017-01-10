@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5练习</title>
+	<script src="js/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+	<div id="shuc"></div>
+    <div id="count1"></div>
+    <div id="count2"></div>
+    <input type="text" style="width:100px; height:35px;">
+    <button style="width:50px; height:25px;">点击</button>
+    <script>
+		var worker=new Worker("js/worker.js");
+		worker.postMessage("hello");
+		worker.onmessage=function(e){
+			console.log(e);
+			$("#shuc").html(e.data)
+			console.log(e.data);
+			}
+		var workerc=new Worker("js/workerc.js");
+		$("button").click(function(){
+			var value=$("input").val();
+			workerc.postMessage(value)
+			workerc.onmessage=function(e){
+				$("#count1").html(e.data);
+				}
+			var add=0;
+			for(var j=0; j<parseInt(value); j++){
+				add=add+1;
+				}
+			$("#count2").html(add);
+			})
+			
+    </script>
+</body>
+</html>

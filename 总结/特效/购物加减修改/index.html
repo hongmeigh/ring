@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery微信支付代码</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/wxzf.css">
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	//出现浮动层
+	var self;
+	$(".value_btn").click(function(){
+			var htm=$(this).parents(".wrap").find(".add");
+			self=$(this);
+			console.log(self)
+			if(parseInt(htm.attr("value"))-parseFloat(htm.attr("value"))!=0){
+				$(".numb_box .dian").html('<a href="javascript:void(0);">.</a>')
+				}
+			else{
+				$(".numb_box .dian").html('<span></span>')
+				}
+			$(".numb_box").slideDown(500);
+			
+		
+		});
+	//输入数字
+	$(".nub_ggg").on("click","li a",function(){
+		var strnum=self.text();
+		if(strnum==""&&$(this).text()=="."){
+			strnum="0"
+			}
+		if(strnum=="0"&&$(this).text()!="."){
+			strnum=""
+			}
+		if(strnum.indexOf(".")!=-1&&$(this).text()=="."){
+			return;
+			}
+		if(strnum.indexOf(".")!=-1&&$(this).text()!="."){
+			if(strnum.length-1-strnum.indexOf(".")>=2){
+				return;
+				}
+			}
+		self.html(strnum+$(this).text())
+	})
+	//删除数字
+	$(".nub_ggg li .del").click(function(){
+		self.html(self.text().slice(0,self.text().length-1))
+		if(self.html()==""){
+			self.html("0");
+			}			 
+	});
+	//隐藏输入数字框
+	$(".xiaq_tb").click(function(){
+		$(".numb_box").slideUp(500);
+	});
+	//加减按钮进行加减
+	$(".btn").click(function(){
+		var wrapvalue=$(this).parents(".wrap").find(".value_btn");
+		if($(this).hasClass("add")){
+			var val=Number((parseFloat(wrapvalue.html())+parseFloat($(this).attr("value"))).toFixed(2))
+			wrapvalue.html(val)
+			}
+		if($(this).hasClass("reduce")){
+			var val=Number((parseFloat(wrapvalue.html())-parseFloat($(this).attr("value"))).toFixed(2))
+			wrapvalue.html(val)
+			}
+		})
+		//----		
+	 
+});
+</script>
+</head>
+<body>
+
+<div class="wrap"><button value="2.1" class="btn add">+</button><div data-tank="true" class="value_btn">0</div><button value="2.1" class="btn reduce">-</button></div>
+<div class="wrap"><button value="1" class="btn add">+</button><div data-tank="true" class="value_btn">0</div><button value="1" class="btn reduce">-</button></div>
+<div class="wrap"><button value="1.1" class="btn add">+</button><div data-tank="true" class="value_btn">0</div><button value="1.1" class="btn reduce">-</button></div>
+
+  <div class="numb_box">
+    <div class="xiaq_tb"> <img src="images/jftc_14.jpg" height="10"> </div>
+    <ul class="nub_ggg">
+      <li><a href="javascript:void(0);">1</a></li>
+      <li><a href="javascript:void(0);" class="zj_x">2</a></li>
+      <li><a href="javascript:void(0);">3</a></li>
+      <li><a href="javascript:void(0);">4</a></li>
+      <li><a href="javascript:void(0);" class="zj_x">5</a></li>
+      <li><a href="javascript:void(0);">6</a></li>
+      <li><a href="javascript:void(0);">7</a></li>
+      <li><a href="javascript:void(0);" class="zj_x">8</a></li>
+      <li><a href="javascript:void(0);">9</a></li>
+      <li class="dian"><span></span></li>
+      <li><a href="javascript:void(0);" class="zj_x">0</a></li>
+      <li><span  class="del" > <img src="images/jftc_18.jpg"   ></span></li>
+    </ul>
+  </div>
+ 
+</body>
+</html>

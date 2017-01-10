@@ -1,0 +1,104 @@
+<!DOCTYPE html >
+<!-- saved from url=(0053)http://php.study.com/CodeIgniter/index.php/demo/snow/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width,hight=device-hight,minimum-scale=1.0,maximum-scale=1.0,ser-scalable=none">
+<title>逼真的下雪效果</title>
+<link type="text/css" rel="stylesheet" href="">
+
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-image:url('images/snow_bk.jpg');
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-color:#222;
+	position: relative;
+	width:100%;
+}
+#code{
+	width:40%;
+	min-width:450px;
+	height:450px;
+	background-color:rgba(0, 0, 0, 0.3);
+	position:fixed;
+	left:30%;
+	top:20%;
+	border-radius: 10px;
+	font-size:16px;
+	line-height:22px;
+	font-weitht:bold;
+}
+#author{
+	position: fixed;
+	bottom: 10px;
+	left: 48%;
+}
+#author a{
+	text-decoration: none;}
+.key{
+	color:orange;
+	font-family:'';
+}
+.comment{
+	color:#e6e6e6;
+	font-weight: 800;
+}
+</style>
+
+<style type="text/css"></style></head>
+
+<body>
+ <div id="code">
+ <pre style="padding: 10px 15%;"> 	<code>
+ <span class="key">$.snowFall({</span>
+	<span class="comment">//创建粒子数量，密度</span>
+	<span class="key">particleNo: 100,</span>
+	<span class="comment">//粒子下拉速度</span>
+	<span class="key">particleSpeed:15,</span>
+	<span class="comment">//粒子在垂直（Y轴）方向运动范围</span>
+	<span class="key">particleY_Range:1300,</span>
+	<span class="comment">//粒子在垂直（X轴）方向运动范围</span>
+	<span class="key">particleX_Range:1000,</span>
+	<span class="comment">//是否绑定鼠标事件</span>
+	<span class="key">bindMouse: false,</span>
+	<span class="comment">//相机离Z轴原点距离</span>
+   	<span class="key">zIndex:600,</span>
+ 	<span class="comment">//摄像机视野角度</span>
+   	<span class="key">angle:55,</span>
+   	<span class="comment">//风力，正值向右，负值向左，0表示无风</span>
+	<span class="key">wind_weight:0</span>
+<span class="key">});</span>
+ 	</code>
+ </pre>
+ </div>
+<script type="text/javascript" src="./js/ThreeCanvas.js"></script>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="./js/Snow.js"></script>
+<script type="text/javascript" src="./js/snowFall.js"></script>
+<script>
+	$.snowFall({
+		//创建粒子数量，密度
+		particleNo: 500,
+		//粒子下拉速度
+		particleSpeed:30,
+		//粒子在垂直（Y轴）方向运动范围
+		particleY_Range:1300,
+		//粒子在垂直（X轴）方向运动范围
+		particleX_Range:1000,
+		//是否绑定鼠标事件
+	    bindMouse: false,
+	    //相机离Z轴原点距离
+	    zIndex:600,
+	  //摄像机视野角度
+	    angle:55,
+	    wind_weight:0
+		});
+</script>
+<canvas></canvas>
+
+</html>

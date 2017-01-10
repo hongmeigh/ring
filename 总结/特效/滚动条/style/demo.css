@@ -1,0 +1,134 @@
+/*
+ * CSS Styles that are used on the jScrollPane demo site - these are custom to the site and
+ * you shouldn't need to use them in your own implementations of jScrollPane.
+ */
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body
+{
+	background: #333;
+}
+
+body
+{
+	font-size: 14px;
+	font-family: Arial;
+}
+
+#container
+{
+	width: 760px;
+	background: #efefef;
+	padding: 20px;
+	margin: 20px auto;
+
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#container h1
+{
+	font-size: 14px;
+	color: #fff;
+	background: #aaa;
+	margin: 0 0 1em;
+	padding:4px 8px 5px;
+
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+background: rgb(125,126,125); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(125,126,125,1) 0%, rgba(96,96,96,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(125,126,125,1)), color-stop(100%,rgba(96,96,96,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(96,96,96,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(96,96,96,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(96,96,96,1) 100%); /* IE10+ */
+background: linear-gradient(top, rgba(125,126,125,1) 0%,rgba(96,96,96,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#606060',GradientType=0 ); /* IE6-9 */	
+}
+
+#container h2
+{
+	clear: left;
+	font-size: 100%;
+	color: #fff;
+	background: #ccc;
+	margin: 1em 0;
+	padding:4px 8px 5px;
+
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	
+background: rgb(193,193,193); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(193,193,193,1) 0%, rgba(132,132,132,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(193,193,193,1)), color-stop(100%,rgba(132,132,132,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(193,193,193,1) 0%,rgba(132,132,132,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(193,193,193,1) 0%,rgba(132,132,132,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(193,193,193,1) 0%,rgba(132,132,132,1) 100%); /* IE10+ */
+background: linear-gradient(top, rgba(193,193,193,1) 0%,rgba(132,132,132,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c1c1c1', endColorstr='#848484',GradientType=0 ); /* IE6-9 */	
+}
+
+h2 span.setting-type
+{
+	font-weight: normal;
+}
+
+p
+{
+	font-size: 93%;
+	margin: 0 0 1em 0;
+}
+
+p.intro
+{
+	font-size: 116%;
+	padding: 10px;
+	background: #fff;
+
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+
+}
+
+a
+{
+	color: #7171D4;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #f60;
+}
+
+ul
+{
+	padding: 0 0 0 1em;
+}
+
+ul li
+{
+	margin: 0 0 .5em;
+}
+
+ul.link-list li
+{
+	margin: 0;
+}
+
+ul p
+{
+	margin: 0;
+}
+
+

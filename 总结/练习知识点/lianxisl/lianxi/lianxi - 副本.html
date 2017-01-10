@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+    <link rel="icon" href="images/ffbb.ico">
+  <script src="jquery/jquery-1.11.2.min.js"></script>
+</head>
+<body  style="width:1300px;">
+	<div class="wrap"><input type="text" style="width:150px; height:35px; border:1px solid #000"></div>
+    <script>
+		$(".wrap").mouseover(function(){
+			$(this).children().attr("disabled",true)
+			}).mouseout(function(){
+				$(this).children().removeAttr("disabled");
+				})
+    </script>
+</body>
+</html>

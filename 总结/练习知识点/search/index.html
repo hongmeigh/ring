@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <title>Document</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+     <script src="jquery-1.11.2.min.js"></script>
+ </head>
+ <body>
+     <form id="myform" action="" onsubmit="return false;">
+     	<input id="myinput" type="search">
+     </form>
+	<script>
+ //这两种都能用, 一个是在form上加id 一个是在input元素加id
+ //对于苹果手机添加一个form元素是必要的,否则只能实现功能但是键盘的文字不能变成搜索字样
+ //  $('#myform').bind('search', function () {
+ //      //coding
+ //      alert(1);
+ //  });
+     $('#myinput').on('search',function(){
+         //coding
+         alert(1);
+     });
+ </script>
+</body>
+</html>

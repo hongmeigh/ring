@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var Hello = React.createClass({
+        getInitialState: function () {
+          return {
+            fontsize: 15,
+            marginleft:0,
+            margintop:0
+          };
+        },
+
+        componentDidMount: function () {
+          var fontcs=true;
+          this.timer = setInterval(function () {
+            var fontsize = this.state.fontsize;
+            var marginleft = this.state.marginleft;
+            var margintop = this.state.margintop;
+            if (fontsize < 106&&fontcs) {
+              fontsize += 1;
+              marginleft+=3;
+              margintop+=3;
+              if(fontsize==105){
+                 fontcs=false;
+                 clearInterval(this.timer);
+              }
+            }
+            if(fontsize>=15&&!fontcs){
+              fontsize -= 1;
+              marginleft-=3;
+              margintop-=3;
+              if(fontsize==15){
+                 fontcs=true;
+              }
+            }
+            this.setState({
+              fontsize: fontsize,
+              marginleft:marginleft,
+              margintop:margintop
+            });
+          }.bind(this), 20);
+        },
+
+        render: function () {
+          return (
+            <div style={{fontSize: this.state.fontsize+"px",fontWeight:"bold",fontFamily:'微软雅黑',marginTop:this.state.margintop+"px",marginLeft:this.state.marginleft+"px"}}>
+              Hello {this.props.name}
+            </div>
+          );
+        }
+      });
+
+      ReactDOM.render(
+        <Hello name="world"/>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

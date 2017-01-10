@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* 代码整理：懒人之家 www.lanrenzhijia.com */
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: Arial, Geneva, SunSans-Regular, sans-serif;
+	font-size: 14px;
+	color: #333;
+	line-height: 22px;
+}
+#wrapper {
+	border: 1px solid #ccc;
+	background-color: #fff;
+	width: 600px;
+	height: 400px;
+	padding: 20px;
+	margin: -220px 0 0 -320px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	box-shadow: 0 5px 10px #ccc;
+}
+#inner {
+	position: relative;
+	width: 600px;
+	height: 400px;
+	overflow: hidden;
+}
+#carousel img {
+	display: block;
+	float: left;
+}
+#navi {
+	background-color: #333;
+	background-color: rgba(30, 30, 30, 0.8);
+	border-top: 1px solid #000;
+	width: 600px;
+	height: 70px;
+	position: absolute;
+	bottom: -60px;
+	left: 0;
+	z-index: 10;
+}
+#timer {
+	background-color: #222;
+	background-color: rgba(20, 20, 20, 0.8);
+	width: 0;
+	height: 70px;
+	position: absolute;
+	z-index: 20;
+	top: 0;
+	left: 0;
+}
+#prev, #next, #play {
+	display: block;
+	position: absolute;
+	z-index: 30;
+}
+#prev, #next {
+	width: 47px;
+	height: 47px;
+	top: 13px;
+}
+#play {
+	width: 53px;
+	height: 53px;
+	top: 10px;
+	background: url(../images/ui/pause.png) 0 0 no-repeat transparent;
+	left: 50%;
+	margin-left: -27px;
+}
+#play.paused {
+	background: url(../images/ui/play.png) 0 0 no-repeat transparent;
+}
+#prev {
+	background: url(../images/ui/prev.png) 0 0 no-repeat transparent;
+	left: 220px;
+}
+#next {
+	background: url(../images/ui/next.png) 0 0 no-repeat transparent;
+	right: 220px;
+}
+#donate-spacer {
+	height: 100%;
+}
+#donate {
+	border-top: 1px solid #999;
+	width: 750px;
+	padding: 50px 75px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#donate p, #donate form {
+	margin: 0;
+	float: left;
+}
+#donate p {
+	width: 650px;
+}
+#donate form {
+	width: 100px;
+}
+/* 代码整理：懒人之家 www.lanrenzhijia.com */

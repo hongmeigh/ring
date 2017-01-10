@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>小站教育</title>
+<meta name="keywords" content="关键词"/>
+<meta name="description" content="关键词详情"/>
+<link type="text/css" rel="stylesheet" href="css/reset.css">
+<link type="text/css" rel="stylesheet" href="css/layer.css">
+<link type="text/css" rel="stylesheet" href="css/jscal2.css">
+<link type="text/css" rel="stylesheet" href="css/gold.css">
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jscal2.js"></script>
+<script type="text/javascript" src="js/en.js"></script>
+<script type="text/javascript" src="jquery.countdown.js"></script>
+<script language="javascript">
+function check()
+{ 
+if(document.form1.xing.value==""  )
+{
+alert("用户姓名不能为空!");
+this.form1.xing.focus();
+return false;
+}
+else
+if(document.form1.shouji.value.length<11)
+{
+alert("请输入正确的手机号码!");
+this.form1.shouji.focus();
+return false;
+}
+else
+form1.submit();
+}
+
+function check2()
+{ 
+if(document.form2.name.value==""  )
+{
+alert("用户姓名不能为空!");
+this.form2.name.focus();
+return false;
+}
+else
+if(document.form2.phone.value.length<11)
+{
+alert("请输入正确的手机号码!");
+this.form2.phone.focus();
+return false;
+}
+else
+form2.submit2();
+}
+
+(function($){
+	$(function(){
+		$('div.xueyuan').each(function(){
+			var $this=$(this);
+			var $th=$('>div:first',$this);
+			var $td=$('>div:last',$this);
+			
+			$('>.xytab1',$th).mouseenter(function(){
+				var i=$(this).index();
+				$(this).siblings().addClass('xyceng').end().removeClass('xyceng');
+				$('>div:eq(' + i + ')',$td).siblings().hide().end().show();
+			});
+		});
+	});
+})(jQuery); 
+</script>
+</head>
+<body>
+
+
+<div class="header">
+	<div class="navtop">
+		<div class="logo"><a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank"><img src="images/navtop.png" alt="TPO小站，出国留学第一站" title="TPO小站，出国留学第一站" /></a></div>
+		<div class="banner"><img src="images/bg02.png" alt="137位名师联手打造10000名学员的选择"  title="137位名师联手打造10000名学员的选择" usemap="#Map" />
+          <map name="Map">
+            <area shape="circle" coords="724,410,46" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank" alt="在线咨询" title="在线咨询">
+            <area shape="circle" coords="850,410,45" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank" alt="我要测评" title="我要测评">
+            <area shape="circle" coords="972,411,48" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank" alt="立即报班" title="立即报班">
+          </map>
+		</div>
+	</div>
+</div>
+
+<div class="wrap">
+	<div class="wbox" id="youshi"><a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank"><img src="images/wangdao.jpg" alt=""></a></div>
+	
+	<div class="wbox form20">
+		<div class="form20_left">
+			<p><span>新托福真实模考，</span><br/>熟悉新托福考试具体流程和考试强度</p>
+			<p><span>新托福真实模考，</span>调整考试节奏，<br/>听、说、读、写单项点评，<span>针对性强化复习</span></p>
+			<h1>新托福在线模考，模拟真实考试环境、流程真实模考+名师点评</h1>
+		</div>
+		<div class="form20_right">
+			<form action="add_2.php" method="post" name="form2" onSubmit="return check2()">
+				<label>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" name="name" class="input20" /></label>
+				<label>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：<input type="text" name="phone" class="input20" /></label>
+				<label>
+					英语水平：
+					<select name="level" id="">
+						<option name="level" value="初高中">初高中</option>
+						<option name="level" value="大学四级">大学四级</option>
+						<option name="level" value="大学六级">大学六级</option>
+						<option name="level" value="大学六级以上">大学六级以上</option>
+					</select>
+				</label>
+				<label><input type="submit" name="submit2" value="报名" class="submit20" /></label>
+			</form>
+			<p>备注：如果您之前没有参加过托福考试，请点击在线客服按钮索取托福摸底测试卷，以便我们为您安排同等级的模考。</p>
+		</div>
+	</div>
+	<div class="xueyuan" id="gaofen">
+		<div class="xytab">
+			<div class="xytab1"><p></p><img src="images/xypeo2.jpg" alt="" /></div>
+			<div class="xytab1 xyceng"><p></p><img src="images/xypeo1.jpg" alt="" /></div> 
+			<div class="xytab1 xyceng"><p></p><img src="images/xypeo3.jpg" alt="" /></div> 
+			<div class="xytab1 xyceng"><p></p><img src="images/xypeo4.jpg" alt="" /></div> 
+			<div class="xytab1 xyceng"><p></p><img src="images/xypeo5.jpg" alt="" /></div> 
+		</div>
+		<div class="xytablist">
+			<div class="xy1">
+				<div class="xydiv"> 
+					<a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank"><img src="images/xueyuan2.jpg" alt="预约名师，定制专属课程" class="fl" /></a>
+					<div class="xyname">Charlotte<span style="font-size:18px;margin-left:20px;">基础89，课后提高111</span></div>
+					<h1>学员分享</h1>
+					<p>当因为艺术而放弃高考准备申请美国大学的时候，托福狠狠地打击了我。裸考成绩很低（不要问啦两位数都懒得说）。特别是考听力和口语时，我的临场发挥非常不好，感觉我自己的逻辑思维一塌糊涂，听力遇到长句听不懂，口语能听懂的又说不出来真的是急死我。哭了一晚上觉得这个不是自己的水平，而且甚至想要放弃自己理想的大学。但是，就是大约去年的今天，我发现了TPO小站，之后的一切都改变了。</p>
+					<p>紧接着Vivien 成为了我的私助，帮我联系老师安排课时。说实话，现在我好像说句好抱歉给Vivien—因为我在学校参与了很多Club, 学AP还要准备SAT，所以导致我上课的时间经常有变动。Vivien却能总是很及时的回复我，帮我和老师协商好！真的好感激!我也真的很感谢她，正是因为她的耐心，让我们全家都相信了TPO小站。</p>
+				</div>
+			</div>
+			<div class="xy2" style="display:none;">
+				<div class="xydiv"> 
+					<a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank"><img src="images/xueyuan1.jpg" alt="预约名师，定制专属课程" class="fl" /></a>
+					<div class="xyname">于彦昊<span style="font-size:18px;margin-left:20px;">基础42，课后提高101</span></div>
+					<h1>学员分享</h1>
+					<p>第一次知道小站也是同学告诉我的，她说主要因为寒假回老家没有太好的师资，小站是网上教学的弥补了这个一点，当时我想报名但是我妈没有让，因为她觉得考托福这么重要的事情在淘宝买课不太可靠。为了打消顾虑，小站给我安排了一次试听课，第一次上的是写作课，我依然记得是王老师上的课。第一次上课的时候王老师说我领悟东西快，好好学就一定可以考得好等等，给了我很多的鼓励，这是从来没有的，因为之前上的都是大班，从来没有老师一对一的辅导，也没有老师给我提出针对性的建议。</p>
+					<p>当然，一味的夸奖会觉得像托儿一样，不足之处也是有的，比如：有时候课程安排的时间不是特别固定，这我也理解，毕竟老师不是只给我一个学生上课，我想要的时间也可能是别人选择的时间，有时会记错上课的时间。</p>
+				</div>
+			</div>
+			<div class="xy3" style="display:none;">
+				<div class="xydiv"> 
+					<a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank"><img src="images/xueyuan3.jpg" alt="预约名师，定制专属课程" class="fl" /></a>
+					<div class="xyname">朱明<span style="font-size:18px;margin-left:20px;">基础58，2个月提高到94</span></div>
+					<h1>学员分享</h1>
+					<p>2个月托福从58分的基础考到94分，我是—名普通的高二学生，在寒假的时候找到了长沙当地的—个培训机构，之后便参加了托福考试。坑爹的我家离培训机构有一段距离，每天上课来回路上就要花费将近三个小时，更坑爹的是虽然机构很出名，但因为是大班教学，所以课程的针对性不是很强，虽然老师总能说出让我很好愉悦的段子，但是应试能力没有本质的提高。结果就是辛苦了一个寒假，结果只考了58分。我当时非常沮丧，可又无可奈何：正当我对自己的前途感到迷茫的时候，一个偶然的机会让我了解到了tpo小站这种新兴的授课模式，对我吸引力最大的就是网络教学和一对—辅导了，这样一方面可以让找省去坑爹的路上三小时，另外我觉得也可以提高课程的针对准。除了教会我很多以前不知道的托福考试技巧。尤其是在考前，口语老师Jacky和写作老师Young给我强化了机经中的重点题型，让我的成绩有了很大的提升。</p>
+				</div>
+			</div>
+			<div class="xy4" style="display:none;">
+				<div class="xydiv"> 
+					<a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank"><img src="images/xueyuan4.jpg" alt="预约名师，定制专属课程" class="fl" /></a>
+					<div class="xyname">赵秦<span style="font-size:18px;margin-left:20px;">基础91，课后提高104</span></div>
+					<h1>学员分享</h1>
+					<p>我是在搜索TPO最新套题的时候搜到Tpo小站的网站，经过了解我知道小站还有五线的一对一授课，刚知道的时候我还是很犹豫的：是否他们的授课和我搜到的资料一样针对性强？是否效果不如其他很多实体培训机构？但是我时时间很紧，任务重，不想做更多无谓时间精力的浪费，所以我还是决定试一试。结果上了才知道这种在线模式确实挺符合我的实际情况的，虽然不能看到老师本人，实际却和面对面的一对一教学真的没啥区别甚至更好。</p>
+					<p>但是那个时候我只有20多天的时间，所以选择了保100分的课程。开课前课程顾问真的裉贴心，根据我的情况她当天就给我安排了课程。我在反复思考之后还是决定再冲击一次100分，顾问马上很贴心的给我安排了课程，并且侧重听力和口语，我真的很感动，经过这次重读，我终于突破了100，并且让我很开心的是居然考到了104( L25/S24/R28/W27).</p>
+				</div>
+			</div>
+			<div class="xy5" style="display:none;">
+				<div class="xydiv"> 
+					<a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank"><img src="images/xueyuan5.jpg" alt="预约名师，定制专属课程" class="fl" /></a>
+					<div class="xyname">王宪辉<span style="font-size:18px;margin-left:20px;">人在美国，基础75，课后提高到92</span></div>
+					<h1>学员分享</h1>
+					<p>我年前的时候尝试考了一次托福，不过成绩不理想，才考了75分．妈妈很着急，和妈妈沟通之后看看国内有没有在线的托福培训课程。我们希望找的托福培训要口碑好，最好能够保分。并且我在美国，妈妈在国内，妈妈还希望上课时有人能经常和她说我的学习情况什么的，最后综合比较下来妈妈给我选择了TPO小站，报了—个保90分的课程。由于时差问题，小站的顾问老师基本都是按照我的时间要求我安排了课表。课程中各科老师也十分耐心的分析了我上次考试的分数，觉得我口语可以把目标定在22分，阅读26分，听力20分，写作25分。我觉得这种分科目清晰地规划考试目真的很有用，就听力来说老师在8节课中帮我分了阶段目标，第一步放慢语速，第二步清晰发音，第三步减少卡顿，第四部理清逻辑，第五步熟练流程，确实比我胡邹乱说要清楚的多了。开心的是最后的考了25分，听力18，阅读25，写作24，这个分数我非常满意。</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="wbox" id="xzkec">
+		<div class="kecheng">
+			<div class="kcleft4">金牌总监</div>
+			<div class="kcright">
+				<table>
+					<tr><th colspan="2">班型</th><th>适合学生</th><th>目标分数</th><th>课时</th><th>课程价</th>
+					<th>测评</th></tr>
+					<tr><td colspan="2">短期冲刺</td><td>高中生</td><td>保110分</td><td>24小时</td><td>￥12800</td><td><a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank" class="cepingbtn">我要报名</a></td></tr>
+					<tr><td colspan="2">中期强化</td><td>大学四级</td><td>保110分</td><td>48小时</td><td>￥22800</td><td><a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank" class="cepingbtn">我要报名</a></td></tr>
+					<tr><td colspan="2">至尊全景</td><td>高中生</td><td>保110分</td><td>132小时</td><td>￥45800</td><td><a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank" class="cepingbtn">我要报名</a></td></tr>
+				</table>
+			</div>
+		</div>
+		<div class="kecheng">
+			<div class="kcleft3">总监</div>
+			<div class="kcright">
+				<table>
+					<tr><th colspan="2">班型</th><th>适合学生</th><th>目标分数</th><th>课时</th><th>课程价</th><th>测评</th></tr>
+					<tr><td colspan="2">短期冲刺</td><td>大学六级</td><td>保110分</td><td>24小时</td><td>￥9800</td><td><a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank" class="cepingbtn">我要报名</a></td></tr>
+					<tr><td colspan="2">中期强化</td><td>高中生</td><td>保110分</td><td>48小时</td><td>￥17800</td><td><a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank" class="cepingbtn">我要报名</a></td></tr>
+					<tr><td colspan="2">至尊全景</td><td>高中生</td><td>保110分</td><td>132小时</td><td>￥35800</td><td><a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank" class="cepingbtn">我要报名</a></td></tr>
+				</table>
+			</div>
+		</div>
+		<div class="kcbottom"><span>请根据您的基础选报班级，建议由我们的老师为您测评后由选定最合适您的班级！</span></div>
+		<div class="kcbottom"><span>在线咨询电话：<strong>400-080-6318</strong></span></div>
+	</div>
+	
+	<div class="wbox" style="margin-top:40px;" id="jieshao"><img src="images/mingshi1.jpg" alt="" usemap="#Map6">
+      <map name="Map6">
+        <area shape="rect" coords="37,308,236,356" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">
+        <area shape="rect" coords="708,41,1003,366" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">
+      </map>
+	</div>
+	<div class="wbox"><img src="images/mingshi2.jpg" alt="" usemap="#Map7">
+      <map name="Map7">
+        <area shape="rect" coords="3,46,291,369" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">
+        <area shape="rect" coords="325,310,525,361" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">
+      </map>
+	</div>
+	<div class="wbox"><img src="images/mingshi3.jpg" alt="" usemap="#Map8">
+      <map name="Map8">
+        <area shape="rect" coords="39,314,234,361" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">
+        <area shape="rect" coords="706,49,1006,378" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">
+      </map>
+	</div>
+	<div class="wbox"><img src="images/mingshi4.jpg" alt="" usemap="#Map9">
+      <map name="Map9">
+        <area shape="rect" coords="3,44,292,368" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">
+        <area shape="rect" coords="326,311,522,360" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">
+      </map>
+	</div>
+</div>
+<div class="liucheng" id="duibi"><img src="images/butong.jpg" /></div>
+<div class="wrap">
+	<div class="wbox">
+		<div class="jwp">
+			<img src="images/shilizx.jpg" alt="">
+		</div>
+		<div class="calendar">
+			<div id="sample3"></div>
+			<script>
+			$(document).ready(function(){
+				var DISABLED_DATES = {
+					20090502: true,
+					20090505: true,
+					20090510: true,
+					20090511: true
+				};
+				Calendar.setup({
+					cont     : "sample3",
+					disabled : function(date) {
+						date = Calendar.dateToInt(date);
+						return date in DISABLED_DATES;
+					}
+				});
+			});
+				function lxfEndtime(){
+					$(".lxftime").each(function(){
+						var lxfday=$(this).attr("lxfday");//用来判断是否显示天数的变量
+						var endtime = new Date($(this).attr("endtime")).getTime();//取结束日期(毫秒值)
+						var nowtime = new Date().getTime();        //今天的日期(毫秒值)
+						var youtime = endtime-nowtime;//还有多久(毫秒值)
+						var seconds = youtime/1000;
+						var minutes = Math.floor(seconds/60);
+						var hours = Math.floor(minutes/60);
+						var days = Math.floor(hours/24);
+						var CDay= days ;
+						var CHour= hours % 24;
+						var CMinute= minutes % 60;
+						var CSecond= Math.floor(seconds%60);//"%"是取余运算，可以理解为60进一后取余数，然后只要余数。
+						if(endtime<=nowtime){
+							$(this).html("已过期")//如果结束日期小于当前日期就提示过期啦
+							}else{
+									if($(this).attr("lxfday")=="no"){
+											$(this).html("<i>距考试还剩</i><span>"+CHour+"</span>时<span>"+CMinute+"</span>分<span>"+CSecond+"</span>秒");          //输出没有天数的数据
+											}else{
+							$(this).html("<i>距考试还剩</i><span>"+days+"</span><em>天</em>");          //输出有天数的数据
+									}
+							}
+						});
+				   setTimeout("lxfEndtime()",1000);
+				};
+				$(function(){
+					  lxfEndtime();
+				});
+			</script>
+			<div class="lxftime" endtime="04/19/2014"></div>
+		</div>
+	</div>
+	
+	<div class="wbox"><img src="images/qianghua.jpg" alt="" usemap="#Map10">
+      <map name="Map10">
+        <area shape="rect" coords="6,74,328,174" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">
+        <area shape="rect" coords="342,76,666,174" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">
+        <area shape="rect" coords="681,73,1001,178" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">
+      </map>
+	</div>
+</div>
+
+<div class="ggimg"><img src="images/ggimg01.jpg" alt="每天一小时，足不出户就提分" title="每天一小时，足不出户就提分" usemap="#Map2" />
+  <map name="Map2">
+    <area shape="rect" coords="730,89,1000,132" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank" alt="更多内容点击咨询" title="更多内容点击咨询">
+  </map>
+</div>
+
+<div class="wrap">
+	<div class="wbox">
+		<div class="tsdx bgF0">
+			<div class="tsdx_title bg69">预约名师</div>
+			<div class="tsdx_block"><a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank"><img src="images/ting.jpg" alt="听" title="听"></a>
+			  <p style="padding-top:13px">一对一解决考试过程中长句听不懂，词汇量不够，逻辑思维不清晰等问题！听力名师Sandy老师倾力打造，听力内容来源于真实考试试题...<a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">[详细]</a></p>
+			</div>
+		</div>
+		<div class="tsdx bgCF mt10">
+			<div class="tsdx_title bg4E bordertop">预约名师</div>
+			<div class="tsdx_block"> <a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank"><img src="images/shuo.jpg" alt="说" title="说"></a>
+				<p>针对学生在考试中听懂了说不出来，所问非所答等问题！《Tpo小站》老师针对学生口语，进行一对一口语教学，帮助考生突破口语瓶颈...<a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">[详细]</a></p>
+			</div>
+		</div>
+		<div class="tsdx bgF0">
+			<div class="tsdx_title bg69">预约名师</div>
+			<div class="tsdx_block"> <a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank"><img src="images/du.jpg" alt="读" title="读"></a>
+				<p style="padding-top:13px">阅读是四个部分里最好拿分的部分，《Tpo小站》帮您总结得分技巧和要领，难拿分的地方保障拿分，容易拿分的地方...<a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">[详细]</a></p>
+		  </div>
+		</div>
+		<div class="tsdx bgCF mt10">
+			<div class="tsdx_title bg4E bordertop">预约名师</div>
+			<div class="tsdx_block"> <a href="http://master.53kf.com/kf.php?arg=10048324&style=2" target="_blank"><img src="images/xie.jpg" alt="写" title="写"></a>
+				<p>《Tpo小站》老师总结并分析作文经典句型、写做思路，优质高分作文写作套路指导，妙笔生花...<a href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">[详细]</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="ggimg"><img src="images/ggimg02.jpg" alt="一人通过本站报名同时报任意两门课程，享受现金9.2折或者同时报任意三门课程，享受现金8.8折" title="一人通过本站报名同时报任意两门课程，享受现金9.2折或者同时报任意三门课程，享受现金8.8折" usemap="#Map3" />
+  <map name="Map3">
+    <area shape="rect" coords="829,75,998,127" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank" alt="咨询详情" title="咨询详情">
+  </map>
+</div>
+
+
+
+
+
+<div class="ggimg"><img src="images/ggimg03.jpg" alt="即刻起:凡两人一起报名享受现金9.5折，三人以上（含三人）一起报名,享受现金9.2折" title="即刻起:凡两人一起报名享受现金9.5折，三人以上（含三人）一起报名,享受现金9.2折" usemap="#Map4" />
+  <map name="Map4">
+    <area shape="rect" coords="568,277,801,329" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank" alt="点击报名" title="点击报名">
+  </map>
+</div>
+
+<div class="wrap">
+
+</div>
+
+<div class="ggimg" id="zhuce"><img src="images/ggimg04.jpg" alt="马上测评赠送价值1000元考前心理辅导" title="马上测评赠送价值1000元考前心理辅导" usemap="#Map5" />
+  <map name="Map5">
+    <area shape="rect" coords="718,14,988,167" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank" alt="我要测评" title="我要测评">
+  </map>
+</div>
+
+<div class="wrap">
+	<div class="wbox form">
+		<form action="add_1.php" method="post" name="form1" onSubmit="return check()" class="biaodan">
+			<p>
+				<em class="em">*</em>
+				<input name="xing" type="text" value="姓名" onFocus="if(this.value=='姓名') {this.value='';}this.style.color='#333';" onBlur="if(this.value=='') {this.value='姓名';this.style.color='#999';}" class="input" />
+				<!--<input type="text" value="名" onFocus="if(this.value=='名') {this.value='';}this.style.color='#333';" onBlur="if(this.value=='') {this.value='名';this.style.color='#999';}" class="input" />-->
+				<input name="shouji" type="text" value="手机" onFocus="if(this.value=='手机') {this.value='';}this.style.color='#333';" onBlur="if(this.value=='') {this.value='手机';this.style.color='#999';}" class="input" />
+			</p>
+			<!--<p>
+				<em class="em">*</em>
+				<input type="text" value="手机" onFocus="if(this.value=='手机') {this.value='';}this.style.color='#333';" onBlur="if(this.value=='') {this.value='手机';this.style.color='#999';}" class="input" />
+				<input type="text" value="年龄" onFocus="if(this.value=='年龄') {this.value='';}this.style.color='#333';" onBlur="if(this.value=='') {this.value='年龄';this.style.color='#999';}" class="input" />
+			</p>-->
+			<p>
+				<em class="em"></em>
+				<input name="mail" type="text" value="邮箱" onFocus="if(this.value=='邮箱') {this.value='';}this.style.color='#333';" onBlur="if(this.value=='') {this.value='邮箱';this.style.color='#999';}" class="input" />
+				<input name="submit" type="submit" class="submit" value="点此确认" />
+			</p>
+			<p><em class="em"></em>每个ID只限领取一个</p>
+		</form>
+		<div class="wyy"><label><input type="checkbox" class="checkbox" checked="checked" />我愿意接收来自小站教育关于托福的资料。</label></div>
+	</div>
+</div>
+
+<div class="wrap bgF0" id="liucheng">
+	<div class="wbox"><img src="images/liucheng.jpg" alt="" usemap="#Map11">
+      <map name="Map11">
+        <area shape="rect" coords="259,164,993,242" href="http://login.53kf.com/webCompany.php?arg=10048324&amp;style=1" target="_blank">
+      </map>
+	</div>
+</div>
+
+<div class="footer">
+	<div class="ftop"><span class="fr"><a href="">关于我们</a> | <a href="">联系我们</a></span><a href=""><i class="ftopicon"></i>更多小站咨询详情</a></div>
+	<div class="fcenter"><span class="fr">学习资料索取及免费试听全国统一热线</span></div>
+	<div class="fbottom"><span class="fr"><strong>400-080-6318</strong></span>沪ICP备11025181号 &copy; Copyright All Rights Reserved 邮箱：hr@tpooo.com </div>
+</div>
+
+<div id="head2">
+<div id="head2main2">
+<ul>
+<li><a href="#youshi"><img src="images/nav_01.jpg" width="138" height="44" /></a></li>
+<li><a href="#xzkec"><img src="images/nav_02.jpg" width="138" height="44" /></a></li>
+<li><a href="#jieshao"><img src="images/nav_03.jpg" width="138" height="44" /></a></li>
+<li><a href="#duibi"><img src="images/nav_04.jpg" width="138" height="44" /></a></li>
+<li><a href="#gaofen"><img src="images/nav_05.jpg" width="138" height="44" /></a></li>
+<li><a href="#zhuce"><img src="images/nav_06.jpg" width="177" height="44" /></a></li>
+<li><a href="#liucheng"><img src="images/nav_07.jpg" width="138" height="44" /></a></li>
+</ul>
+</div>
+</div>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffb5da94ba9cc39aec1d16f5dde839fa6' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+<script type="text/javascript" src="/tongji.js"></script>
+</html>
+<script type='text/javascript' src='http://tb.53kf.com/kf.php?arg=10048324&style=1'></script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48670556-1']);
+  _gaq.push(['_setDomainName', 'tpooo.com']);
+  _gaq.push(['_addOrganic', 'soso', 'w']);
+  _gaq.push(['_addOrganic', 'yodao', 'q']);
+  _gaq.push(['_addOrganic', 'sogou', 'query']);
+  _gaq.push(['_addOrganic', 'so.360.cn', 'q']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F66b86cf0d401876416811aa6a6172eab' type='text/javascript'%3E%3C/script%3E"));
+</script>

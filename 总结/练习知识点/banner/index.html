@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+    <div class="banner">
+        <ul>
+            <li><img src="images/1.jpg"></li>
+            <li><img src="images/2.jpg"></li>
+            <li><img src="images/3.jpg"></li>
+            <li><img src="images/4.jpg"></li>
+            <li><img src="images/5.jpg"></li>
+            <li><img src="images/6.jpg"></li>
+            <li><img src="images/7.jpg"></li>
+        </ul>
+    </div>
+    <script>
+        var imgwidth=$(".banner").width();
+        $(".banner img").css("width",imgwidth);
+        function move(){
+            $(".banner ul").animate({"left":"-="+imgwidth},1000,function(){
+                $(".banner li").eq(0).appendTo($(".banner ul"));
+                $(".banner ul").css("left",0);
+            })
+        }
+        var h=setInterval(move,5000);
+        $(".banner li").hover(function(){
+            clearInterval(h);
+        },function(){
+            h=setInterval(move,5000);
+        })
+    </script>
+</body>
+</html>

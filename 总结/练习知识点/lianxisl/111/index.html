@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<div>你好</div>
+	<script>
+	$("div").animate({"to":10},{duration:1000,step:function(){
+		console.log($("div")[0].to)
+	}})
+	</script>
+</body>
+</html>

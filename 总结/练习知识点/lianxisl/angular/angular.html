@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>angular练习</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/angular.min.js"></script>
+	<script src="js/controller.js"></script>
+</head>
+<body ng-app='myapp' ng-controller='myctrl'>
+        Your name: <input type="text" ng-model='yname' ng-change="yourname(x)" placeholder="World">
+        <hr>
+        Hello {{yname || 'World'}}!
+        <div ng-repeat='phone in phones'><span>{{$first}}&nbsp;{{$middle}}&nbsp;{{$last}}</span>&nbsp;{{$index+" "+phone}}</div>
+        <div ng-init="count=0" ng-click="countadd2()">{{count}}</div>
+        <div ng-init="count1=0" ng-click="count1=count1+1">{{count1}}</div>
+        <script>
+			var app=angular.module('myapp',[]);
+			app.controller('myctrl',function($scope){
+				$scope.yname='john';			
+				$scope.yourname=function(){
+				if($scope.yname=='sss'){
+					$scope.yname='替换掉sss';
+					}
+				}
+				$scope.count=0;
+				$scope.phones=["shouji1","shouji2","shouji3"]
+				$scope.countadd=function(){
+					//$scope.count++;
+					return $scope.count;
+					}
+				$scope.countadd2=function(){
+					$scope.count=$scope.count+1;
+					//return $scope.count;
+					}
+				$scope.$watch('[count,count1]',function(){alert($scope.count)},true)
+				})
+				
+        </script>
+    </body>
+</html>

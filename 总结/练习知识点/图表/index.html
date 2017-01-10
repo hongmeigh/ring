@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>图表</title>
+		<script src="js/echarts.min.js" type="text/javascript"></script>
+        <script src="js/china.js" type="text/javascript"></script>
+	</head>
+	<body bgcolor="#FFFFFF" style="padding-bottom: 60px;  padding-top:200px;">
+ <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 850px;height:650px;"></div>
+    <button></button>
+    <div id="main1" style="width: 850px;height:650px;"></div>
+    <script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+	var myChart1 = echarts.init(document.getElementById('main1'));
+
+option = {
+    backgroundColor:'#fff',
+    textStyle:{
+        color:'red',
+    },
+    visualMap: {
+    // 不显示 visualMap 组件，只用于明暗度的映射
+    show: false,
+    // 映射的最小值为 80
+    min: 0,
+    // 映射的最大值为 600
+    max: 500,
+    inRange: {
+        // 明暗度的范围是 0 到 1
+        colorLightness: [0, 1]
+    }
+},
+    series : [
+        {
+            name: '访问来源',
+            type: 'pie',
+            radius: '55%',
+            data:[
+                {value:235, name:'视频广告',itemStyle:{normal:{color:'red'}}},
+                {value:274, name:'联盟广告',itemStyle:{normal:{color:'red'}}},
+                {value:310, name:'邮件营销',itemStyle:{normal:{color:'red'}}},
+                {value:335, name:'直接访问',itemStyle:{normal:{color:'red'}}},
+                {value:400, name:'搜索引擎',itemStyle:{normal:{color:'red'}}}
+            ],
+            roseType: 'angle',
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 100,
+                    shadowColor: 'red',
+                    color:'orange'
+                }
+            },
+            label: {
+                normal: {
+                    textStyle: {
+                        color: 'black'
+                    }
+                }
+            },
+            labelLine: {
+                normal: {
+                    lineStyle: {
+                        color: 'black'
+                    }
+                }
+            }
+        }
+    ]
+};
+function randomData() {
+    return Math.round(Math.random()*1000);
+}
+
+option1 = {
+    title: {
+        text: 'iphone销量',
+        subtext: '纯属虚构',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data:['iphone3','iphone4','iphone5']
+    },
+    toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+            dataView: {readOnly: false},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    series: [
+        {
+            name: 'iphone3',
+            type: 'map',
+            mapType: 'china',
+            roam: false,
+           
+            data:[
+                {name: '北京',value: randomData() },
+                {name: '天津',value: randomData() },
+                {name: '上海',value: randomData() },
+                {name: '重庆',value: randomData() },
+                {name: '河北',value: randomData() },
+                {name: '河南',value: randomData() },
+                {name: '云南',value: randomData() },
+                {name: '辽宁',value: randomData() },
+                {name: '黑龙江',value: randomData() },
+                {name: '湖南',value: randomData() },
+                {name: '安徽',value: randomData() },
+                {name: '山东',value: randomData() },
+                {name: '新疆',value: randomData() },
+                {name: '江苏',value: randomData() },
+                {name: '浙江',value: randomData() },
+                {name: '江西',value: randomData() },
+                {name: '湖北',value: randomData() },
+                {name: '广西',value: randomData() },
+                {name: '甘肃',value: randomData() },
+                {name: '山西',value: randomData() },
+                {name: '内蒙古',value: randomData() },
+                {name: '陕西',value: randomData() },
+                {name: '吉林',value: randomData() },
+                {name: '福建',value: randomData() },
+                {name: '贵州',value: randomData() },
+                {name: '广东',value: randomData() },
+                {name: '青海',value: randomData() },
+                {name: '西藏',value: randomData() },
+                {name: '四川',value: randomData() },
+                {name: '宁夏',value: randomData() },
+                {name: '海南',value: randomData() },
+                {name: '台湾',value: randomData() },
+                {name: '香港',value: randomData() },
+                {name: '澳门',value: randomData() }
+            ],
+			itemStyle:{
+				normal:{
+					color:'yellow',
+					areaColor:'#07141d'					
+					},
+				emphasis:{
+					areaColor:'red'
+					}
+				},
+				label:{
+					normal: {
+                    show: true,
+					textStyle: { 
+						color: '#fff',
+						fontSize:20,
+						fontWeight:'bold'
+						}
+                	},
+					emphasis: {
+                    show: true,
+					textStyle: { 
+						color: 'blue' ,
+						fontSize:20,
+						fontWeight:'bold'
+						}
+                	}
+				}
+        },
+        {
+            name: 'iphone4',
+            type: 'map',
+            mapType: 'china',
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '北京',value: randomData() },
+                {name: '天津',value: randomData() },
+                {name: '上海',value: randomData() },
+                {name: '重庆',value: randomData() },
+                {name: '河北',value: randomData() },
+                {name: '安徽',value: randomData() },
+                {name: '新疆',value: randomData(),id:'xinj' },
+                {name: '浙江',value: randomData() },
+                {name: '江西',value: randomData() },
+                {name: '山西',value: randomData() },
+                {name: '内蒙古',value: randomData() },
+                {name: '吉林',value: randomData() },
+                {name: '福建',value: randomData() },
+                {name: '广东',value: randomData() },
+                {name: '西藏',value: randomData() },
+                {name: '四川',value: randomData() },
+                {name: '宁夏',value: randomData() },
+                {name: '香港',value: randomData() },
+                {name: '澳门',value: randomData() }
+            ]
+        },
+        {
+            name: 'iphone5',
+            type: 'map',
+            mapType: 'china',
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '北京',value: randomData() },
+                {name: '天津',value: randomData() },
+                {name: '上海',value: randomData() },
+                {name: '广东',value: randomData() },
+                {name: '台湾',value: randomData() },
+                {name: '香港',value: randomData() },
+                {name: '澳门',value: randomData() }
+            ]
+        }
+    ]
+};
+    
+	var x=document.getElementsByTagName("button")[0];
+	x.onclick=function(){
+		myChart.setOption(option);
+		}
+		//绑定时间获得区域名字
+		myChart1.setOption(option1);
+		myChart1.on("click",function(param){
+			console.log(param.name)
+			})
+    </script>
+	</body>
+</html>

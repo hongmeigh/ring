@@ -1,0 +1,17 @@
+{
+  "weekDate": [[2016, 5, 17], [2016, 5, 18], [2016, 5, 19], [2016, 5, 20], [2016, 5, 21], [2016, 5, 22], [2016, 5, 23] ],
+  "course": [
+  {
+    "weekday": "1", "startTime": "9:10", "duration": 45, "courseType": "雅思", "subject": "听力", "bgClass":"cb-gkk", "isMine": true
+  },
+  {
+    "weekday": "2", "startTime": "10:00", "duration": 90, "courseType": "雅思", "subject": "阅读", "bgClass":"cb-gkk"
+  },
+  {
+    "weekday": "3", "startTime": "14:30", "duration": 120, "courseType": "雅思", "subject": "写作", "bgClass":"cb-gkk", "isMine": true
+  },
+  {
+    "weekday": "5", "startTime": "9:20", "duration": 60, "courseType": "雅思", "subject": "口语", "bgClass":"cb-gkk", "isMine": true
+  } 
+  ]
+}

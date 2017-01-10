@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.11.2.min.js"></script>
+	<script src="app.js"></script>
+	<style>
+		.canvaswrap{
+			position: relative;
+		}
+		.canvaswrap img{
+			position: absolute;
+			top: 95px;
+			left: 42px;
+			transform-origin:83.7% 50%;
+			transition-property:all;
+			-webkit-transition-property:all;
+			transition-duration:2s;
+			
+		}
+	</style>
+</head>
+<body>
+	<div class="canvaswrap">
+		<canvas id="mycanvas1" width="230" height="115"></canvas>
+		<img src="images/jiant.png">
+	</div>	
+</body>
+</html>

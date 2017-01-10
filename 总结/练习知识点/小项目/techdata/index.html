@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>小站教育-技术部</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body>
+	<audio loop="loop" id="audio" autoplay="true" preload="preload" src="music/time Stands Still..mp3"></audio>
+	<div class="swiper-container contwrap">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide page1">
+	        	<img class="bg" src="images/bg1.jpg">
+	        	<img class="page1tit ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="images/page1_01.png">
+	        	<img class="page1n ani" swiper-animate-effect="flipInX" swiper-animate-duration="1s" swiper-animate-delay="1s" src="images/page1_02.png">
+	        	<img class="page1text1 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.7s" src="images/page1_03.png">
+	        	<img class="we ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s" src="images/we.png">
+	        	<img class="page1text2 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="2.2s" src="images/page1_04.png">
+	        	<img class="page1text3 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="2.2s" src="images/page1_05.png">
+	        	<div class="up">
+	        		<img src="images/up.png">
+	        	</div>
+	        </div>
+	        <div class="swiper-slide page2">
+	        	<img class="bg" src="images/bg2.jpg">
+	        	<img class="logo" src="images/logo.png">
+	        	<img class="page2tit ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="images/page2_01.png">
+	        	<img class="page2cir1 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0.7s" src="images/page2_02.png">
+	        	<img class="page2cir2 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.6s" swiper-animate-delay="0.7s" src="images/page2_03.png">
+	        	<img class="page2cir3 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.6s" swiper-animate-delay="0.7s" src="images/page2_04.png">
+	        	<div class="up">
+	        		<img src="images/up.png">
+	        	</div>
+	        </div>
+	        <div class="swiper-slide page3">
+	        	<img class="bg" src="images/bg2.jpg">
+	        	<img class="logo" src="images/logo.png">
+	        	<img class="page3tit ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="images/page3_01.png">
+	        	<img class="page3text1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.8s" swiper-animate-delay="0.6s" src="images/page3_02.png">
+	        	<img class="page3img1 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="images/page3_03.png">
+	        	<img class="page3img2 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="images/page3_04.png">
+	        	<img class="page3img3 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="images/page3_05.png">
+	        	<img class="page3text2 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.8s" swiper-animate-delay="1.5s" src="images/page3_06.png">
+	        	<img class="page3img4 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.7s" swiper-animate-delay="1.8s" src="images/page3_07.png">
+	        	<img class="page3img5 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.7s" swiper-animate-delay="2.1s" src="images/page3_08.png">
+	        	<img class="page3img6 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.7s" swiper-animate-delay="2.4s" src="images/page3_09.png">
+	        	<div class="up">
+	        		<img src="images/up.png">
+	        	</div>
+	        </div>
+	        <div class="swiper-slide page4">
+	        	<img class="bg" src="images/bg2.jpg">
+	        	<img class="logo" src="images/logo.png">
+	        	<img class="page4tit ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="images/page4_01.png">
+	        	<div class="cas1">
+	        		<canvas id="percas1"></canvas>
+	        		<img src="images/page4_02.png">
+	        		<div class="text">
+	        			<span>排课时间缩短</span><br>
+	        			<b>0</b>
+	        		</div>
+	        	</div>
+	        	<div class="cas2">
+	        		<canvas id="percas2"></canvas>
+	        		<img src="images/page4_03.png">
+	        		<div class="text">
+	        			<span>性能提升</span><br>
+	        			<b>0</b>
+	        		</div>
+	        	</div>
+	        	<div class="cas3">
+	        		<canvas id="percas3"></canvas>
+	        		<img src="images/page4_04.png">
+	        		<div class="text">
+	        			<span>人均通话频次提高</span><br>
+	        			<b>0</b>
+	        		</div>
+	        	</div>
+	        	<div class="up">
+	        		<img src="images/up.png">
+	        	</div>
+	        </div>
+	        <div class="swiper-slide page5">
+	        	<img class="bg" src="images/bg2.jpg">
+	        	<img class="logo" src="images/logo.png">
+	        	<img class="page5tit ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="images/page5_01.png">
+	        	<img class="page5img1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s" src="images/page5_02.png">
+	        	<img class="page5img2 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s" src="images/page5_03.png">
+	        	<img class="page5img3 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.4s" src="images/page5_04.png">
+	        	<img class="page5img5 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2.1s" src="images/page5_06.png">
+	        	<img class="line1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.7s" src="images/line.png">
+	        	<img class="page5img4 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.4s" src="images/page5_05.png">
+	        	<img class="page5img6 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.4s" src="images/page5_07.png">
+	        	<img class="page5img8 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2.7s" src="images/page5_09.png">
+	        	<img class="line3 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2.4s" src="images/line.png">
+	        	<img class="page5img7 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2.1s" src="images/page5_08.png">
+	        	<img class="line2 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.7s" src="images/line.png">
+	        	<div class="up">
+	        		<img src="images/up.png">
+	        	</div>
+	        </div>
+	        <div class="swiper-slide page6">
+	        	<img class="bg" src="images/bg2.jpg">
+	        	<img class="logo" src="images/logo.png">
+	        	<img class="page6tit ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="images/page6_01.png">
+	        	<img class="page6img ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s" src="images/page6.png">
+	        	<img class="page6text1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.4s" src="images/page6_02.png">
+	        	<img class="page6text2 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.4s" src="images/page6_03.png">
+	        	<img class="page6text3 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.4s" src="images/page6_04.png">
+	        	<img class="page6text4 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.4s" src="images/page6_05.png">
+	        	<div class="up">
+	        		<img src="images/up.png">
+	        	</div>
+	        </div>
+	        <div class="swiper-slide page7">
+	        	<img class="bg" src="images/bg2.jpg">
+	        	<img class="logo" src="images/logo.png">
+	        	<img class="page7tit ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="images/page7_01.png">
+	        	<img class="page7img1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s" src="images/page7_02.png">
+	        	<img class="page7img2 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s" src="images/page7_03.png">
+	        	<img class="page7img3 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s" src="images/page7_04.png">
+	        	<img class="page7img4 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s" src="images/page7_05.png">
+	        	<div class="up">
+	        		<img src="images/up.png">
+	        	</div>
+	        </div>
+	        <div class="swiper-slide page8">
+	        	<img class="bg" src="images/bg2.jpg">
+	        	<img class="logo" src="images/logo.png">
+	        	<img class="page8tit ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="images/page8_01.png">
+	        	<img class="page8img1 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="images/page8_02.png">
+	        	<img class="page8img2 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="images/page8_03.png">
+	        	<img class="page8img3 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s" src="images/page8_04.png">
+	        	<div class="page8img4 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s">
+	        		<img class="map" src="images/page8_05.png">
+					<img class="person1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6s"  swiper-animate-delay="1.8s" src="images/person1.png">
+					<img class="person2 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6s"  swiper-animate-delay="1.8s"  src="images/person.png">
+	        	</div>
+	        	<img class="page8img5 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2.2s" src="images/page8_06.png">
+	        	<img class="page8img6 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="2.2s" src="images/page8_07.png">
+	        	<img class="page8img7 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="2.2s" src="images/page8_08.png">
+	        	<img class="page8img8 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.2s" src="images/page8_09.png">
+	        	<div class="up">
+	        		<img src="images/up.png">
+	        	</div>
+	        </div>
+	        <div class="swiper-slide page9">
+	        	<img class="bg" src="images/bg2.jpg">
+	        	<img class="logo" src="images/logo.png">
+	        	<img class="page9tit ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="images/page9_01.png">
+	        	<img class="page9img1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s" src="images/page9_02.png">
+	        	<img class="page9img2 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s" src="images/page9_03.png">
+	        	<img class="page9img3 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s" src="images/page9_04.png">
+	        	<img class="page9img4 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s" src="images/page9_05.png">
+	        	<img class="page9img5 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s" src="images/page9_06.png">
+	        	<img class="page9img6 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s" src="images/page9_07.png">
+	        	<div class="up">
+	        		<img src="images/up.png">
+	        	</div>
+	        </div>
+	        <div class="swiper-slide page10">
+	        	<img class="bg" src="images/bg2.jpg">
+	        	<img class="logo" src="images/logo.png">
+	        	<img class="page10tit ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="images/page10_01.png">
+	        	<img class="page10img1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="images/page10_02.png">
+	        	<img class="page10img2 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.1s" src="images/page10_03.png">
+	        	<img class="page10img3 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s" src="images/page10_04.png">
+	        	<img class="page10img4 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s" src="images/page10_05.png">
+	        	<img class="page10img5 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.7s" src="images/page10_06.png">
+	        	<img class="page10img6 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.9s" src="images/page10_07.png">
+	        	<div class="up">
+	        		<img src="images/up.png">
+	        	</div>
+	        </div>
+	        <div class="swiper-slide page11">
+	        	<img class="bg" src="images/bg2.jpg">
+	        	<img class="logo" src="images/logo.png">
+	        	<img class="page11tit ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="images/page11_01.png">
+	        	<img class="page11img1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="images/page11_02.png">
+	        	<div class="swiper-container tupian ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" >
+	        		<div class="swiper-wrapper">
+		        		<img class="swiper-slide tu" src="images/img1.png">
+		        		<img class="swiper-slide tu" src="images/img2.png">
+		        		<img class="swiper-slide tu" src="images/img3.png">
+		        		<img class="swiper-slide tu" src="images/img4.png">
+		        		<img class="swiper-slide tu" src="images/img5.png">
+		        		<img class="swiper-slide tu" src="images/img6.png">
+		        		<img class="swiper-slide tu" src="images/img8.png">
+		        		<img class="swiper-slide tu" src="images/img9.png">
+	        		</div>
+	        		<img class="kuang" src="images/page11_03.png">
+	        	</div>
+	        	<img class="page11img2 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s" src="images/page11_04.png">
+	        	<img class="page11img3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s" src="images/page11_05.png">
+	        	<img class="page11img4 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s" src="images/page11_06.png">
+	        	<img class="page11img5 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.3s" src="images/page11_07.png">
+	        	<img class="page11img6 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.7s" src="images/page11_09.png">
+	        	<img class="page11img7 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1.7s" src="images/page11_08.png">
+	        	<div class="share">
+	        		<img src="images/page11_10.png">
+	        		<div class="sharebtn">点击分享</div>
+	        		<div class="num">已经阅读10次</div>
+	        	</div>
+	        </div>
+	    </div>
+	</div>
+	<img class="sharebg" src="images/sharebg.png">
+	<img class="kuangout" src="images/page11_03.png">
+
+
+
+
+
+
+
+
+<script src="js/swiper.min.js"></script>	
+<script src="js/swiper.animate1.0.2.min.js"></script>	
+</body>
+</html>

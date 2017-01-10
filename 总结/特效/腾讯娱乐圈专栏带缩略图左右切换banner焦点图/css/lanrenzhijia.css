@@ -1,0 +1,29 @@
+/* 代码整理：懒人之家 www.lanrenzhijia.com */
+*{ margin:0; padding:0; list-style:none;}
+img{ border:none;}
+body { margin:0; padding:0; background:#f7f7f7; font-family: "宋体", "Arial Narrow"; font-size:12px;}
+
+
+.lanrenzhijia{width:680px;height:406px;position:relative;background:#f7f7f7; margin:0 auto;}
+.lanrenzhijia .btn{position:absolute;width:15px;height:70px;top:336px;cursor:pointer;z-index:99;font-size:50px;font-weight:bold;}
+.lanrenzhijia .prev{left:0;background:url(../images/prevBtn.png) no-repeat;}
+.lanrenzhijia #prevTop,.lanrenzhijia #nextTop{top:213px;width: 46px;height: 48px;}
+.lanrenzhijia #prevTop{background: url(../images/prevBtnTop.png) 0 0 no-repeat;}
+.lanrenzhijia #nextTop{background: url(../images/nextBtnTop.png) 0 0 no-repeat;}
+.lanrenzhijia .next{right:0;background:url(../images/nextBtn.png) no-repeat;}
+.lanrenzhijia li{float:left;}
+.lanrenzhijia .cf li{position: relative;color: #fff;}
+.lanrenzhijia .cf a{display: block; width: 680px;height: 330px; position: absolute;color: #fff;}
+.lanrenzhijia .cf li span{display: block;width: 640px; position: absolute; left: 0; bottom: 0;padding: 10px 20px;line-height: 22px;text-align:left;background:rgba(0,0,0,0.6);filter: progid:DXImageTransform.Microsoft.gradient( GradientType = 0,startColorstr = "#60000000",endColorstr = "#60000000") 6}
+.lanrenzhijia .picBox{height:330px;position:relative;overflow:hidden;}
+.lanrenzhijia .picBox ul{height:330px;position:absolute;}
+.lanrenzhijia .picBox li{width:680px;height:330px;}
+.lanrenzhijia .listBox{width:642px;height:100px;margin:0 auto;position:relative;padding:6px 0 10px;overflow:hidden;}
+.lanrenzhijia .listBox ul{height:100px;position:absolute;}
+.lanrenzhijia .listBox li{width:129px;height:70px;cursor:pointer;position:relative;}
+.lanrenzhijia .listBox li i{display:none;}
+.lanrenzhijia .listBox li a{display: block;width:124px;height: 70px;}
+.lanrenzhijia .listBox li img{width:124px;height: 70px;}
+.lanrenzhijia .listBox .on img{width: 118px;height: 64px;border:3px solid #AEAEAE;}
+.lanrenzhijia .listBox .on i{display:block;}
+/* 代码整理：懒人之家 www.lanrenzhijia.com */

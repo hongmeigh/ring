@@ -1,0 +1,40 @@
+.scroll-wrap{
+	width: 500px;
+	height: 600px;
+	border: 1px solid #333;
+	margin: 50px auto 0;
+	position: relative;
+	overflow: hidden;
+}
+.scroll-cont{
+	position: absolute;
+	padding: 0 15px;
+	word-break:break-all;
+	top:0;
+	left: 0;
+}
+.scroll-bar{
+	width: 10px;
+	background-color: #ddd;
+	position: absolute;
+	height: 100%;
+	top: 0;
+	right: 0;
+	display: none;
+}
+.scroll-bar .bar{
+	width: 100%;
+	background-color: #666;
+	height: 50px;
+	border-radius: 5px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.select{
+	-moz-user-select: none; /*火狐*/
+	-webkit-user-select: none; /*webkit浏览器*/
+	-ms-user-select: none; /*IE10*/
+	-khtml-user-select: none; /*早期浏览器*/
+	user-select: none;
+}

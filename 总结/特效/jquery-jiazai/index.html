@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>pull to refresh</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/reset.css"/>
+<link rel="stylesheet" href="css/pullToRefresh.css"/>
+<script src="js/iscroll.js"></script>
+<script src="js/pullToRefresh.js"></script>
+
+<style type="text/css" media="all">
+body{ font-size:12px; font-family:"Microsoft YaHei","宋体",arial; background-color:#f2f2f2;}
+*html{background-image:url(about:blank); background-attachment:fixed;}
+.scroller li {
+	height:60px;
+	border-bottom: 1px solid #eee;
+	background-color: #fff;
+	font-size: 14px;
+	
+}
+
+.game-info{ padding:15px 10px; background:#FFF; line-height:22px; color:#333; font-size:14px;}
+.game-info p{color:#999; font-size:12px;}
+</style>
+</head>
+<body>
+<!--must content ul li,or shoupi-->
+<div id="wrapper">
+  <ul>
+    <li><div class="game-info"><h1>上拉加载更多</h1><p>2015-10-27</p></div></li>
+    <li><div class="game-info"><h1>jQuery 团队在官博中再次提醒用户，jQuery 2.0 不再支持IE 6/7/8 了，但是 jQuery 1.9 会继续支持。</h1><p>2015-10-27</p></div></li>  
+  </ul>
+</div>
+
+<script>
+refresher.init({
+	id:"wrapper",
+	pullDownAction:Refresh,                                                            
+	pullUpAction:Load 																			
+	});																																							
+function Refresh() {																
+	setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
+		var el, li, i;																		
+		el =document.querySelector("#wrapper ul");					
+		//这里写你的刷新代码				
+		document.getElementById("wrapper").querySelector(".pullDownIcon").style.display="none";		
+		document.getElementById("wrapper").querySelector(".pullDownLabel").innerHTML="<img src='css/ok.png'/>刷新成功";																					 
+		setTimeout(function () {
+			wrapper.refresh();
+			document.getElementById("wrapper").querySelector(".pullDownLabel").innerHTML="";								
+			},1000);//模拟qq下拉刷新显示成功效果
+		/****remember to refresh after  action completed！ ---yourId.refresh(); ----| ****/
+	}, 1000);
+}
+function Load() {
+	setTimeout(function () {// <-- Simulate network congestion, remove setTimeout from production!
+		var el, li, i;
+		el =document.querySelector("#wrapper ul");
+		for (i=0; i<2; i++) {
+			li = document.createElement('li');
+			li.innerHTML="<div class='game-info'><h1>在很多环境中，jQuery 2.0 应当都表现的很好。</h1><p>2015-10-27</p></div>"
+			el.appendChild(li, el.childNodes[0]);
+		}
+		wrapper.refresh();/****remember to refresh after action completed！！！   ---id.refresh(); --- ****/
+	},1000);	
+}
+</script>
+</body>
+</html>
