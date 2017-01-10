@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<div class="input">
+    <input type="button" id="btn" class="btn_mfyzm" value="免费获取验证码" style="width:100px;height:30px;border:1px solid #000;"/>
+   <script type="text/javascript">
+var wait=30;
+document.getElementById("btn").disabled = false;  
+function time(o) {
+        if (wait == 0) {
+            o.removeAttribute("disabled");          
+            o.value="免费获取验证码";
+            wait = 30;
+        } else {
+            o.setAttribute("disabled", true);
+            o.value= wait + "s";
+            wait--;
+            setTimeout(function() {
+                time(o)
+            },
+            1000)
+        }
+    }
+document.getElementById("btn").onclick=function(){time(this);}
+</script>
+</div> 
+</body>
+</html>
