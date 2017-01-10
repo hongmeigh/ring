@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  	<link rel="stylesheet" href="scripts/bootstrap3/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="scripts/bootstrap3/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/offcanvas.css">
+  	<script src="scripts/jquery/js/jquery.min.js"></script>
+  	<script src="scripts/bootstrap3/js/bootstrap.min.js"></script>
+  	<script src="scripts/angularjs/angular.min.js"></script>
+  	<script src="scripts/angularjs/angular-animate.min.js"></script>
+  	<script src="scripts/angularjs/angular-resource.min.js"></script>
+  	<script src="scripts/angularjs/angular-route.min.js"></script>
+    <script src="scripts/angularjs/ui-bootstrap-tpls-0.12.0.js"></script>
+  	<script src="scripts/app.js"></script>
+    <script src="scripts/services/config.js"></script>
+    <script src="scripts/services/services.js"></script>
+    <script src="scripts/functions/partialViews.js"></script>  
+  	<script src="scripts/controllers/home.js"></script>
+  	<script src="scripts/controllers/detail.js"></script>
+    <script src="scripts/controllers/list.js"></script>  
+</head>
+<body ng-controller="PartialsCtrl">
+	<div class="container">
+		<div ng-include="'includes/header.html'"></div>
+	</div>
+	<!-- <div class="container view-animate-container">
+		<div ng-view class="view-animate"></div>
+	</div> -->
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+        <div class="list-group">
+          <a href="#home" class="list-group-item active" data-toggle="offcanvas">home</a>
+          <a href="#list/1" class="list-group-item" data-toggle="offcanvas">list</a>
+          <a href="#siderbar" class="list-group-item" data-toggle="offcanvas">Link</a>
+          <a href="#siderbar" class="list-group-item" data-toggle="offcanvas">Link</a>
+          <a href="#siderbar" class="list-group-item" data-toggle="offcanvas">Link</a>
+          <a href="#siderbar" class="list-group-item" data-toggle="offcanvas">Link</a>
+          <a href="#siderbar" class="list-group-item" data-toggle="offcanvas">Link</a>
+          <a href="#siderbar" class="list-group-item" data-toggle="offcanvas">Link</a>
+          <a href="#siderbar" class="list-group-item" data-toggle="offcanvas">Link</a>
+          <a href="#siderbar" class="list-group-item" data-toggle="offcanvas">Link</a>
+        </div>
+      </div>
+
+      
+      
+      <div class="col-xs-12 col-sm-9">
+        <div ng-view></div>
+      </div>
+    </div>
+    
+  </div>
+</body>
+</html>
