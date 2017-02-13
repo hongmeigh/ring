@@ -3,7 +3,7 @@ $(function(){
 	var ctx1=cas1.getContext("2d");
 	var count=0;
 	function wrap(value,ctx,cas,count){
-		if(count<=value){
+		if(parseFloat(count).toFixed(2)<=value){
 			drawcir(value,ctx,cas,count)
 		}else{
 			clearInterval(timer)
@@ -28,7 +28,7 @@ $(function(){
 	}
 	var timer=setInterval(function(){
 		count=count+0.01;
-		wrap(0.95,ctx1,cas1,count)
+		wrap(1,ctx1,cas1,count)
 	},15)
 
 })

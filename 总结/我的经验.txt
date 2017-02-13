@@ -237,3 +237,4 @@
         alert(Number((a+b).toFixed(2)));
 	用这种方式避免
 28.父级元素如果有transform属性，会导致子元素的fixed失效。父元素去掉transform属性或者 父元素加display：inline;
+29.绝对定位下top left right bottom 都设置0，再margin: auto 就可以将元素垂直水平居中。

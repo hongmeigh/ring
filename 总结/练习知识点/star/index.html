@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.cirstar{
+			width: 120px;
+			height: 120px;
+			background: url(images/cir.png) top center no-repeat;
+			position: relative;
+		}
+		.cirstar img{
+			position: absolute;
+			display: block;
+			/*margin: 0 auto;
+			padding-top: 35px;*/
+			top: 35px;
+			left: 19px;
+			animation:move 1.5s linear infinite;
+			-webkit-animation:move 1.5s linear infinite;
+		}
+		.cirstar .star{
+			position: absolute;
+			width: 4px;
+			height: 4px;
+			border-radius: 2px;
+			animation:shan 1.5s linear infinite;
+			-webkit-animation:shan 1.5s linear infinite;
+		}
+		.cirstar .xing1{			
+			background-color: red;
+			top: 17px;
+			left: 25px;
+			animation-delay:0;
+			-webkit-animation-delay:0;
+		}
+		.cirstar .xing2{			
+			background-color: red;
+			top: 34px;
+			left: 82px;
+			animation-delay:0;
+			-webkit-animation-delay:0;
+		}
+		.cirstar .xing3{			
+			background-color: red;
+			top: 48px;
+			left: 93px;
+			animation-delay:0.3s;
+			-webkit-animation-delay:0.3s;
+		}
+		.cirstar .xing4{			
+			background-color: #3a2f56;
+			top: 16px;
+			left: 53px;
+			animation-delay:0.7s;
+			-webkit-animation-delay:0.7s;
+		}
+		.cirstar .xing5{			
+			background-color: #fbb141;
+			top: 26px;
+			left: 38px;
+			animation-delay:1s;
+			-webkit-animation-delay:1s;
+		}
+		.cirstar .xing6{			
+			background-color: #fbb141;
+			top: 27px;
+			left: 72px;
+			animation-delay:0.2s;
+			-webkit-animation-delay:0.2s;
+		}
+		.cirstar .xing7{			
+			background-color: #45a7fb;
+			top: 39px;
+			left: 25px;
+			animation-delay:0.1s;
+			-webkit-animation-delay:0.1s;
+		}
+		@keyframes shan{
+			0%{
+				transform:scale(1,1);
+				-webkit-transform:scale(1,1);
+			}
+			25%{
+				transform:scale(1.5,1.5);
+				-webkit-transform:scale(1.5,1.5);
+			}
+			75%{
+				transform:scale(0.5,0.5);
+				-webkit-transform:scale(0.5,0.5);
+			}
+			100%{
+				transform:scale(1,1);
+				-webkit-transform:scale(1,1);
+			}
+		}
+		@-webkit-keyframes shan{
+			0%{
+				transform:scale(1,1);
+				-webkit-transform:scale(1,1);
+			}
+			25%{
+				transform:scale(1.5,1.5);
+				-webkit-transform:scale(1.5,1.5);
+			}
+			75%{
+				transform:scale(0.5,0.5);
+				-webkit-transform:scale(0.5,0.5);
+			}
+			100%{
+				transform:scale(1,1);
+				-webkit-transform:scale(1,1);
+			}
+		}
+		@-webkit-keyframes move{
+			0%{
+				top: 35px;
+			}
+			25%{
+				top: 33px;
+			}
+			75%{
+				top: 37px;
+			}
+			100%{
+				top: 35px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="cirstar">
+		<div class="star xing1"></div>
+		<div class="star xing2"></div>
+		<div class="star xing3"></div>
+		<div class="star xing4"></div>
+		<div class="star xing5"></div>
+		<div class="star xing6"></div>
+		<div class="star xing7"></div>
+		<img src="images/car.png">
+	</div>
+</body>
+</html>
