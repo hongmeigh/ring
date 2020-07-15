@@ -39,7 +39,7 @@
     "grunt-protractor-runner": "^1.1.4",
     "grunt-recess": "~0.6.1",
     "less": "~1.4.2",
-    "lodash": "^2.4.1",
+    "lodash": "^4.17.19",
     "parameterize": "0.0.7",
     "selenium-server-standalone-jar": "^2.44.0",
     "semver": "~2.2.1"
